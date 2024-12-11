@@ -1,0 +1,196 @@
+input {
+  /* 기본 스타일 초기화 */
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  vertical-align: middle;
+}
+.com-input {
+  padding-left: 10px;
+  box-sizing: border-box;
+  // border: 1px solid #666666;
+  border-radius: 4px;
+  width: 100%;
+
+  &:hover {
+    border: 1px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(102, 175, 233, 0.6);
+  }
+  &:focus {
+    border: 1px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(102, 175, 233, 0.6);
+  }
+  // 입력란 크기 설정
+  &.input-lg {
+    height: 28px;
+    border: 1px solid #bbbbbb;
+  }
+
+  &.input-mid {
+    height: 28px;
+    border: 1px solid #bbbbbb;
+    &::placeholder {
+      font-size: 13px;
+      letter-spacing: 0px;
+      color: #222222;
+    }
+  }
+
+  &.input-sm {
+    height: 28px;
+    background: #fff;
+    border: 1px solid #bbbbbb;
+  }
+
+  // 입력란 테두리 스타일 설정
+  &.border-solid {
+    border-style: solid;
+  }
+
+  &.border-dashed {
+    border-style: dashed;
+  }
+
+  &.border-dotted {
+    border-style: dotted;
+  }
+
+  // 입력란 테두리 색상 설정
+  &.border {
+    border: 1px solid #aaa;
+  }
+  &.border-red {
+    border-color: #ff0000;
+  }
+
+  &.border-blue {
+    border-color: #0000ff;
+  }
+
+  &.border-gray {
+    border-color: #ced4da;
+  }
+
+  // 입력란 배경색 설정
+  &.bg-lightgray {
+    background-color: #f5f5f5;
+  }
+
+  &.bg-lightblue {
+    background-color: #e6f7ff;
+  }
+
+  &.bg-lightgreen {
+    background-color: #e6ffe6;
+  }
+
+  // 입력란 텍스트 정렬 설정
+  &.text-left {
+    text-align: left;
+  }
+
+  &.text-center {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  &.text-right {
+    text-align: right;
+    padding-left: 0;
+  }
+}
+
+
+.com-checkbox-wrap {
+  flex-wrap: wrap;
+  max-width: 880px;
+  display: inline-block;
+  padding: 10px 0;
+  display: flex;
+  gap:17px;
+  &.center{
+    justify-content: center;
+    padding-top: 0; padding-bottom: 0;
+  }
+  label,input{
+    cursor: pointer;
+    background: #fff;
+    &:hover{
+      input{
+        border: 1px solid var(--main-color);
+        outline: 1px solid var(--main-color);
+      }
+    }
+  }
+  label{
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    background: #fff;
+  }
+  .item2{
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.com-checkbox {
+  appearance: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cccccc; /* 회색 선 */
+  cursor: pointer;
+  position: relative;
+}
+
+.com-checkbox:checked {
+  background-color: $main-color; /* 체크박스 선택 시 배경색 */
+}
+
+.com-checkbox:checked::before {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+
+
+
+.v-mx-2 {
+  /* Vuetify의 margin 클래스 */
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.v-motion {
+  /* Vuetify의 모션 스타일 */
+  animation: motion-fadeInLeft 0.5s ease-in-out;
+}
+
+@keyframes motion-fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

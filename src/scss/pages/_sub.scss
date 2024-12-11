@@ -1,0 +1,139 @@
+.employee-wrap{
+  padding-top: 25px;
+  border-top: 1px solid #B2DDFF;
+  .row{
+    margin-top: 20px;
+  }
+}
+.employee-tit {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  p {
+    &:last-of-type,&:first-of-type{
+      span::after{
+        display: none;
+      }
+    }
+    opacity: 1;
+    span{
+      position: relative;
+      &::after{
+        content: '/';
+        display: inline-block;
+        margin: 0 5px;
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+    span.name {
+      &::before{
+        content: '▶';
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 10px;
+        position: relative;
+        top:-3px;
+      }
+      font: normal normal bold 20px/24px Pretendard;
+      letter-spacing: 0px;
+      color: #222222;
+    }
+    .id,
+    .department,
+    .rank {
+      font: normal normal normal 14px/16px Pretendard;
+      letter-spacing: 0px;
+      color: #222222;
+    }
+  }
+}
+
+
+.error-page{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .txt-info{
+    position: absolute;
+    left: 144px;
+    top: 50%; transform: translateY(-50%);
+    text-align: center;
+    z-index: 10;
+    p{
+      font-size: 42px;
+      font-weight: 500;
+    }
+    img{
+      display:block;
+      margin-top: 13px;
+    }
+    button{
+      margin-top: 20px;
+      &:hover{
+        filter:none;
+        box-shadow: none;
+      }
+    }
+  }
+  .bg{
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 65%;
+    img{
+      max-height: 100vh;
+      width: 100%;
+    }
+    .por{
+      position: absolute;
+      top: 50%;
+      right: 200px;
+      transform: translateY(-50%);
+      width: 600px;
+    }
+  }
+}
+
+.loading-bar{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  .bg{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.70);
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    .bar{
+      img{
+        position: relative;
+        z-index: 10;
+        animation: spin2 3s linear infinite;
+      }
+    }
+    p{
+      position: relative; z-index: 10;
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes spin2{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
