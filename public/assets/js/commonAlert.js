@@ -2,10 +2,6 @@
 export function commonAlert({
   title = "",
   content = "",
-  confirmText = "확인",
-  cancelText = null,
-  onConfirm = () => {},
-  onCancel = () => {},
   closeOnBackdrop = true,
 }) {
   // 이전 팝업 제거
@@ -41,33 +37,16 @@ export function commonAlert({
 
   // 팝업 요소 선택
   const alertPopup = document.querySelector(".common-alert");
-  const confirmButton = alertPopup.querySelector(".alert-confirm");
-  const cancelButton = alertPopup.querySelector(".alert-cancel");
 
   // 팝업 닫기 함수
   const closeAlert = () => {
     alertPopup.remove();
   };
 
-  // 확인 버튼 이벤트
-  confirmButton.addEventListener("click", () => {
-    onConfirm();
-    closeAlert();
-  });
-
-  // 취소 버튼 이벤트
-  if (cancelButton) {
-    cancelButton.addEventListener("click", () => {
-      onCancel();
-      closeAlert();
-    });
-  }
-
   // 배경 클릭 시 닫기
   if (closeOnBackdrop) {
     alertPopup.addEventListener("click", (e) => {
       if (e.target === alertPopup) {
-        onCancel();
         closeAlert();
       }
     });
