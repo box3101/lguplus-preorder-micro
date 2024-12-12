@@ -1,0 +1,247 @@
+---
+const models = [
+  {
+    id: 'galaxy-s25',
+    name: 'Galaxy S25',
+    active: true,
+    colors: [
+      { name: 'gray', active: true, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+    ],
+    storage: [
+      {
+        size: '256GB',
+        active: true,
+        price: 1232233,
+        discount: 150000,
+        savings: 140000,
+      },
+      {
+        size: '512GB',
+        active: false,
+        price: 1332233,
+        discount: 170000,
+        savings: 160000,
+      },
+      {
+        size: '1TB',
+        active: false,
+        price: 1532233,
+        discount: 200000,
+        savings: 180000,
+      },
+    ],
+  },
+  {
+    id: 'galaxy-s25-plus',
+    name: 'Galaxy S25+',
+    active: false,
+    colors: [
+      { name: 'gray', active: true, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+    ],
+    storage: [
+      {
+        size: '2562GB',
+        active: true,
+        price: 1332233,
+        discount: 160000,
+        savings: 150000,
+      },
+      {
+        size: '512GB',
+        active: false,
+        price: 1432233,
+        discount: 180000,
+        savings: 170000,
+      },
+      {
+        size: '1TB',
+        active: false,
+        price: 1632233,
+        discount: 210000,
+        savings: 190000,
+      },
+    ],
+  },
+  {
+    id: 'galaxy-s25-ultra',
+    name: 'Galaxy S25 Ultra',
+    active: false,
+    colors: [
+      { name: 'gray', active: true, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+    ],
+    storage: [
+      {
+        size: '2563GB',
+        active: true,
+        price: 1432233,
+        discount: 170000,
+        savings: 160000,
+      },
+      {
+        size: '512GB',
+        active: false,
+        price: 1532233,
+        discount: 190000,
+        savings: 180000,
+      },
+      {
+        size: '1TB',
+        active: false,
+        price: 1732233,
+        discount: 220000,
+        savings: 200000,
+      },
+    ],
+  },
+  {
+    id: 'galaxy-s25-edition',
+    name: 'Galaxy S25 Edition',
+    active: false,
+    colors: [
+      { name: 'gray', active: true, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+    ],
+    storage: [
+      {
+        size: '256GB',
+        active: true,
+        price: 1532233,
+        discount: 180000,
+        savings: 170000,
+      },
+      {
+        size: '512GB',
+        active: false,
+        price: 1632233,
+        discount: 200000,
+        savings: 190000,
+      },
+      {
+        size: '1TB',
+        active: false,
+        price: 1832233,
+        discount: 230000,
+        savings: 210000,
+      },
+    ],
+  },
+];
+---
+
+<article class="model-select-wrp">
+  <div class="tab-group model-select">
+    <div class="common-tab-menu-wrp common-inner">
+      <ul class="common-tab-menu model-tab">
+        {
+          models.map((model) => (
+            <li
+              class={`common-tab-menu-item ${model.active ? 'active' : ''}`}
+              data-tab={model.id}
+            >
+              {model.name}
+            </li>
+          ))
+        }
+      </ul>
+
+      {
+        models.map((model) => (
+          <div
+            class={`common-tab-content ${model.active ? 'active' : ''}`}
+            id={model.id}
+          >
+            <div class="tab-group color-select">
+              <ul class="common-tab-menu common-tabs color-tab">
+                {model.colors.map((color) => (
+                  <li
+                    class={`common-tab-menu-item ${
+                      color.active ? 'active' : ''
+                    }`}
+                    data-tab={`${model.id}-${color.name}`}
+                  >
+                    <button type="button" class={`color-btn ${color.name}`} />
+                  </li>
+                ))}
+              </ul>
+
+              {model.colors.map((color) => (
+                <div
+                  class={`common-tab-content ${color.active ? 'active' : ''}`}
+                  id={`${model.id}-${color.name}`}
+                >
+                  <div class="color-swiper swiper">
+                    <div class="swiper-wrapper">
+                      {color.images.map((image, index) => (
+                        <div class="swiper-slide">
+                          <img
+                            src={`images/${model.id}/${color.name}/${image}`}
+                            alt={`${model.name} ${color.name} 이미지${
+                              index + 1
+                            }`}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div class="swiper-scrollbar mt-10" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="tab-group storage-select">
+              <ul class="common-tab-menu common-tabs storage-tab">
+                {model.storage.map((storage) => (
+                  <li
+                    class={`common-tab-menu-item ${
+                      storage.active ? 'active' : ''
+                    }`}
+                    data-tab={`${model.id}-${storage.size}`}
+                  >
+                    {storage.size}
+                  </li>
+                ))}
+              </ul>
+
+              {model.storage.map((storage) => (
+                <div
+                  class={`common-tab-content ${storage.active ? 'active' : ''}`}
+                  id={`${model.id}-${storage.size}`}
+                >
+                  <h3 class="product-title">{`${
+                    model.colors.find((c) => c.active).name
+                  }, ${storage.size}`}</h3>
+                  <div class="price-info">
+                    <p class="original-price">
+                      출고가 {storage.price.toLocaleString()}원
+                    </p>
+                    <p class="reservation-price">
+                      오늘 예약하면 {storage.discount.toLocaleString()}원
+                    </p>
+                    <p class="savings">
+                      지급제보다 최대 {storage.savings.toLocaleString()}원 저렴
+                    </p>
+                    <button
+                      type="button"
+                      class="detail-btn"
+                      data-model={model.id}
+                      data-storage={storage.size}
+                    >
+                      자세히 보기
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</article>

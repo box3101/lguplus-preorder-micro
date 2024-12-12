@@ -1,0 +1,43 @@
+---
+interface Props {
+  promotionText?: string;
+  mainText?: string;
+  prices?: string[];
+  dateText?: string;
+  tipText?: string;
+}
+
+const {
+  promotionText = '사전예약 오픈날 전통누이 좋아하는',
+  mainText = '알람 신청하면',
+  prices = ['200,000원', '300,000원', '400,000원'],
+  dateText = '1/23(월) ~ 소진 시까지',
+  tipText = '사전예약 오픈날 전통누이 좋아하는',
+} = Astro.props;
+---
+
+<article class="main-visual">
+  <div class="visual-content">
+    <div class="top-info">
+      <div class="promotion-text">{promotionText}</div>
+      <div class="main-text">{mainText}</div>
+      <div class="price-swiper swiper">
+        <div class="swiper-wrapper">
+          {
+            prices.map((price) => (
+              <div class="swiper-slide">
+                <div class="price">{price}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="mid-info">
+      <div class="date">{dateText}</div>
+    </div>
+    <div class="balloon-tip dongdong-effect">
+      <div class="tip-text">{tipText}</div>
+    </div>
+  </div>
+</article>
