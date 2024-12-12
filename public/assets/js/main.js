@@ -6,6 +6,7 @@ import { initializeNotice } from "./notice.js";
 import { initializeCountdown } from "./countDown.js";
 import { initializeAccordion } from "./accordian.js";
 import { showAlert } from "./alertPopup.js";
+import { commonAlert } from "./commonAlert.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -22,6 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const model = e.target.dataset.model;
         const storage = e.target.dataset.storage;
         showAlert(model, storage);
+      }
+    });
+
+    // 공통 alert
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("com-alert-btn")) {
+        const title = e.target.dataset.title;
+        const content = e.target.dataset.content;
+        commonAlert({ title, content });
       }
     });
   }, 100);
