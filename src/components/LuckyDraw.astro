@@ -1,0 +1,115 @@
+---
+const prizes = [
+  {
+    id: 1,
+    brand: '태그호이어',
+    name: '포뮬라1 쿼츠 남성 시계',
+    quantity: 1,
+    image: 'https://via.placeholder.com/150x150',
+    thumbnail: 'https://via.placeholder.com/60x60',
+    alt: '태그호이어 시계',
+  },
+  {
+    id: 2,
+    brand: '브랜드2',
+    name: '상품2',
+    quantity: 2,
+    image: 'https://via.placeholder.com/150x150',
+    thumbnail: 'https://via.placeholder.com/60x60',
+    alt: '상품2',
+  },
+  {
+    id: 3,
+    brand: '브랜드3',
+    name: '상품3',
+    quantity: 3,
+    image: 'https://via.placeholder.com/150x150',
+    thumbnail: 'https://via.placeholder.com/60x60',
+    alt: '상품3',
+  },
+  {
+    id: 4,
+    brand: '브랜드4',
+    name: '상품4',
+    quantity: 4,
+    image: 'https://via.placeholder.com/150x150',
+    thumbnail: 'https://via.placeholder.com/60x60',
+    alt: '상품4',
+  },
+  {
+    id: 5,
+    brand: '브랜드5',
+    name: '상품5',
+    quantity: 5,
+    image: 'https://via.placeholder.com/150x150',
+    thumbnail: 'https://via.placeholder.com/60x60',
+    alt: '상품5',
+  },
+  {
+    id: 6,
+    brand: '브랜드6',
+    name: '상품6',
+    quantity: 6,
+    image: 'https://via.placeholder.com/150x150',
+    thumbnail: 'https://via.placeholder.com/60x60',
+    alt: '상품6',
+  },
+];
+---
+
+<article class="lucky-draw common-inner">
+  <div class="lucky-draw-header">
+    <h2>
+      <span class="highlight">알람 받으면 0원</span>
+      <span class="sub-text">여기서 하나 100% 당첨</span>
+    </h2>
+  </div>
+
+  <div class="prize-display-swiper swiper">
+    <div class="swiper-wrapper">
+      {
+        prizes.map((prize) => (
+          <div class="swiper-slide">
+            <div class="prize-item main">
+              <div class="prize-circle">
+                <img src={prize.image} alt={prize.alt} />
+                <div class="prize-info">
+                  <span class="brand">{prize.brand}</span>
+                  <span class="name">{prize.name}</span>
+                  <span class="quantity">({prize.quantity}명)</span>
+                </div>
+              </div>
+              <span class="lucky-badge">LUCKY DRAW</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="prize-thumbs-swiper swiper">
+    <div class="swiper-wrapper">
+      {
+        prizes.map((prize, index) => (
+          <div class="swiper-slide">
+            <div class={`thumb-item ${index === 0 ? 'active' : ''}`}>
+              <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- 응모하기 -->
+  <button
+    class="common-btn"
+    data-gtm-click-location="사전예약 콘텐츠 영역"
+    data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+    data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+    data-gtm-event-category="클릭"
+    data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+    data-gtm-event-name="button_click"
+    type="button"
+    >오늘의 혜택 받고 예약하기<i class="icon"></i>
+  </button>
+</article>

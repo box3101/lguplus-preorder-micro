@@ -1,10 +1,11 @@
 ---
 import MainVisual from '../../components/MainVisual.astro';
-import Toast from '../../components/Toast.astro';
-import Notice from '../../components/Notice.astro';
-import Accordian from '../../components/Accordian.astro';
+import Toast from '../../components/common/Toast.astro';
+import Notice from '../../components/common/Notice.astro';
 import ModelSelect from '../../components/ModelSelect.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
+import PreorderCoupon from '../../components/PreorderCoupon.astro';
+import LuckyDraw from '../../components/LuckyDraw.astro';
 ---
 
 <!DOCTYPE html>
@@ -29,41 +30,59 @@ import PriceComparison from '../../components/PriceComparison.astro';
           <MainVisual />
           <!-- 메인 비쥬얼 EEE -->
 
-          <!-- 모델 탭 -->
-          <ModelSelect />
-          <!-- 모델 탭 EEE -->
+          <!-- 쿠폰 영역 -->
+          <PreorderCoupon />
+          <!-- 쿠폰 영역 EEE -->
 
-          <!-- 토스트 -->
-          <Toast />
-          <!-- 토스트 EEE -->
+          <!-- 가격/할인 비교 섹션 -->
+          <PriceComparison />
+          <!-- 그곳보다가격/할인 비교 섹션 EEE -->
+
+          <!-- 경품/상품 추첨 이벤트 -->
+          <LuckyDraw />
+          <!-- 경품/상품 추첨 이벤트 EEE -->
 
           <!-- 유의사항 -->
           <Notice />
           <!-- 유의사항 EEE -->
 
-          <!-- 그곳보다 저렴한 지 눌러보세요 -->
-          <PriceComparison />
-          <!-- 그곳보다 저렴한 지 눌러보세요 EEE -->
-
-          <!-- 아코디언 -->
-          <Accordian />
-          <!-- 아코디언 EEE -->
+          <!-- 갤럴시 모델 종류 탭 -->
+          <ModelSelect />
+          <!-- 갤럴시 모델 종류 탭 EEE -->
 
           <!-- 공통 alert -->
-          <button class="com-alert-btn" data-title="2344" data-content="256GB"
+          <button class="com-alert-btn" data-title="2344" data-content="coupon"
             >공통알랏</button
           >
-          <button class="com-alert-btn" data-title="2424" data-content="256GB"
+          <button class="com-alert-btn" data-title="2424" data-content="prize"
             >공통알랏2</button
+          >
+          <button
+            class="com-alert-btn"
+            data-title="2424"
+            data-custom-content="true"
+            data-model="retailPrice">공통알랏3</button
+          >
+          <button
+            class="com-alert-btn"
+            data-title="2424"
+            data-custom-content="true"
+            data-model="carrierPrice">공통알랏4</button
+          >
+          <button
+            class="com-alert-btn"
+            data-title="2424"
+            data-custom-content="true"
+            data-model="competitorPrice">공통알랏4</button
           >
           <!-- 공통 alert EEE -->
         </section>
       </main>
+      <script
+        is:inline
+        src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+      ></script>
+      <script type="module" src="/public/assets/js/main.js"></script>
     </div>
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
-    ></script>
-    <script type="module" src="/public/assets/js/main.js"></script>
   </body>
 </html>

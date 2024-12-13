@@ -12,7 +12,6 @@ const {
   mainText = '알람 신청하면',
   prices = ['200,000원', '300,000원', '400,000원'],
   dateText = '1/23(월) ~ 소진 시까지',
-  tipText = '사전예약 오픈날 전통누이 좋아하는',
 } = Astro.props;
 ---
 
@@ -32,12 +31,55 @@ const {
           }
         </div>
       </div>
-    </div>
-    <div class="mid-info">
-      <div class="date">{dateText}</div>
+      <div class="mid-info">
+        <div class="date">{dateText}</div>
+      </div>
+      <div class="main-visual-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="http://175.45.205.228/mobile/img/main/iphone16/keyvisual/keyvisual_03.png"
+              alt="Main Visual 1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="http://175.45.205.228/mobile/img/main/iphone16/keyvisual/keyvisual_00.png"
+              alt="Main Visual 2"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
     <div class="balloon-tip dongdong-effect">
-      <div class="tip-text">{tipText}</div>
+      <div class="tip-text">사전예약 오픈날 전통누이 좋아하는</div>
     </div>
   </div>
+
+  <!-- 네비게이션 버튼 추가 -->
+  <nav class="section-nav">
+    <ul class="nav-list">
+      <li>
+        <a href="#priceComparison" class="nav-link">
+          <span class="text">쿠폰 20만원</span>
+        </a>
+      </li>
+      <li>
+        <a href="#benefit" class="nav-link">
+          <span class="text">예상 할인가</span>
+        </a>
+      </li>
+      <li>
+        <a href="#delivery" class="nav-link">
+          <span class="text">배송 경품</span>
+        </a>
+      </li>
+      <li>
+        <a href="#special" class="nav-link">
+          <span class="text">스파이패밀리</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </article>

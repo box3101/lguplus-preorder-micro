@@ -7,8 +7,12 @@
   font-size: 14px; // 기본 폰트 사이즈 고정
 
   @media screen and (min-width: 360px) {
-    font-size: 16px; // 작은 화면에서만 조정
+    font-size: 16px; // 360 이상일대로 폰트 사이즈 고정
   }
+}
+// 스크롤 부드럽게 이동
+html {
+  scroll-behavior: smooth;
 }
 /* ==================== */
 /*      컨텐츠         */
@@ -25,7 +29,6 @@
   .main-visual {
     text-align: center;
     width: 100%;
-    height: 56.25vw;
     background-color: #ccc;
     background-position: center;
 
@@ -47,6 +50,33 @@
       justify-content: center;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  /* ==================== */
+  /*   prize-display-swiper   */
+  /* ============= ======= */
+  .prize-display-swiper {
+    position: relative;
+    .swiper-slide img {
+      width: auto;
+      height: auto;
+    }
+    .prize-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 300px;
+      padding: 50px;
+      border: 3px solid #000;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+    .lucky-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 
@@ -301,6 +331,7 @@
 .dongdong-effect {
   animation: float 2s ease-in-out infinite;
 }
+
 /* ==================== */
 /*      공통  */
 /* ==================== */
@@ -354,5 +385,20 @@
   .px-#{$i} {
     padding-left: rem($i);
     padding-right: rem($i);
+  }
+}
+
+.common-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: rem(40);
+  background-color: #ff0066;
+  color: #fff;
+  border: none;
+  border-radius: rem(4);
+  &:hover {
+    background-color: #e5005c;
   }
 }

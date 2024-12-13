@@ -1,6 +1,6 @@
 // main.js
 import { initializeSwiper } from "./swiper.js";
-import { initializeColorTab } from "./colorTab.js";
+import { initializeColorTab } from "./commonTab.js";
 import { initializeMainTab } from "./mainTab.js";
 import { initializeNotice } from "./notice.js";
 import { initializeCountdown } from "./countDown.js";
@@ -31,7 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.classList.contains("com-alert-btn")) {
         const title = e.target.dataset.title;
         const content = e.target.dataset.content;
-        commonAlert({ title, content });
+        const customContent = e.target.dataset.customContent;
+        const model = e.target.dataset.model;
+
+        commonAlert({ title, content, customContent, model });
       }
     });
   }, 100);
