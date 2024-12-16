@@ -1,0 +1,53 @@
+---
+const benefitItems = [
+  {
+    tag: '공시지원금',
+    title: '자급제보다,',
+    discountAmount: '15% 더 할인',
+    description:
+      '유플러스에서 휴대폰 구매 시<br />추가 지원금도 받을 수 있어요',
+    imageContent: '할인<br />IMG',
+  },
+  {
+    tag: '스페셜 혜택',
+    title: '최대 12만원,',
+    discountAmount: '추가 할인',
+    description: 'U+ 닷컴 단독<br />스페셜 혜택을 받을 수 있어요',
+    imageContent: '혜택<br />IMG',
+  },
+  {
+    tag: '결합 할인',
+    title: '인터넷과 결합 시,',
+    discountAmount: '월 1만원 할인',
+    description: '인터넷, 모바일 결합 시<br />매월 추가 할인 혜택',
+    imageContent: '결합<br />IMG',
+  },
+];
+---
+
+<article class="discount-card common-inner">
+  <div class="discount-header">
+    <h2>
+      <span class="brand-name">U+닷컴에서,</span>
+      <span class="main-title">폰 바꾸면 좋은 이유</span>
+    </h2>
+  </div>
+
+  {
+    benefitItems.map((item) => (
+      <div class="benefit-card">
+        <div class="benefit-content">
+          <span class="benefit-tag">{item.tag}</span>
+          <div class="benefit-title">
+            <h3>{item.title}</h3>
+            <p class="discount-amount">{item.discountAmount}</p>
+          </div>
+          <p class="benefit-description" set:html={item.description} />
+        </div>
+        <div class="benefit-image">
+          <div class="image-placeholder" set:html={item.imageContent} />
+        </div>
+      </div>
+    ))
+  }
+</article>

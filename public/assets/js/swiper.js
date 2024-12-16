@@ -49,112 +49,129 @@ export function initializeSwiper() {
   }
 
   // Lucky Draw 메인 스와이퍼
-  // Lucky Draw 메인 스와이퍼
-  const prizeDisplaySwiper = new Swiper(".prize-display-swiper", {
-    effect: "creative", // fade 대신 creative 효과 사용
-    creativeEffect: {
-      prev: {
-        translate: [0, 0, -400],
-        rotate: [0, 0, -45],
-        opacity: 0,
-      },
-      next: {
-        translate: [0, 0, -400],
-        rotate: [0, 0, 45],
-        opacity: 0,
-      },
-    },
-    loop: true,
-    speed: 800, // 속도를 좀 더 늘림
-    allowTouchMove: false,
-  });
-
-  // Lucky Draw 썸네일 스와이퍼
-  const prizeThumbsSwiper = new Swiper(".prize-thumbs-swiper", {
-    slidesPerView: 3,
-    grid: {
-      rows: 2,
-      fill: "row",
-    },
-    spaceBetween: 10,
-    loop: false,
-    watchSlidesProgress: true,
-    allowTouchMove: true,
-  });
-
-  // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
-  const thumbSlides = document.querySelectorAll(
-    ".prize-thumbs-swiper .swiper-slide"
-  );
-  thumbSlides.forEach((slide, index) => {
-    slide.addEventListener("click", () => {
-      // 클릭한 썸네일에 active 클래스 추가
-      thumbSlides.forEach((s) =>
-        s.querySelector(".thumb-item").classList.remove("active")
-      );
-      slide.querySelector(".thumb-item").classList.add("active");
-
-      // 메인 이미지 전환
-      prizeDisplaySwiper.slideTo(index);
-
-      // 메인 이미지에 추가 애니메이션 적용
-      const mainSlide = document.querySelector(
-        ".prize-display-swiper .swiper-slide-active"
-      );
-      if (mainSlide) {
-        mainSlide.style.animation = "none";
-        mainSlide.offsetHeight; // reflow
-        mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
-      }
-    });
-  });
-
-  // 컬러 스와이퍼 초기화 함수
-  function initColorSwiper(element) {
-    return new Swiper(element, {
-      direction: "horizontal",
-      loop: true,
+  const prizeDisplaySwiper = document.querySelector(".prize-display-swiper");
+  if (prizeDisplaySwiper) {
+    const mainSwiper = new Swiper(prizeDisplaySwiper, {
       effect: "fade",
       fadeEffect: {
         crossFade: true,
       },
-      speed: 500,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
+      loop: true,
+      speed: 800,
+      allowTouchMove: false,
+    });
+    // Lucky Draw 썸네일 스와이퍼
+    const prizeThumbsSwiper = new Swiper(".prize-thumbs-swiper", {
+      slidesPerView: 3,
+      grid: {
+        rows: 2,
+        fill: "row",
       },
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-        hide: false,
-      },
+      spaceBetween: 10,
+      loop: false,
+      watchSlidesProgress: true,
+      allowTouchMove: true,
+    });
+    // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
+    const thumbSlides = document.querySelectorAll(
+      ".prize-thumbs-swiper .swiper-slide"
+    );
+    thumbSlides.forEach((slide, index) => {
+      slide.addEventListener("click", () => {
+        thumbSlides.forEach((s) =>
+          s.querySelector(".thumb-item").classList.remove("active")
+        );
+        slide.querySelector(".thumb-item").classList.add("active");
+
+        // Swiper 인스턴스를 사용하여 slideTo 메서드 호출
+        mainSwiper.slideTo(index);
+
+        const mainSlide = document.querySelector(
+          ".prize-display-swiper .swiper-slide-active"
+        );
+        if (mainSlide) {
+          mainSlide.style.animation = "none";
+          mainSlide.offsetHeight;
+          mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
+        }
+      });
     });
   }
 
-  // 활성화된 탭의 스와이퍼만 초기화
-  function initializeActiveSwiper() {
-    const activeContent = document.querySelector(".common-tab-content.active");
-    if (activeContent) {
-      const swipers = activeContent.querySelectorAll(".color-swiper");
-      swipers.forEach((element) => {
-        // 이미 초기화된 스와이퍼 제거
-        if (element.swiper) {
-          element.swiper.destroy();
-        }
-        initColorSwiper(element);
+  // 컬러 스와이퍼 초기화
+  const colorSwiper = document.querySelector(".color-swiper");
+  if (colorSwiper) {
+    // 개별 컬러 스와이퍼 초기화 함수
+    function initColorSwiper(element) {
+      if (element.swiper) {
+        element.swiper.destroy(true, true);
+      }
+
+      return new Swiper(element, {
+        direction: "horizontal",
+        loop: true,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        speed: 500,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        scrollbar: {
+          el: element.querySelector(".swiper-scrollbar"),
+          draggable: true,
+          hide: false,
+        },
+        observer: true,
+        observeParents: true,
+        on: {
+          init: function () {
+            this.slideTo(0, 0);
+          },
+        },
       });
     }
-  }
 
-  // 초기 스와이퍼 초기화
-  initializeActiveSwiper();
+    // 모든 컬러 스와이퍼 초기화 함수
+    function initializeAllColorSwipers() {
+      const allSwipers = document.querySelectorAll(".color-swiper");
+      allSwipers.forEach((element) => {
+        if (element && element.querySelector(".swiper-wrapper")) {
+          initColorSwiper(element);
+        }
+      });
+    }
 
-  // 탭 변경 이벤트에 스와이퍼 초기화 연결
-  const tabItems = document.querySelectorAll(".common-tab-menu-item");
-  tabItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      // 탭 변경 후 약간의 딜레이를 주고 스와이퍼 초기화
-      setTimeout(initializeActiveSwiper, 100);
+    // 초기 컬러 스와이퍼 초기화
+    initializeAllColorSwipers();
+
+    // 모델 탭 클릭 이벤트 리스너
+    const modelTabs = document.querySelectorAll(
+      ".model-tab .common-tab-menu-item"
+    );
+    modelTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setTimeout(initializeAllColorSwipers, 300);
+      });
     });
-  });
+
+    // 컬러 탭 클릭 이벤트 리스너
+    const colorTabs = document.querySelectorAll(
+      ".color-tab .common-tab-menu-item"
+    );
+    colorTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setTimeout(() => {
+          const activeContent = document.querySelector(
+            ".common-tab-content.active .color-swiper"
+          );
+          if (activeContent && activeContent.querySelector(".swiper-wrapper")) {
+            initColorSwiper(activeContent);
+          }
+        }, 300);
+      });
+    });
+  }
 }
