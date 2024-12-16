@@ -23,6 +23,27 @@ import DisCountCard from '../../components/DisCountCard.astro';
     />
   </head>
   <body>
+    <header th:fragment="header_alarm" class="header_alarm ip283_header_type2">
+      <div class="top-area iphone16">
+        <h2 class="logo">
+          <a
+            target="_blank"
+            href="https://www.lguplus.com/"
+            data-gtm-event-name="link_click"
+            data-gtm-event-category="클릭"
+            data-gtm-event-action="네비게이터 영역 - 링크 클릭"
+            data-gtm-event-label="컨텐츠 : 유플러스닷컴 바로가기"
+            data-gtm-click-location="네비게이터 영역"
+            data-gtm-click-text="유플러스닷컴 바로가기"
+            data-gtm-click-url="https://www.lguplus.com"
+            data-gtm-click-direction="외부"
+          >
+            ㄸ
+          </a>
+        </h2>
+      </div>
+    </header>
+
     <div id="content" class="content-wrapper preorder-section">
       <main class="container main-container">
         <!-- 사전예약 기간 -->
@@ -54,6 +75,26 @@ import DisCountCard from '../../components/DisCountCard.astro';
           <!-- 갤럴시 모델 종류 탭 -->
           <ModelSelect />
           <!-- 갤럴시 모델 종류 탭 EEE -->
+
+          <div th:fragment="footer" th:if="${preorderStatus} == 'before'">
+            <div class="type2 preorder" id="btnAlarm">
+              <div class="click_trigger">
+                <button
+                  type="button"
+                  class="alarm-btn preorder"
+                  onclick="javascript:PreorderCtrl.open();"
+                  data-gtm-event-name="button_click"
+                  data-gtm-event-category="클릭"
+                  data-gtm-event-action="플로팅 영역 - 버튼 클릭"
+                  data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_예약하기"
+                  data-gtm-click-location="플로팅 영역"
+                  data-gtm-click-text="예약신청_01-단계진입_예약하기"
+                >
+                  예약하기
+                </button>
+              </div>
+            </div>
+          </div>
 
           <!-- 공통 alert -->
           <button class="com-alert-btn" data-title="2344" data-content="coupon"
