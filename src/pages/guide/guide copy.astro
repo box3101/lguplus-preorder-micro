@@ -72,14 +72,12 @@ import DisCountCard from '../../components/DisCountCard.astro';
           <Notice />
           <!-- 유의사항 EEE -->
 
+          <!-- 갤럴시 모델 종류 탭 -->
+          <ModelSelect />
+          <!-- 갤럴시 모델 종류 탭 EEE -->
+
           <div th:fragment="footer" th:if="${preorderStatus} == 'before'">
             <div class="com-alarm-btn-wrp">
-              <div class="toast-img dongdong-effect">
-                <img
-                  style="width: 182px;"
-                  src="/public/assets/img/main-toast.svg"
-                />
-              </div>
               <button
                 type="button"
                 class="com-alarm-btn"
@@ -91,10 +89,7 @@ import DisCountCard from '../../components/DisCountCard.astro';
                 data-gtm-click-location="플로팅 영역"
                 data-gtm-click-text="예약신청_01-단계진입_예약하기"
               >
-                <img
-                  style="width: 227px;"
-                  src="/public/assets/img/com-alarm-btn-txt.svg"
-                />
+                New Galaxy 알랑받기
               </button>
             </div>
           </div>

@@ -1,5 +1,16 @@
-<div class="accordion common-inner mt30">
-  자세히 보기
+---
+interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="accordion common-inner">
+  <img class="accordion-icon" src="/public/assets/img/느낌표.svg" />
+  <p class="accordion-txt">
+    {title ?? '자세히 보기'}
+  </p>
+  <i class="arrow-down"></i>
   <div class="accordion-content">
     <slot />
   </div>

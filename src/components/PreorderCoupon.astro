@@ -5,31 +5,43 @@ import Accordian from './common/Accordian.astro';
 <article class="preorder-coupon common-inner">
   <div class="first-landing-coupon">
     <div class="coupon-header">
-      <h2 class="coupon-title">선착순 랜딩 쿠폰</h2>
-      <p class="coupon-subtitle">당첨금: 최대 20만원</p>
+      <h2 class="coupon-title">
+        <img src="/public/assets/img/coupon-title.png" />
+      </h2>
+      <p class="coupon-subtitle">
+        <img src="/public/assets/img/coupon-sub-title.svg" />
+      </p>
     </div>
 
     <div class="coupon-content">
-      <img
-        src="http://175.45.205.228/mobile/img/main/iphone16/keyvisual/keyvisual_03.png"
-        alt=""
-      />
+      <img src="/public/assets/img/preorder-coupon-img.png" />
     </div>
 
-    <button
-      class="common-btn"
-      data-gtm-click-location="사전예약 콘텐츠 영역"
-      data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
-      data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
-      data-gtm-event-category="클릭"
-      data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
-      data-gtm-event-name="button_click"
-      type="button"
-      >오늘의 혜택 받고 예약하기<i class="icon"></i>
-    </button>
+    <p class="coupon-date">
+      쿠폰 발송 : <span class="c-main-color">1월 4째 주</span>
+    </p>
+
+    <div class="common-btn-wrp">
+      <div class="toast dongdong-effect">
+        <img style="width: 177px;" src="/public/assets/img/coupon-toast.svg" />
+      </div>
+      <button
+        class="common-btn"
+        data-gtm-click-location="사전예약 콘텐츠 영역"
+        data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+        data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+        data-gtm-event-category="클릭"
+        data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+        data-gtm-event-name="button_click"
+        type="button"
+      >
+        내 당첨금 확인하기
+        <i class="arrow-right"></i>
+      </button>
+    </div>
 
     <!-- 아코디언 -->
-    <Accordian>
+    <Accordian title="쿠폰 사용방법 ">
       여기에 내용 여기에 내용 여기에 내용 여기에 내용 여기에 내용
     </Accordian>
     <!-- 아코디언 EEE -->

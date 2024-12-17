@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-  font-size: 14px;
+  font-size: 15px;
 }
 @media screen and (min-width: 360px) {
   :root {
@@ -16,9 +16,11 @@ html {
 /*      컨텐츠         */
 /* ==================== */
 .preorder-section {
-  min-height: 437.5rem;
   /* ==================== */
   /*      visual         */
+  /* ============= ======= */
+  /* ==================== */
+  /*      preorder-coupon         */
   /* ============= ======= */
   /* ==================== */
   /*   prize-display-swiper   */
@@ -40,13 +42,16 @@ html {
   padding: 0 1.25rem;
 }
 .preorder-section .main-visual {
+  padding: 2.5rem 0rem;
   text-align: center;
   width: 100%;
   background-color: #ccc;
   background-position: center;
+  padding-bottom: 1.875rem;
+  background: #111;
 }
 .preorder-section .main-visual .price-swiper {
-  height: 3.125rem;
+  height: 4.5rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -61,6 +66,69 @@ html {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+.preorder-section .main-visual .mid-info {
+  margin-top: 0.625rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.preorder-section .main-visual .mid-info em {
+  color: #eee;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+.preorder-section .main-visual .mid-info span {
+  display: inline-block;
+  color: rgba(238, 238, 238, 0.5);
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -1.1px;
+  position: relative;
+  top: -0.5rem;
+  left: -0.1875rem;
+}
+.preorder-section .preorder-coupon {
+  background: #f1f1f1;
+  padding-top: 3.125rem;
+  text-align: center;
+  padding-bottom: 3.9375rem;
+}
+.preorder-section .preorder-coupon .coupon-content {
+  margin-top: 2.3125rem;
+}
+.preorder-section .preorder-coupon .coupon-date {
+  margin-top: 1.25rem;
+  margin-bottom: 3rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.9px;
+}
+.preorder-section .preorder-coupon .coupon-header {
+  margin: 0 auto;
+  text-align: center;
+}
+.preorder-section .preorder-coupon .coupon-header .coupon-title {
+  width: 7.75rem;
+  margin: 0 auto;
+}
+.preorder-section .preorder-coupon .coupon-header .coupon-subtitle {
+  width: 16.4375rem;
+  margin: 0 auto;
+  margin-top: 0.375rem;
+}
+.preorder-section .preorder-coupon .arrow-right {
+  top: -0.0625rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-bottom: 2px solid #8100f5;
+  border-right: 2px solid #8100f5;
 }
 .preorder-section .prize-display-swiper {
   position: relative;
@@ -279,7 +347,7 @@ html {
   }
 }
 .dongdong-effect {
-  animation: float 2s ease-in-out infinite;
+  animation: dongdong 2s ease-in-out infinite;
 }
 
 /* ==================== */
@@ -5485,19 +5553,121 @@ html {
   padding-right: 6.25rem;
 }
 
-.common-btn {
+/* ==================== */
+/*      공통  버튼  */
+/* ==================== */
+.common-btn-wrp {
+  position: relative;
+}
+.common-btn-wrp .toast {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -1.5625rem;
+  text-align: center;
+}
+.common-btn-wrp .common-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 2.5rem;
-  background-color: #ff0066;
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
+  height: 3.75rem;
+  border: 1px solid #8100f5;
+  color: #8100f5;
+  background-color: #fff;
+  border-radius: 6.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.9px;
 }
-.common-btn:hover {
-  background-color: #e5005c;
+
+.com-alarm-btn-wrp {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3.75rem;
+}
+.com-alarm-btn-wrp .toast-img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -1.25rem;
+  text-align: center;
+}
+.com-alarm-btn-wrp .toast-img img {
+  display: inline-block;
+}
+.com-alarm-btn-wrp .com-alarm-btn {
+  background: linear-gradient(98deg, #ff485b 0%, #f601bc 100%);
+  height: 100%;
+}
+.com-alarm-btn-wrp .com-alarm-btn button {
+  color: #fff;
+}
+
+/* ==================== */
+/*      공통  아코디언  */
+/* ==================== */
+.accordion {
+  margin-top: 1.25rem;
+}
+.accordion.active .arrow-down {
+  top: 0.125rem;
+  transform: rotate(225deg);
+}
+.accordion .accordion-icon {
+  position: relative;
+  top: 1px;
+  left: -1px;
+  width: 16px;
+}
+.accordion .accordion-txt {
+  padding-bottom: 0.3125rem;
+  display: inline-block;
+  border-bottom: 1px solid #555;
+  font-size: 0.8125rem;
+  color: #555;
+  font-weight: 400;
+  letter-spacing: -0.65px;
+}
+.accordion .accordion-content {
+  padding: 0.625rem 0 1.25rem;
+}
+
+/* ==================== */
+/*      공통  화살표  */
+/* ==================== */
+.arrow-right,
+.arrow-down {
+  transition: all 0.3s ease;
+  position: relative;
+  top: -0.125rem;
+  left: 0.3125rem;
+  display: inline-block;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+}
+
+.arrow-down {
+  transform: rotate(45deg);
+}
+
+/* ==================== */
+/*      색상  */
+/* ==================== */
+.c-main-color {
+  color: #ff0090;
 }
 
 /*# sourceMappingURL=ui.css.map */
