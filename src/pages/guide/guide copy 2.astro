@@ -76,6 +76,12 @@ import DisCountCard from '../../components/DisCountCard.astro';
 
       <div th:fragment="footer" th:if="${preorderStatus} == 'before'">
         <div class="com-alarm-btn-wrp">
+          <div class="toast-img dongdong-effect">
+            <img
+              style="width: 182px;"
+              src="/public/assets/img/main-toast.svg"
+            />
+          </div>
           <button
             type="button"
             class="com-alarm-btn"

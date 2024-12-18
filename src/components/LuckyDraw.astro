@@ -2,57 +2,57 @@
 const prizes = [
   {
     id: 1,
-    brand: '태그호이어',
-    name: '포뮬라1 쿼츠 남성 시계',
-    quantity: 1,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
-    alt: '태그호이어 시계',
+    brand: 'Samsung',
+    name: 'Galaxy Watch6<br>40mm',
+    quantity: 10,
+    image: '../assets/img/lucky-draw-slide01.svg',
+    thumbnail: '../assets/img/lucky-draw-thumb01.svg',
+    alt: '삼성 갤럭시 워치6',
   },
   {
     id: 2,
-    brand: '브랜드2',
-    name: '상품2',
-    quantity: 2,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
-    alt: '상품2',
+    brand: 'LG',
+    name: 'LG 스탠바이미<br>27인치',
+    quantity: 5,
+    image: '../assets/img/lucky-draw-slide01.svg',
+    thumbnail: '../assets/img/lucky-draw-thumb02.svg',
+    alt: 'LG 스탠바이미',
   },
   {
     id: 3,
-    brand: '브랜드3',
-    name: '상품3',
-    quantity: 3,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
-    alt: '상품3',
+    brand: 'Apple',
+    name: 'AirPods Pro 2세대',
+    quantity: 20,
+    image: '../assets/img/lucky-draw-slide01.svg',
+    thumbnail: '../assets/img/lucky-draw-thumb03.svg',
+    alt: '애플 에어팟 프로',
   },
   {
     id: 4,
-    brand: '브랜드4',
-    name: '상품4',
-    quantity: 4,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
-    alt: '상품4',
+    brand: 'Nintendo',
+    name: 'Switch<br>OLED 모델',
+    quantity: 3,
+    image: '../assets/img/lucky-draw-slide04.svg',
+    thumbnail: '../assets/img/lucky-draw-thumb04.svg',
+    alt: '닌텐도 스위치',
   },
   {
     id: 5,
-    brand: '브랜드5',
-    name: '상품5',
-    quantity: 5,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
-    alt: '상품5',
+    brand: 'Dyson',
+    name: '에어랩<br>컴플리트',
+    quantity: 2,
+    image: '../assets/img/lucky-draw-slide05.svg',
+    thumbnail: '../assets/img/lucky-draw-thumb05.svg',
+    alt: '다이슨 에어랩',
   },
   {
     id: 6,
-    brand: '브랜드6',
-    name: '상품6',
-    quantity: 6,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
-    alt: '상품6',
+    brand: 'U+',
+    name: '모바일 데이터<br>100GB',
+    quantity: 100,
+    image: '../assets/img/lucky-draw-slide06.svg',
+    thumbnail: '../assets/img/lucky-draw-thumb06.svg',
+    alt: 'U+ 모바일 데이터',
   },
 ];
 ---
@@ -79,12 +79,14 @@ const prizes = [
               <div class="prize-circle">
                 <img src={prize.image} alt={prize.alt} />
                 <div class="prize-info">
-                  <span class="brand">{prize.brand}</span>
-                  <span class="name">{prize.name}</span>
-                  <span class="quantity">({prize.quantity}명)</span>
+                  <p class="brand">{prize.brand}</p>
+                  <p class="name" set:html={prize.name} />
+                  <p class="quantity">{prize.quantity}명</p>
                 </div>
               </div>
-              <span class="lucky-badge">LUCKY DRAW</span>
+              <span class="lucky-badge dongdong-effect">
+                <img src="../assets/img/star.svg" alt="" />
+              </span>
             </div>
           </div>
         ))
@@ -97,24 +99,81 @@ const prizes = [
         prizes.map((prize, index) => (
           <div class="swiper-slide">
             <div class={`thumb-item ${index === 0 ? 'active' : ''}`}>
-              <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
+              <div class="image-wrapper">
+                <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
+                <input
+                  type="checkbox"
+                  id={`prize-${index}`}
+                  class="prize-checkbox"
+                />
+                <label for={`prize-${index}`} class="checkbox-label" />
+              </div>
             </div>
           </div>
         ))
       }
     </div>
+    <style lang="scss">
+      .thumb-item {
+        position: relative;
+        cursor: pointer;
+
+        .image-wrapper {
+          position: relative;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          .prize-checkbox {
+            display: none;
+          }
+
+          .checkbox-label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 24px;
+            height: 24px;
+            background: url('../assets/img/checkbox-unchecked.svg') no-repeat
+              center / contain;
+            cursor: pointer;
+          }
+
+          .prize-checkbox:checked + .checkbox-label {
+            background-image: url('../assets/img/checkbox-checked.svg');
+          }
+        }
+
+        &.active {
+          border: 2px solid #ff4e00;
+          border-radius: 10px;
+        }
+      }
+    </style>
   </div>
 
   <!-- 응모하기 -->
-  <button
-    class="common-btn"
-    data-gtm-click-location="사전예약 콘텐츠 영역"
-    data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
-    data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
-    data-gtm-event-category="클릭"
-    data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
-    data-gtm-event-name="button_click"
-    type="button"
-    >오늘의 혜택 받고 예약하기<i class="icon"></i>
-  </button>
+  <div class="common-btn-wrp">
+    <button
+      class="common-btn"
+      data-gtm-click-location="사전예약 콘텐츠 영역"
+      data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+      data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+      data-gtm-event-category="클릭"
+      data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+      data-gtm-event-name="button_click"
+      type="button"
+    >
+      래플 참여하기
+      <i class="arrow-right animate"></i>
+    </button>
+  </div>
+
+  <!-- 유의사항 -->
+  <p class="notice">
+    ※ 당첨된 선물은 개통 후 14일 유지 시 지급됩니다. <br />
+    자세한 내용은 <u>하단 유의사항</u>을 읽어주세요.
+  </p>
 </article>

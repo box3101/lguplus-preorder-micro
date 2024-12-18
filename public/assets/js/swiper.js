@@ -1,4 +1,23 @@
 export function initializeSwiper() {
+  // 배경 스와이퍼 추가
+  const bgSwiper = document.querySelector(".bg-swiper");
+  if (bgSwiper) {
+    new Swiper(bgSwiper, {
+      direction: "horizontal",
+      loop: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 300,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      allowTouchMove: false,
+    });
+  }
+
   // 가격 스와이퍼 (price)
   const priceSwipers = document.querySelectorAll(".price-swiper");
   if (priceSwipers.length) {

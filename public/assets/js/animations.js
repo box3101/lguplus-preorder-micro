@@ -24,11 +24,12 @@ export const initializeAnimations = () => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("on");
+        const rangeProgress = entry.target.querySelector(".range-progress");
+        const savingsAmount = entry.target.querySelector(".savings-amount");
 
-          const rangeProgress = entry.target.querySelector(".range-progress");
-          const savingsAmount = entry.target.querySelector(".savings-amount");
+        if (entry.isIntersecting) {
+          // 영역에 들어왔을 때
+          entry.target.classList.add("on");
 
           if (savingsAmount) savingsAmount.classList.add("on");
 
@@ -43,12 +44,24 @@ export const initializeAnimations = () => {
             const duration = parseInt(savingsAmount.dataset.duration) / 1.5;
             animateCounter(savingsAmount, target, duration);
           }
+        } else {
+          // 영역을 벗어났을 때
+          entry.target.classList.remove("on");
+          if (savingsAmount) savingsAmount.classList.remove("on");
+          if (rangeProgress) rangeProgress.classList.remove("on");
 
-          observer.unobserve(entry.target);
+          // 숫자를 0으로 리셋
+          if (savingsAmount) {
+            savingsAmount.textContent = "0";
+          }
         }
       });
     },
-    { threshold: 0.5 }
+    {
+      threshold: 0.5,
+      // rootMargin을 추가하면 요소가 화면에 더 일찍/늦게 감지되도록 조정할 수 있습니다
+      // rootMargin: "-50px 0px"
+    }
   );
 
   const priceComparisonSection = document.querySelector("#priceComparison");
