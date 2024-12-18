@@ -18,6 +18,11 @@ html {
 /*      컨텐츠         */
 /* ==================== */
 .preorder-section {
+  img {
+    display: block;
+    width: auto !important;
+    margin: 0 auto;
+  }
   .common-inner {
     padding: 0 rem(20);
   }
@@ -106,21 +111,258 @@ html {
       margin: 0 auto;
       text-align: center;
       .coupon-title {
-        width: rem(124);
         margin: 0 auto;
       }
       .coupon-subtitle {
-        width: rem(263);
         margin: 0 auto;
-        margin-top: rem(6);
+        margin-top: rem(12);
       }
     }
-    .arrow-right {
-      top: rem(-1);
-      width: rem(8);
-      height: rem(8);
-      border-bottom: 2px solid #8100f5;
-      border-right: 2px solid #8100f5;
+  }
+
+  /* ==================== */
+  /*    priceComparison         */
+  /* ============= ======= */
+  .priceComparison {
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+    .common-btn-wrp {
+      margin-top: rem(27);
+    }
+    .price-header {
+      .sub-title {
+        margin-top: rem(12);
+      }
+    }
+    .price-content {
+      margin-top: rem(37);
+      padding: rem(36) 0;
+      border-radius: 8px;
+      border: 1px dashed #ccc;
+      padding-left: rem(24);
+      position: relative;
+      .price-description {
+        span {
+          display: inline-block;
+          color: #282228;
+          font-size: rem(18);
+          font-weight: 700;
+          margin-right: rem(4);
+          letter-spacing: -0.9px;
+          padding-bottom: rem(6);
+          border-bottom: 3px solid #000;
+        }
+      }
+      .price-savings {
+        display: inline-block;
+        margin-top: rem(14);
+        font-size: rem(18);
+        font-weight: 700;
+        color: #ff008c;
+        letter-spacing: -0.9px;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: rem(2);
+          left: 0;
+          height: 7px;
+          width: rem(0);
+          background: rgba(255, 0, 140, 0.1);
+          transition: all 0.6s ease-in-out 0.7s;
+        }
+        em {
+          display: inline-block;
+          margin-right: rem(2);
+          position: relative;
+          top: rem(-12);
+          font-size: rem(16);
+          font-weight: 700;
+          color: #ff008c;
+          letter-spacing: -0.9px;
+        }
+        strong {
+          font-size: rem(28);
+          font-family: Outfit;
+          font-weight: 700;
+          color: #ff008c;
+          letter-spacing: -0.9px;
+        }
+      }
+      span.txt {
+        position: absolute;
+        right: rem(35);
+        top: rem(105);
+        display: inline-block;
+        margin-left: rem(5);
+        font-size: rem(14);
+        font-weight: 700;
+        color: #282228;
+        letter-spacing: -0.7px;
+      }
+      .price-note {
+        margin-top: rem(16);
+        font-size: rem(13);
+        font-weight: 400;
+        color: #777;
+        letter-spacing: -0.7px;
+      }
+    }
+    .price-range-container {
+      padding: rem(26) rem(32);
+      border-radius: 8px;
+      background: #f1f1f1;
+      position: relative;
+      overflow: hidden;
+      direction: rtl;
+      .price-range {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: transform 1s ease-in-out;
+      }
+      .range-label {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 5px 0;
+        font-size: rem(12);
+        font-weight: 600;
+        color: #777;
+        letter-spacing: -0.6px;
+        &.original {
+          .label-text {
+            &::after {
+              content: '';
+              position: absolute;
+              z-index: 6;
+              left: rem(15);
+              bottom: rem(-40);
+              width: 40px;
+              height: 40px;
+              background: url('../../../public/assets/img/priceComparison-bill.svg')
+                no-repeat center;
+            }
+          }
+          .price-text {
+            position: relative;
+            left: calc(3px + (100vw - 360px) * 0.085);
+          }
+        }
+        .label-text {
+          position: relative;
+          img {
+            position: relative;
+            left: rem(5);
+          }
+        }
+      }
+      .range-bar {
+        width: 100%;
+        height: rem(8);
+        background-color: #ff008c;
+        border-radius: 100px;
+        position: relative;
+        margin-top: rem(15);
+        margin-bottom: rem(10);
+        .range-bar-fill {
+          position: absolute;
+          z-index: 6;
+          top: rem(-7);
+          left: 33.3%;
+          height: rem(21);
+          background-color: #ddd;
+          width: rem(2);
+          transition: width 1s ease-in-out;
+          &.second {
+            left: 66.6%;
+          }
+        }
+      }
+      .range-progress {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: #777;
+        border-radius: 100px;
+        width: 0;
+        transition: width 1s ease-in-out;
+      }
+      /* ==================== */
+      /*     쿠폰 애니메이션   */
+      /* ==================== */
+      /* 초기 상태 */
+      .range-progress {
+        width: 0;
+        transition: width 1s ease-out;
+        &::before {
+          content: '';
+          position: absolute;
+          top: rem(-17);
+          left: rem(-25);
+          width: 40px;
+          height: 40px;
+          background: url('../../../public/assets/img/priceComparison-coin.svg')
+            no-repeat center;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          right: rem(-1);
+          width: 10%;
+          background: #fff;
+          height: rem(10);
+          border-radius: 100px;
+        }
+      }
+
+      .price-range {
+        transition: transform 1s ease-out;
+      }
+
+      .savings-amount {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
+      }
+
+      /* 'on' 클래스가 추가되었을 때의 스타일 */
+      .range-progress.on {
+        width: clamp(85%, calc(85% + (100vw - 360px) * 0.05), 100%);
+      }
+
+      .savings-amount.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 섹션 전체에 대한 스타일도 유지 */
+      #priceComparison.on .range-progress {
+        width: 100%;
+      }
+
+      #priceComparison.on .savings-amount {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &.on .price-content .price-savings::after {
+      width: rem(162);
+    }
+  }
+
+  /* ==================== */
+  /*    lucky-draw       */
+  /* ============= ======= */
+  .lucky-draw {
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+    h3 {
+      margin-top: rem(12);
+      margin-bottom: rem(40);
     }
   }
 
@@ -531,6 +773,7 @@ html {
     top: 1px;
     left: -1px;
     width: 16px;
+    display: inline-block;
   }
 
   .accordion-txt {
@@ -552,7 +795,6 @@ html {
 /*      공통  화살표  */
 /* ==================== */
 
-.arrow-right,
 .arrow-down {
   transition: all 0.3s ease;
   position: relative;
@@ -566,11 +808,39 @@ html {
 }
 
 .arrow-right {
+  position: relative;
+  top: rem(0);
+  left: rem(10);
+  width: rem(8);
+  height: rem(8);
+  border-bottom: 2px solid #8100f5;
+  border-right: 2px solid #8100f5;
   transform: rotate(-45deg);
+
+  /* 애니메이션 상태 클래스 */
+  &.animate {
+    animation: arrowSlideOut 1.2s ease infinite;
+  }
 }
 
 .arrow-down {
   transform: rotate(45deg);
+}
+
+/* 슬라이드 아웃 애니메이션 */
+@keyframes arrowSlideOut {
+  0% {
+    opacity: 0;
+    left: rem(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 호버 효과도 추가하고 싶다면 */
+.arrow-right:hover {
+  animation: arrowSlideOut 0.5s ease forwards;
 }
 
 /* ==================== */

@@ -1,34 +1,13 @@
----
-interface Props {
-  promotionText?: string;
-  mainText?: string;
-  prices?: string[];
-  dateText?: string;
-  tipText?: string;
-}
-
-const {
-  mainText = '알람 신청하면',
-  prices = ['200,000원', '300,000원', '400,000원'],
-} = Astro.props;
----
-
 <article class="main-visual">
   <div class="visual-content">
     <div class="top-info">
       <div class="main-visual-swiper swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img
-              style="width: auto;"
-              src="/public/assets/img/main-slide-img01.png"
-            />
+            <img src="/public/assets/img/main-slide-img01.png" />
           </div>
           <div class="swiper-slide">
-            <img
-              style="width: auto;"
-              src="/public/assets/img/main-slide-img02.png"
-            />
+            <img src="/public/assets/img/main-slide-img02.png" />
           </div>
         </div>
       </div>
@@ -37,10 +16,10 @@ const {
     <div class="price-swiper swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img style="width: auto;" src="/public/assets/img/main-slide01.png" />
+          <img src="/public/assets/img/main-slide01.png" />
         </div>
         <div class="swiper-slide">
-          <img style="width: auto;" src="/public/assets/img/main-slide02.png" />
+          <img src="/public/assets/img/main-slide02.png" />
         </div>
       </div>
     </div>

@@ -23,6 +23,12 @@ html {
   /*      preorder-coupon         */
   /* ============= ======= */
   /* ==================== */
+  /*    priceComparison         */
+  /* ============= ======= */
+  /* ==================== */
+  /*    lucky-draw       */
+  /* ============= ======= */
+  /* ==================== */
   /*   prize-display-swiper   */
   /* ============= ======= */
   /* ==================== */
@@ -37,6 +43,11 @@ html {
   /* ==================== */
   /*      공통 NOTICE        */
   /* ==================== */
+}
+.preorder-section img {
+  display: block;
+  width: auto !important;
+  margin: 0 auto;
 }
 .preorder-section .common-inner {
   padding: 0 1.25rem;
@@ -115,20 +126,232 @@ html {
   text-align: center;
 }
 .preorder-section .preorder-coupon .coupon-header .coupon-title {
-  width: 7.75rem;
   margin: 0 auto;
 }
 .preorder-section .preorder-coupon .coupon-header .coupon-subtitle {
-  width: 16.4375rem;
   margin: 0 auto;
-  margin-top: 0.375rem;
+  margin-top: 0.75rem;
 }
-.preorder-section .preorder-coupon .arrow-right {
-  top: -0.0625rem;
-  width: 0.5rem;
+.preorder-section .priceComparison {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+.preorder-section .priceComparison .common-btn-wrp {
+  margin-top: 1.6875rem;
+}
+.preorder-section .priceComparison .price-header .sub-title {
+  margin-top: 0.75rem;
+}
+.preorder-section .priceComparison .price-content {
+  margin-top: 2.3125rem;
+  padding: 2.25rem 0;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.preorder-section .priceComparison .price-content .price-description span {
+  display: inline-block;
+  color: #282228;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-right: 0.25rem;
+  letter-spacing: -0.9px;
+  padding-bottom: 0.375rem;
+  border-bottom: 3px solid #000;
+}
+.preorder-section .priceComparison .price-content .price-savings {
+  display: inline-block;
+  margin-top: 0.875rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ff008c;
+  letter-spacing: -0.9px;
+  position: relative;
+}
+.preorder-section .priceComparison .price-content .price-savings::after {
+  content: "";
+  position: absolute;
+  bottom: 0.125rem;
+  left: 0;
+  height: 7px;
+  width: 0rem;
+  background: rgba(255, 0, 140, 0.1);
+  transition: all 0.6s ease-in-out 0.7s;
+}
+.preorder-section .priceComparison .price-content .price-savings em {
+  display: inline-block;
+  margin-right: 0.125rem;
+  position: relative;
+  top: -0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff008c;
+  letter-spacing: -0.9px;
+}
+.preorder-section .priceComparison .price-content .price-savings strong {
+  font-size: 1.75rem;
+  font-family: Outfit;
+  font-weight: 700;
+  color: #ff008c;
+  letter-spacing: -0.9px;
+}
+.preorder-section .priceComparison .price-content span.txt {
+  position: absolute;
+  right: 2.1875rem;
+  top: 6.5625rem;
+  display: inline-block;
+  margin-left: 0.3125rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #282228;
+  letter-spacing: -0.7px;
+}
+.preorder-section .priceComparison .price-content .price-note {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.7px;
+}
+.preorder-section .priceComparison .price-range-container {
+  padding: 1.625rem 2rem;
+  border-radius: 8px;
+  background: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
+  /* ==================== */
+  /*     쿠폰 애니메이션   */
+  /* ==================== */
+  /* 초기 상태 */
+  /* 'on' 클래스가 추가되었을 때의 스타일 */
+  /* 섹션 전체에 대한 스타일도 유지 */
+}
+.preorder-section .priceComparison .price-range-container .price-range {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 1s ease-in-out;
+}
+.preorder-section .priceComparison .price-range-container .range-label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #777;
+  letter-spacing: -0.6px;
+}
+.preorder-section .priceComparison .price-range-container .range-label.original .label-text::after {
+  content: "";
+  position: absolute;
+  z-index: 6;
+  left: 0.9375rem;
+  bottom: -2.5rem;
+  width: 40px;
+  height: 40px;
+  background: url("../../../public/assets/img/priceComparison-bill.svg") no-repeat center;
+}
+.preorder-section .priceComparison .price-range-container .range-label.original .price-text {
+  position: relative;
+  left: calc(3px + (100vw - 360px) * 0.085);
+}
+.preorder-section .priceComparison .price-range-container .range-label .label-text {
+  position: relative;
+}
+.preorder-section .priceComparison .price-range-container .range-label .label-text img {
+  position: relative;
+  left: 0.3125rem;
+}
+.preorder-section .priceComparison .price-range-container .range-bar {
+  width: 100%;
   height: 0.5rem;
-  border-bottom: 2px solid #8100f5;
-  border-right: 2px solid #8100f5;
+  background-color: #ff008c;
+  border-radius: 100px;
+  position: relative;
+  margin-top: 0.9375rem;
+  margin-bottom: 0.625rem;
+}
+.preorder-section .priceComparison .price-range-container .range-bar .range-bar-fill {
+  position: absolute;
+  z-index: 6;
+  top: -0.4375rem;
+  left: 33.3%;
+  height: 1.3125rem;
+  background-color: #ddd;
+  width: 0.125rem;
+  transition: width 1s ease-in-out;
+}
+.preorder-section .priceComparison .price-range-container .range-bar .range-bar-fill.second {
+  left: 66.6%;
+}
+.preorder-section .priceComparison .price-range-container .range-progress {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #777;
+  border-radius: 100px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+.preorder-section .priceComparison .price-range-container .range-progress {
+  width: 0;
+  transition: width 1s ease-out;
+}
+.preorder-section .priceComparison .price-range-container .range-progress::before {
+  content: "";
+  position: absolute;
+  top: -1.0625rem;
+  left: -1.5625rem;
+  width: 40px;
+  height: 40px;
+  background: url("../../../public/assets/img/priceComparison-coin.svg") no-repeat center;
+}
+.preorder-section .priceComparison .price-range-container .range-progress::after {
+  content: "";
+  position: absolute;
+  right: -0.0625rem;
+  width: 10%;
+  background: #fff;
+  height: 0.625rem;
+  border-radius: 100px;
+}
+.preorder-section .priceComparison .price-range-container .price-range {
+  transition: transform 1s ease-out;
+}
+.preorder-section .priceComparison .price-range-container .savings-amount {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+.preorder-section .priceComparison .price-range-container .range-progress.on {
+  width: clamp(85%, 85% + (100vw - 360px) * 0.05, 100%);
+}
+.preorder-section .priceComparison .price-range-container .savings-amount.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+.preorder-section .priceComparison .price-range-container #priceComparison.on .range-progress {
+  width: 100%;
+}
+.preorder-section .priceComparison .price-range-container #priceComparison.on .savings-amount {
+  opacity: 1;
+  transform: translateY(0);
+}
+.preorder-section .priceComparison.on .price-content .price-savings::after {
+  width: 10.125rem;
+}
+.preorder-section .lucky-draw {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+.preorder-section .lucky-draw h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
 }
 .preorder-section .prize-display-swiper {
   position: relative;
@@ -5625,6 +5848,7 @@ html {
   top: 1px;
   left: -1px;
   width: 16px;
+  display: inline-block;
 }
 .accordion .accordion-txt {
   padding-bottom: 0.3125rem;
@@ -5642,7 +5866,6 @@ html {
 /* ==================== */
 /*      공통  화살표  */
 /* ==================== */
-.arrow-right,
 .arrow-down {
   transition: all 0.3s ease;
   position: relative;
@@ -5656,11 +5879,37 @@ html {
 }
 
 .arrow-right {
+  position: relative;
+  top: 0rem;
+  left: 0.625rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-bottom: 2px solid #8100f5;
+  border-right: 2px solid #8100f5;
   transform: rotate(-45deg);
+  /* 애니메이션 상태 클래스 */
+}
+.arrow-right.animate {
+  animation: arrowSlideOut 1.2s ease infinite;
 }
 
 .arrow-down {
   transform: rotate(45deg);
+}
+
+/* 슬라이드 아웃 애니메이션 */
+@keyframes arrowSlideOut {
+  0% {
+    opacity: 0;
+    left: 0rem;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 호버 효과도 추가하고 싶다면 */
+.arrow-right:hover {
+  animation: arrowSlideOut 0.5s ease forwards;
 }
 
 /* ==================== */

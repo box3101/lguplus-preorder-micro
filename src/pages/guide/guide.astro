@@ -71,62 +71,33 @@ import DisCountCard from '../../components/DisCountCard.astro';
           <!-- 유의사항 -->
           <Notice />
           <!-- 유의사항 EEE -->
-
-          <div th:fragment="footer" th:if="${preorderStatus} == 'before'">
-            <div class="com-alarm-btn-wrp">
-              <div class="toast-img dongdong-effect">
-                <img
-                  style="width: 182px;"
-                  src="/public/assets/img/main-toast.svg"
-                />
-              </div>
-              <button
-                type="button"
-                class="com-alarm-btn"
-                onclick="javascript:PreorderCtrl.open();"
-                data-gtm-event-name="button_click"
-                data-gtm-event-category="클릭"
-                data-gtm-event-action="플로팅 영역 - 버튼 클릭"
-                data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_예약하기"
-                data-gtm-click-location="플로팅 영역"
-                data-gtm-click-text="예약신청_01-단계진입_예약하기"
-              >
-                <img
-                  style="width: 227px;"
-                  src="/public/assets/img/com-alarm-btn-txt.svg"
-                />
-              </button>
-            </div>
-          </div>
-
-          <!-- 공통 alert -->
-          <button class="com-alert-btn" data-title="2344" data-content="coupon"
-            >공통알랏</button
-          >
-          <button class="com-alert-btn" data-title="2424" data-content="prize"
-            >공통알랏2</button
-          >
-          <button
-            class="com-alert-btn"
-            data-title="2424"
-            data-custom-content="true"
-            data-model="retailPrice">공통알랏3</button
-          >
-          <button
-            class="com-alert-btn"
-            data-title="2424"
-            data-custom-content="true"
-            data-model="carrierPrice">공통알랏4</button
-          >
-          <button
-            class="com-alert-btn"
-            data-title="2424"
-            data-custom-content="true"
-            data-model="competitorPrice">공통알랏4</button
-          >
-          <!-- 공통 alert EEE -->
         </section>
       </main>
+
+      <div th:fragment="footer" th:if="${preorderStatus} == 'before'">
+        <div class="com-alarm-btn-wrp">
+          <div class="toast-img dongdong-effect">
+            <img
+              style="width: 182px;"
+              src="/public/assets/img/main-toast.svg"
+            />
+          </div>
+          <button
+            type="button"
+            class="com-alarm-btn"
+            onclick="javascript:PreorderCtrl.open();"
+            data-gtm-event-name="button_click"
+            data-gtm-event-category="클릭"
+            data-gtm-event-action="플로팅 영역 - 버튼 클릭"
+            data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_예약하기"
+            data-gtm-click-location="플로팅 영역"
+            data-gtm-click-text="예약신청_01-단계진입_예약하기"
+          >
+            <img src="/public/assets/img/com-alarm-btn-txt.svg" />
+          </button>
+        </div>
+      </div>
+
       <script
         is:inline
         src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"

@@ -7,6 +7,7 @@ import { initializeCountdown } from "./countDown.js";
 import { initializeAccordion } from "./accordian.js";
 import { showAlert } from "./alertPopup.js";
 import { commonAlert } from "./commonAlert.js";
+import { initializeAnimations } from "./animations.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeNotice();
     initializeCountdown();
     initializeAccordion();
+    initializeAnimations();
 
     // 자세히 보기 버튼 클릭 이벤트 리스너 추가
     document.addEventListener("click", (e) => {
