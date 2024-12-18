@@ -252,7 +252,7 @@ html {
   bottom: -2.5rem;
   width: 40px;
   height: 40px;
-  background: url("../../../public/assets/img/priceComparison-bill.svg") no-repeat center;
+  background: url("../../../../public/assets/img/priceComparison-bill.svg") no-repeat center;
 }
 .preorder-section .priceComparison .price-range-container .range-label.original .price-text {
   position: relative;
@@ -309,7 +309,7 @@ html {
   left: -1.5625rem;
   width: 40px;
   height: 40px;
-  background: url("../../../public/assets/img/priceComparison-coin.svg") no-repeat center;
+  background: url("../../../../public/assets/img/priceComparison-coin.svg") no-repeat center;
 }
 .preorder-section .priceComparison .price-range-container .range-progress::after {
   content: "";
