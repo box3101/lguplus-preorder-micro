@@ -18,13 +18,14 @@ html {
 /*      컨텐츠         */
 /* ==================== */
 .preorder-section {
+  overflow-x: hidden;
   img {
     display: block;
     width: auto !important;
     margin: 0 auto;
   }
   .common-inner {
-    padding: 0 rem(20);
+    padding: 0 rem(24);
   }
 
   /* ==================== */
@@ -61,7 +62,7 @@ html {
     }
 
     .price-swiper {
-      height: rem(72);
+      height: rem(81);
       margin: 0 auto;
       text-align: center;
     }
@@ -310,7 +311,7 @@ html {
         background-color: #777;
         border-radius: 100px;
         width: 0;
-        transition: width 1s ease-in-out;
+        transition: width 1.2s ease-in-out;
       }
       /* ==================== */
       /*     쿠폰 애니메이션   */
@@ -318,7 +319,7 @@ html {
       /* 초기 상태 */
       .range-progress {
         width: 0;
-        transition: width 1s ease-out;
+        transition: width 1.2s ease-out;
         &::before {
           content: '';
           position: absolute;
@@ -328,6 +329,7 @@ html {
           height: 40px;
           background: url('../../../assets/img/priceComparison-coin.svg')
             no-repeat center;
+          opacity: 0;
         }
         &::after {
           content: '';
@@ -353,6 +355,9 @@ html {
       /* 'on' 클래스가 추가되었을 때의 스타일 */
       .range-progress.on {
         width: clamp(85%, calc(85% + (100vw - 360px) * 0.05), 100%);
+        &::before {
+          opacity: 1;
+        }
       }
 
       .savings-amount.on {
@@ -397,6 +402,55 @@ html {
       font-weight: 400;
       color: #aaa;
       letter-spacing: -0.65px;
+    }
+    .common-btn-wrp {
+      margin-top: rem(26);
+    }
+    .lucky-draw-content {
+      .prize-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(8);
+      }
+      .prize-card {
+        position: relative;
+        text-align: center;
+        flex: 1 0 calc(50% - rem(4));
+        border-radius: 12px;
+        background: #f5f5f5;
+        padding: rem(25) rem(0);
+        box-sizing: border-box;
+        .prize-brand {
+          font-size: rem(12);
+          font-weight: 400;
+          color: #ff18aa;
+          letter-spacing: -0.6px;
+        }
+        .prize-name {
+          margin-top: rem(5);
+          font-size: rem(15);
+          font-weight: 600;
+          color: #272727;
+          letter-spacing: -0.7px;
+        }
+        .prize-quantity {
+          width: rem(42);
+          height: rem(42);
+          box-sizing: border-box;
+          position: absolute;
+          right: rem(17);
+          top: rem(20);
+          padding: rem(12) rem(8) rem(13) rem(7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100px;
+          background: rgba(0, 0, 0, 0.5);
+          font-size: rem(12);
+          font-weight: 500;
+          color: #fff;
+        }
+      }
     }
   }
 
@@ -453,6 +507,100 @@ html {
         top: 0;
         left: 0;
       }
+    }
+  }
+
+  /* ==================== */
+  /*    discount-card      */
+  /* ============= ======= */
+  .discount-card {
+    background: rgba(254, 5, 146, 0.05);
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+
+    h3 {
+      margin-top: rem(12);
+    }
+    .benefit-cards-container {
+      margin-top: rem(32);
+    }
+    .benefit-card {
+      margin-bottom: rem(30);
+      padding-left: rem(32);
+      padding-top: rem(32);
+      padding-bottom: rem(28);
+      padding-right: rem(32);
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 0, 140, 0.2);
+      background: #fff;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .benefit-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(14);
+        height: rem(16);
+        border-radius: 100px;
+        background: #c1c1c1;
+        padding: rem(9) rem(10);
+        font-size: rem(13);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.26px;
+      }
+      .benefit-title {
+        font-size: rem(24);
+        font-weight: 700;
+        color: #333;
+        letter-spacing: -1.2px;
+      }
+      .discount-amount {
+        font-size: rem(24);
+        font-weight: 700;
+        color: #ff008c;
+        letter-spacing: -1.2px;
+      }
+      .benefit-description {
+        margin-top: rem(8);
+      }
+      .description-line1 {
+        font-size: rem(16);
+        font-weight: 400;
+        color: #777;
+        letter-spacing: -0.8px;
+      }
+      .description-line2 {
+        font-size: rem(12);
+        font-weight: 400;
+        color: #777;
+        letter-spacing: -0.6px;
+      }
+      .benefit-image img {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: rem(30);
+      }
+    }
+  }
+
+  /* ==================== */
+  /*    new-galaxy-coming-soon      */
+  /* ============= ======= */
+  .new-galaxy-coming-soon {
+    padding: rem(60) rem(60);
+    background: #1d1d1d;
+    position: relative;
+    .bg {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: rem(0);
+    }
+    p {
+      margin-top: rem(35);
     }
   }
 
@@ -567,24 +715,60 @@ html {
   /*      공통 NOTICE        */
   /* ==================== */
   .common-notice-wrp {
+    padding-bottom: 80px;
     .common-notice-menu {
+      .title-wrp {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .arrow-down {
+          border-bottom: #fff solid 2px;
+          border-right: #fff solid 2px;
+        }
+      }
       &-item {
-        padding: rem(10) rem(20);
-        background-color: #f1f1f1;
+        padding: rem(16) rem(24);
+        background: #1d1d1d;
         cursor: pointer;
         transition: background-color 0.2s ease;
+        border-top: 1px solid rgba(221, 221, 221, 0.2);
+        font-size: rem(16);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.8px;
 
-        &:hover {
-          background-color: #e0e0e0;
+        &.active {
+          .arrow-down {
+            top: rem(2);
+            transform: rotate(225deg);
+          }
+        }
+
+        ul {
+          margin-top: rem(16);
+          list-style: none;
+          li {
+            font-size: rem(14);
+            font-weight: 400;
+            color: #999;
+            letter-spacing: -0.8px;
+            position: relative;
+            padding-left: rem(12);
+            &:before {
+              content: '•';
+              position: absolute;
+              left: 0;
+              color: #999;
+            }
+          }
         }
 
         &.active {
-          background-color: #d0d0d0;
+          background-color: #1d1d1d;
 
           > .common-notice-content {
             max-height: rem(500);
             opacity: 1;
-            transition: max-height 0.3s ease-out, opacity 0.2s ease;
           }
         }
       }
@@ -594,8 +778,7 @@ html {
       max-height: 0;
       opacity: 0;
       overflow: hidden;
-      padding: 0 rem(20);
-      transition: max-height 0.3s ease-in, opacity 0.2s ease, padding 0.2s ease;
+      padding-left: rem(10);
 
       &.active {
         padding: rem(20);

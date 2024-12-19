@@ -16,6 +16,7 @@ html {
 /*      컨텐츠         */
 /* ==================== */
 .preorder-section {
+  overflow-x: hidden;
   /* ==================== */
   /*      visual         */
   /* ============= ======= */
@@ -27,6 +28,12 @@ html {
   /* ============= ======= */
   /* ==================== */
   /*    lucky-draw       */
+  /* ============= ======= */
+  /* ==================== */
+  /*    discount-card      */
+  /* ============= ======= */
+  /* ==================== */
+  /*    new-galaxy-coming-soon      */
   /* ============= ======= */
   /* ==================== */
   /*   model-select-wrp   */
@@ -47,7 +54,7 @@ html {
   margin: 0 auto;
 }
 .preorder-section .common-inner {
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
 }
 .preorder-section .main-visual {
   box-sizing: border-box;
@@ -77,7 +84,7 @@ html {
   margin-bottom: 0.875rem;
 }
 .preorder-section .main-visual .price-swiper {
-  height: 4.5rem;
+  height: 5.0625rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -312,11 +319,11 @@ html {
   background-color: #777;
   border-radius: 100px;
   width: 0;
-  transition: width 1s ease-in-out;
+  transition: width 1.2s ease-in-out;
 }
 .preorder-section .priceComparison .price-range-container .range-progress {
   width: 0;
-  transition: width 1s ease-out;
+  transition: width 1.2s ease-out;
 }
 .preorder-section .priceComparison .price-range-container .range-progress::before {
   content: "";
@@ -326,6 +333,7 @@ html {
   width: 40px;
   height: 40px;
   background: url("../../../assets/img/priceComparison-coin.svg") no-repeat center;
+  opacity: 0;
 }
 .preorder-section .priceComparison .price-range-container .range-progress::after {
   content: "";
@@ -346,6 +354,9 @@ html {
 }
 .preorder-section .priceComparison .price-range-container .range-progress.on {
   width: clamp(85%, 85% + (100vw - 360px) * 0.05, 100%);
+}
+.preorder-section .priceComparison .price-range-container .range-progress.on::before {
+  opacity: 1;
 }
 .preorder-section .priceComparison .price-range-container .savings-amount.on {
   opacity: 1;
@@ -380,6 +391,53 @@ html {
   font-weight: 400;
   color: #aaa;
   letter-spacing: -0.65px;
+}
+.preorder-section .lucky-draw .common-btn-wrp {
+  margin-top: 1.625rem;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card {
+  position: relative;
+  text-align: center;
+  flex: 1 0 calc(50% - 0.25rem);
+  border-radius: 12px;
+  background: #f5f5f5;
+  padding: 1.5625rem 0rem;
+  box-sizing: border-box;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-brand {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #ff18aa;
+  letter-spacing: -0.6px;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-name {
+  margin-top: 0.3125rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #272727;
+  letter-spacing: -0.7px;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-quantity {
+  width: 2.625rem;
+  height: 2.625rem;
+  box-sizing: border-box;
+  position: absolute;
+  right: 1.0625rem;
+  top: 1.25rem;
+  padding: 0.75rem 0.5rem 0.8125rem 0.4375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
 }
 .preorder-section .prize-display-swiper {
   position: relative;
@@ -435,6 +493,91 @@ html {
   position: absolute;
   top: 0;
   left: 0;
+}
+.preorder-section .discount-card {
+  background: rgba(254, 5, 146, 0.05);
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+.preorder-section .discount-card h3 {
+  margin-top: 0.75rem;
+}
+.preorder-section .discount-card .benefit-cards-container {
+  margin-top: 2rem;
+}
+.preorder-section .discount-card .benefit-card {
+  margin-bottom: 1.875rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1.75rem;
+  padding-right: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 140, 0.2);
+  background: #fff;
+}
+.preorder-section .discount-card .benefit-card:last-of-type {
+  margin-bottom: 0;
+}
+.preorder-section .discount-card .benefit-card .benefit-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.875rem;
+  height: 1rem;
+  border-radius: 100px;
+  background: #c1c1c1;
+  padding: 0.5625rem 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.26px;
+}
+.preorder-section .discount-card .benefit-card .benefit-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -1.2px;
+}
+.preorder-section .discount-card .benefit-card .discount-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff008c;
+  letter-spacing: -1.2px;
+}
+.preorder-section .discount-card .benefit-card .benefit-description {
+  margin-top: 0.5rem;
+}
+.preorder-section .discount-card .benefit-card .description-line1 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.8px;
+}
+.preorder-section .discount-card .benefit-card .description-line2 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.6px;
+}
+.preorder-section .discount-card .benefit-card .benefit-image img {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 1.875rem;
+}
+.preorder-section .new-galaxy-coming-soon {
+  padding: 3.75rem 3.75rem;
+  background: #1d1d1d;
+  position: relative;
+}
+.preorder-section .new-galaxy-coming-soon .bg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0rem;
+}
+.preorder-section .new-galaxy-coming-soon p {
+  margin-top: 2.1875rem;
 }
 .preorder-section .model-select-wrp .swiper-scrollbar {
   position: relative;
@@ -515,29 +658,63 @@ html {
 .preorder-section .common-tab-menu-wrp .common-tab-content.active {
   display: block;
 }
+.preorder-section .common-notice-wrp {
+  padding-bottom: 80px;
+}
+.preorder-section .common-notice-wrp .common-notice-menu .title-wrp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.preorder-section .common-notice-wrp .common-notice-menu .title-wrp .arrow-down {
+  border-bottom: #fff solid 2px;
+  border-right: #fff solid 2px;
+}
 .preorder-section .common-notice-wrp .common-notice-menu-item {
-  padding: 0.625rem 1.25rem;
-  background-color: #f1f1f1;
+  padding: 1rem 1.5rem;
+  background: #1d1d1d;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border-top: 1px solid rgba(221, 221, 221, 0.2);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.8px;
 }
-.preorder-section .common-notice-wrp .common-notice-menu-item:hover {
-  background-color: #e0e0e0;
+.preorder-section .common-notice-wrp .common-notice-menu-item.active .arrow-down {
+  top: 0.125rem;
+  transform: rotate(225deg);
+}
+.preorder-section .common-notice-wrp .common-notice-menu-item ul {
+  margin-top: 1rem;
+  list-style: none;
+}
+.preorder-section .common-notice-wrp .common-notice-menu-item ul li {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #999;
+  letter-spacing: -0.8px;
+  position: relative;
+  padding-left: 0.75rem;
+}
+.preorder-section .common-notice-wrp .common-notice-menu-item ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #999;
 }
 .preorder-section .common-notice-wrp .common-notice-menu-item.active {
-  background-color: #d0d0d0;
+  background-color: #1d1d1d;
 }
 .preorder-section .common-notice-wrp .common-notice-menu-item.active > .common-notice-content {
   max-height: 31.25rem;
   opacity: 1;
-  transition: max-height 0.3s ease-out, opacity 0.2s ease;
 }
 .preorder-section .common-notice-wrp .common-notice-content {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  padding: 0 1.25rem;
-  transition: max-height 0.3s ease-in, opacity 0.2s ease, padding 0.2s ease;
+  padding-left: 0.625rem;
 }
 .preorder-section .common-notice-wrp .common-notice-content.active {
   padding: 1.25rem;

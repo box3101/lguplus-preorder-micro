@@ -2,57 +2,45 @@
 const prizes = [
   {
     id: 1,
-    brand: 'Samsung',
-    name: 'Galaxy Watch6<br>40mm',
-    quantity: 10,
-    image: '../assets/img/lucky-draw-slide01.svg',
-    thumbnail: '../assets/img/lucky-draw-thumb01.svg',
-    alt: '삼성 갤럭시 워치6',
+    brand: '네이버페이',
+    name: '모바일 금액권<br>(1,000P)',
+    quantity: '1천',
+    image: '../assets/img/IMG_prod.svg',
   },
   {
     id: 2,
-    brand: 'LG',
+    brand: '주유권',
     name: 'LG 스탠바이미<br>27인치',
-    quantity: 5,
-    image: '../assets/img/lucky-draw-slide01.svg',
-    thumbnail: '../assets/img/lucky-draw-thumb02.svg',
-    alt: 'LG 스탠바이미',
+    quantity: 1,
+    image: '../assets/img/IMG_prod2.svg',
   },
   {
     id: 3,
-    brand: 'Apple',
-    name: 'AirPods Pro 2세대',
-    quantity: 20,
-    image: '../assets/img/lucky-draw-slide01.svg',
-    thumbnail: '../assets/img/lucky-draw-thumb03.svg',
-    alt: '애플 에어팟 프로',
+    brand: '대한항공',
+    name: '기프트 카드<br>(100만원)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod3.svg',
   },
   {
     id: 4,
-    brand: 'Nintendo',
-    name: 'Switch<br>OLED 모델',
-    quantity: 3,
-    image: '../assets/img/lucky-draw-slide04.svg',
-    thumbnail: '../assets/img/lucky-draw-thumb04.svg',
-    alt: '닌텐도 스위치',
+    brand: '올리브영',
+    name: '기프트 카드<br>(100만원)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod4.svg',
   },
   {
     id: 5,
-    brand: 'Dyson',
-    name: '에어랩<br>컴플리트',
-    quantity: 2,
-    image: '../assets/img/lucky-draw-slide05.svg',
-    thumbnail: '../assets/img/lucky-draw-thumb05.svg',
-    alt: '다이슨 에어랩',
+    brand: 'SONY',
+    name: '플레이스테이션 5<br>(슬림)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod5.svg',
   },
   {
     id: 6,
-    brand: 'U+',
-    name: '모바일 데이터<br>100GB',
-    quantity: 100,
-    image: '../assets/img/lucky-draw-slide06.svg',
-    thumbnail: '../assets/img/lucky-draw-thumb06.svg',
-    alt: 'U+ 모바일 데이터',
+    brand: 'Celine',
+    name: '트리옹프 캔버스 &<br>카프스킨 미니 아바 탄',
+    quantity: 1,
+    image: '../assets/img/IMG_prod6.svg',
   },
 ];
 ---
@@ -70,88 +58,21 @@ const prizes = [
     </h3>
   </div>
 
-  <div class="prize-display-swiper swiper">
-    <div class="swiper-wrapper">
+  <div class="lucky-draw-content">
+    <div class="prize-cards-container">
       {
         prizes.map((prize) => (
-          <div class="swiper-slide">
-            <div class="prize-item main">
-              <div class="prize-circle">
-                <img src={prize.image} alt={prize.alt} />
-                <div class="prize-info">
-                  <p class="brand">{prize.brand}</p>
-                  <p class="name" set:html={prize.name} />
-                  <p class="quantity">{prize.quantity}명</p>
-                </div>
-              </div>
-              <span class="lucky-badge dongdong-effect">
-                <img src="../assets/img/star.svg" alt="" />
-              </span>
+          <div class="prize-card">
+            <img src={prize.image} />
+            <div class="prize-info">
+              <span class="prize-brand">{prize.brand}</span>
+              <h4 class="prize-name" set:html={prize.name} />
+              <p class="prize-quantity">{prize.quantity}명</p>
             </div>
           </div>
         ))
       }
     </div>
-  </div>
-  <div class="prize-thumbs-swiper swiper">
-    <div class="swiper-wrapper">
-      {
-        prizes.map((prize, index) => (
-          <div class="swiper-slide">
-            <div class={`thumb-item ${index === 0 ? 'active' : ''}`}>
-              <div class="image-wrapper">
-                <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
-                <input
-                  type="checkbox"
-                  id={`prize-${index}`}
-                  class="prize-checkbox"
-                />
-                <label for={`prize-${index}`} class="checkbox-label" />
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-    <style lang="scss">
-      .thumb-item {
-        position: relative;
-        cursor: pointer;
-
-        .image-wrapper {
-          position: relative;
-
-          img {
-            width: 100%;
-            height: auto;
-          }
-
-          .prize-checkbox {
-            display: none;
-          }
-
-          .checkbox-label {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 24px;
-            height: 24px;
-            background: url('../assets/img/checkbox-unchecked.svg') no-repeat
-              center / contain;
-            cursor: pointer;
-          }
-
-          .prize-checkbox:checked + .checkbox-label {
-            background-image: url('../assets/img/checkbox-checked.svg');
-          }
-        }
-
-        &.active {
-          border: 2px solid #ff4e00;
-          border-radius: 10px;
-        }
-      }
-    </style>
   </div>
 
   <!-- 응모하기 -->
@@ -170,10 +91,4 @@ const prizes = [
       <i class="arrow-right animate"></i>
     </button>
   </div>
-
-  <!-- 유의사항 -->
-  <p class="notice">
-    ※ 당첨된 선물은 개통 후 14일 유지 시 지급됩니다. <br />
-    자세한 내용은 <u>하단 유의사항</u>을 읽어주세요.
-  </p>
 </article>

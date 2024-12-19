@@ -68,54 +68,54 @@ export function initializeSwiper() {
   }
 
   // Lucky Draw 메인 스와이퍼
-  const prizeDisplaySwiper = document.querySelector(".prize-display-swiper");
-  if (prizeDisplaySwiper) {
-    const mainSwiper = new Swiper(prizeDisplaySwiper, {
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      loop: true,
-      speed: 800,
-      allowTouchMove: false,
-    });
-    // Lucky Draw 썸네일 스와이퍼
-    const prizeThumbsSwiper = new Swiper(".prize-thumbs-swiper", {
-      slidesPerView: 3,
-      grid: {
-        rows: 2,
-        fill: "row",
-      },
-      spaceBetween: 10,
-      loop: false,
-      watchSlidesProgress: true,
-      allowTouchMove: true,
-    });
-    // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
-    const thumbSlides = document.querySelectorAll(
-      ".prize-thumbs-swiper .swiper-slide"
-    );
-    thumbSlides.forEach((slide, index) => {
-      slide.addEventListener("click", () => {
-        thumbSlides.forEach((s) =>
-          s.querySelector(".thumb-item").classList.remove("active")
-        );
-        slide.querySelector(".thumb-item").classList.add("active");
+  // const prizeDisplaySwiper = document.querySelector(".prize-display-swiper");
+  // if (prizeDisplaySwiper) {
+  //   const mainSwiper = new Swiper(prizeDisplaySwiper, {
+  //     effect: "fade",
+  //     fadeEffect: {
+  //       crossFade: true,
+  //     },
+  //     loop: true,
+  //     speed: 800,
+  //     allowTouchMove: false,
+  //   });
+  //   // Lucky Draw 썸네일 스와이퍼
+  //   const prizeThumbsSwiper = new Swiper(".prize-thumbs-swiper", {
+  //     slidesPerView: 3,
+  //     grid: {
+  //       rows: 2,
+  //       fill: "row",
+  //     },
+  //     spaceBetween: 10,
+  //     loop: false,
+  //     watchSlidesProgress: true,
+  //     allowTouchMove: true,
+  //   });
+  //   // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
+  //   const thumbSlides = document.querySelectorAll(
+  //     ".prize-thumbs-swiper .swiper-slide"
+  //   );
+  //   thumbSlides.forEach((slide, index) => {
+  //     slide.addEventListener("click", () => {
+  //       thumbSlides.forEach((s) =>
+  //         s.querySelector(".thumb-item").classList.remove("active")
+  //       );
+  //       slide.querySelector(".thumb-item").classList.add("active");
 
-        // Swiper 인스턴스를 사용하여 slideTo 메서드 호출
-        mainSwiper.slideTo(index);
+  //       // Swiper 인스턴스를 사용하여 slideTo 메서드 호출
+  //       mainSwiper.slideTo(index);
 
-        const mainSlide = document.querySelector(
-          ".prize-display-swiper .swiper-slide-active"
-        );
-        if (mainSlide) {
-          mainSlide.style.animation = "none";
-          mainSlide.offsetHeight;
-          mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
-        }
-      });
-    });
-  }
+  //       const mainSlide = document.querySelector(
+  //         ".prize-display-swiper .swiper-slide-active"
+  //       );
+  //       if (mainSlide) {
+  //         mainSlide.style.animation = "none";
+  //         mainSlide.offsetHeight;
+  //         mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
+  //       }
+  //     });
+  //   });
+  // }
 
   // 컬러 스와이퍼 초기화
   const colorSwiper = document.querySelector(".color-swiper");
