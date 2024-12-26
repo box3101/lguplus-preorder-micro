@@ -3,6 +3,14 @@ import Accordian from './common/Accordian.astro';
 ---
 
 <article class="preorder-coupon">
+  <article class="toast-message" id="countdown-toast">
+    <span class="toast-text">종료</span>
+    <span class="countdown" id="countdown">6일 1시간 55분</span>
+    <span class="toast-text"> 전</span>
+    <button class="toast-message-close" id="toast-close">
+      <i class="close-btn"></i>
+    </button>
+  </article>
   <div class="first-landing-coupon common-inner">
     <div class="coupon-header">
       <h2 class="coupon-title" data-aos="fade-up" data-aos-duration="1000">

@@ -10,14 +10,14 @@ export function initializeSwiper() {
         fadeEffect: {
           crossFade: true,
         },
-        speed: 300,
+        speed: 500, // 속도 더 빠르게 조정
         autoplay: {
-          delay: 2000,
+          delay: 2000, // 딜레이 시간 단축
           disableOnInteraction: false,
         },
         allowTouchMove: false,
       });
-    }, 100);
+    }, 0);
   }
 
   // 가격 스와이퍼 (price)
@@ -29,10 +29,10 @@ export function initializeSwiper() {
           direction: "vertical",
           loop: true,
           autoplay: {
-            delay: 2000,
+            delay: 2000, // 딜레이 시간 단축
             disableOnInteraction: false,
           },
-          speed: 300,
+          speed: 500, // 속도 더 빠르게 조정
           effect: "creative",
           creativeEffect: {
             prev: {
@@ -48,7 +48,7 @@ export function initializeSwiper() {
           parallax: true,
           allowTouchMove: false,
         });
-      }, 100);
+      }, 0);
     });
   }
 
@@ -63,14 +63,14 @@ export function initializeSwiper() {
         fadeEffect: {
           crossFade: true,
         },
-        speed: 300,
+        speed: 500, // 속도 더 빠르게 조정
         autoplay: {
-          delay: 2000,
+          delay: 2000, // 딜레이 시간 단축
           disableOnInteraction: false,
         },
         allowTouchMove: false,
       });
-    }, 100);
+    }, 0);
   }
 
   // Lucky Draw 메인 스와이퍼
