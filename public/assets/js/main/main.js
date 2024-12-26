@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // AOS 초기화
     AOS.init({
       once: true, // 한번만 실행되도록 설정
+      offset: 0, // 스크롤 애니메이션이 시작되는 지점을 0으로 설정하여 더 위에서부터 시작되도록 함
     });
 
     initializeSwiper();
