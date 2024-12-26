@@ -1,0 +1,142 @@
+---
+const notices = [
+  {
+    id: 'notice1',
+    title: '공통 영역',
+    content: [
+      '본 이벤트는 당사 및 제휴사 사정에 의해 조기 종료 되거나 변경될 수 있습니다.',
+      '추가 공지사항이 있을 수 있습니다.',
+    ],
+  },
+  {
+    id: 'notice2',
+    title: '할인 쿠폰',
+    content: [
+      '성과 평가 진행 절차 및 일정 안내',
+      '각 단계별 주요 사항을 확인하세요.',
+      '평가 결과는 개별 통보됩니다.',
+    ],
+  },
+  {
+    id: 'notice3',
+    title: '경품 이벤트',
+    content: [
+      '성과 평가 진행 절차 및 일정 안내',
+      '각 단계별 주요 사항을 확인하세요.',
+    ],
+  },
+  {
+    id: 'notice4',
+    title: '기타',
+    content: [
+      '성과 평가 진행 절차 및 일정 안내',
+      '각 단계별 주요 사항을 확인하세요.',
+    ],
+  },
+];
+---
+
+<!-- 뉴 갤럭시 커밍 순 -->
+<section class="new-galaxy-coming-soon">
+  <div class="bg2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="672"
+      height="441"
+      viewBox="0 0 672 441"
+      fill="none"
+    >
+      <g filter="url(#filter0_f_1872_3397)">
+        <path
+          d="M300.474 -360H395.211L561 330H111L300.474 -360Z"
+          fill="url(#paint0_linear_1872_3397)"
+          fill-opacity="0.2"></path>
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_1872_3397"
+          x="0"
+          y="-471"
+          width="672"
+          height="912"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"></feBlend>
+          <feGaussianBlur
+            stdDeviation="55.5"
+            result="effect1_foregroundBlur_1872_3397"></feGaussianBlur>
+        </filter>
+        <linearGradient
+          id="paint0_linear_1872_3397"
+          x1="336"
+          y1="-57.75"
+          x2="336"
+          y2="336"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="white"></stop>
+          <stop offset="1" stop-color="#111111"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="common-inner">
+    <h2
+      style="position: relative; left: -7px;"
+      data-aos="fade-up"
+      data-aos-duration="600"
+    >
+      <img
+        style="width: 376px!important;"
+        src="../assets/img/new-galaxy-coming-soon-title.svg"
+      />
+    </h2>
+    <img
+      style="width: 409px!important;"
+      src="../assets/pc-img/pc-new-galaxy-coming-soon-txt.png"
+      data-aos="fade-up"
+      data-aos-duration="600"
+      data-aos-delay="200"
+    />
+    <p data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+      <img
+        style="width: 240px!important;"
+        src="../assets/img/new-galaxy-coming-soon-txt.png"
+      />
+    </p>
+  </div>
+
+  <article class="common-notice-wrp">
+    <div class="common-inner">
+      <ul class="common-notice-menu">
+        {
+          notices.map((item, index) => (
+            <li class="common-notice-menu-item" data-tab={item.id}>
+              <div class="title-wrp">
+                <div class="left">
+                  <span class="notice-dot" />
+                  {item.title}
+                </div>
+                <i class="arrow-down" />
+              </div>
+              <div class="common-notice-content" id={item.id}>
+                <ul>
+                  {item.content.map((contentItem) => (
+                    <li>{contentItem}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </article>
+</section>
+<!-- 뉴 갤럭시 커밍 순 EEE -->

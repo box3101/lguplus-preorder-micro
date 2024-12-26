@@ -334,8 +334,9 @@ html {
         &::after {
           content: '';
           position: absolute;
-          right: rem(-1);
+          right: rem(-2);
           width: 10%;
+          top: rem(-1);
           background: #fff;
           height: rem(10);
           border-radius: 100px;

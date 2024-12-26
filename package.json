@@ -11,9 +11,9 @@
     "astro": "astro",
     "prettier": "prettier --write \"**/*.html\"",
     "sass:src": "sass --watch ./src/scss/ui.scss:./src/css/ui.css",
-    "sass:public": "sass --watch ./src/scss/ui.scss:./public/assets/css/ui.css",
-    "sass:pc-src": "sass --watch ./src/scss/pc-ui.scss:./src/css/pc/ui.css",
-    "sass:pc-public": "sass --watch ./src/scss/pc-ui.scss:./public/assets/css/pc/ui.css",
+    "sass:public": "sass --watch --source-map ./src/scss/ui.scss:./public/assets/css/ui.css",
+    "sass:pc-src": "sass --watch --source-map ./src/scss/pc-ui.scss:./src/css/pc/ui.css",
+    "sass:pc-public": "sass --watch --source-map ./src/scss/pc-ui.scss:./public/assets/css/pc/ui.css",
     "sass": "npm-run-all --parallel sass:src sass:public sass:pc-src sass:pc-public"
   },
   "dependencies": {

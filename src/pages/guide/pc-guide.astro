@@ -1,12 +1,12 @@
 ---
-import MainVisual from '../../components/MainVisual.astro';
-import Toast from '../../components/common/Toast.astro';
-import Notice from '../../components/Notice.astro';
-import ModelSelect from '../../components/ModelSelect.astro';
-import PriceComparison from '../../components/PriceComparison.astro';
-import PreorderCoupon from '../../components/PreorderCoupon.astro';
-import LuckyDraw from '../../components/LuckyDraw.astro';
-import DisCountCard from '../../components/DisCountCard.astro';
+import MainVisual from '../../pc-components/MainVisual.astro';
+import Toast from '../../pc-components/common/Toast.astro';
+import Notice from '../../pc-components/Notice.astro';
+import ModelSelect from '../../pc-components/ModelSelect.astro';
+import PriceComparison from '../../pc-components/PriceComparison.astro';
+import PreorderCoupon from '../../pc-components/PreorderCoupon.astro';
+import LuckyDraw from '../../pc-components/LuckyDraw.astro';
+import DisCountCard from '../../pc-components/DisCountCard.astro';
 ---
 
 <!DOCTYPE html>
@@ -15,32 +15,97 @@ import DisCountCard from '../../components/DisCountCard.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>사전예약</title>
-    <link rel="stylesheet" href="/public/assets/css/pc/common.css" />
-    <link rel="stylesheet" href="/public/assets/css/pc/ui.css" />
+    <link rel="stylesheet" href="/assets/css/pc/common.css" />
+    <link rel="stylesheet" href="/assets/css/pc/ui.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
-    <header th:fragment="header_alarm" class="header_alarm ip283_header_type2">
-      <div class="top-area iphone16">
-        <h2 class="logo">
-          <a
-            target="_blank"
-            href="https://www.lguplus.com/"
-            data-gtm-event-name="link_click"
-            data-gtm-event-category="클릭"
-            data-gtm-event-action="네비게이터 영역 - 링크 클릭"
-            data-gtm-event-label="컨텐츠 : 유플러스닷컴 바로가기"
-            data-gtm-click-location="네비게이터 영역"
-            data-gtm-click-text="유플러스닷컴 바로가기"
-            data-gtm-click-url="https://www.lguplus.com"
-            data-gtm-click-direction="외부"
-          >
-            33
-          </a>
-        </h2>
+    <header class="header_preOrder ip283_header_type2 header_alarm2">
+      <div class="top-area">
+        <div class="inner">
+          <h1 class="logo">
+            <a
+              class="lgLogo"
+              data-gtm-click-direction="외부"
+              data-gtm-click-location="네비게이터 영역"
+              data-gtm-click-text="유플러스닷컴 바로가기"
+              data-gtm-click-url="https://www.lguplus.com/"
+              data-gtm-event-action="네비게이터 영역 - 링크 클릭"
+              data-gtm-event-category="클릭"
+              data-gtm-event-label="컨텐츠 : 유플러스닷컴 바로가기"
+              data-gtm-event-name="link_click"
+              href="https://www.lguplus.com/"
+              target="_blank"
+            >
+              <img
+                alt="유플러스닷컴"
+                src="http://localhost/pc/img/common/img_logo_lguplus2.png"
+              />
+            </a>
+          </h1>
+          <!-- <a 
+				class="logo2"
+				href="https://www.lguplus.com/"
+				target="_blank"
+				data-gtm-event-name='link_click' 
+				data-gtm-event-category='클릭'
+				data-gtm-event-action='네비게이터 영역 - 링크 클릭'
+				data-gtm-event-label='컨텐츠 : 유플러스닷컴 바로가기'
+				data-gtm-click-location='네비게이터 영역'
+				data-gtm-click-text='유플러스닷컴 바로가기'
+				data-gtm-click-url='https://www.lguplus.com/'
+				data-gtm-click-direction='외부'
+			>
+				<img th:src="@{{res}/pc/img/common/img_logo_lguplus3.png(res=${imgUrl})}" alt="U+ 공식온라인스토어">
+			</a> -->
+        </div>
+      </div>
+      <div class="bottom-area">
+        <div class="inner">
+          <div class="left">
+            <h2>
+              <a
+                class="lgLogo"
+                data-gtm-click-direction="내부"
+                data-gtm-click-location="네비게이터 영역"
+                data-gtm-click-text="홈 바로가기"
+                data-gtm-click-url="https://preorder.lguplus.com"
+                data-gtm-event-action="네비게이터 영역 - 링크 클릭"
+                data-gtm-event-category="클릭"
+                data-gtm-event-label="컨텐츠 : 홈 바로가기"
+                data-gtm-event-name="link_click"
+                href="/"
+              >
+                <img
+                  src="../../assets/pc-img/img_alarm_title_pc.png"
+                  alt="New Galaxy 사전알람"
+                />
+              </a>
+            </h2>
+          </div>
+
+          <div class="right">
+            <div class="alarm_btn">
+              <button
+                class="alarm-reserve_btn"
+                data-gtm-click-location="네비게이터 영역"
+                data-gtm-click-text="알람신청_01-단계진입_쿠폰 뽑기"
+                data-gtm-event-action="네비게이터 영역- 버튼 클릭"
+                data-gtm-event-category="클릭"
+                data-gtm-event-label="컨텐츠 : 알람신청_01-단계진입_쿠폰 뽑기"
+                data-gtm-event-name="button_click"
+                onclick="ALARM.oepnEvtPag();"
+                type="button"
+              >
+                <span>쿠폰 뽑기</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -71,64 +136,40 @@ import DisCountCard from '../../components/DisCountCard.astro';
           <!-- 유의사항 -->
           <Notice />
           <!-- 유의사항 EEE -->
-
-          <!-- 갤럴시 모델 종류 탭 -->
-          <ModelSelect />
-          <!-- 갤럴시 모델 종류 탭 EEE -->
-
-          <div th:fragment="footer" th:if="${preorderStatus} == 'before'">
-            <div class="type2 preorder" id="btnAlarm">
-              <div class="click_trigger">
-                <button
-                  type="button"
-                  class="alarm-btn preorder"
-                  onclick="javascript:PreorderCtrl.open();"
-                  data-gtm-event-name="button_click"
-                  data-gtm-event-category="클릭"
-                  data-gtm-event-action="플로팅 영역 - 버튼 클릭"
-                  data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_예약하기"
-                  data-gtm-click-location="플로팅 영역"
-                  data-gtm-click-text="예약신청_01-단계진입_예약하기"
-                >
-                  예약하기
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 공통 alert -->
-          <button class="com-alert-btn" data-title="2344" data-content="coupon"
-            >공통알랏</button
-          >
-          <button class="com-alert-btn" data-title="2424" data-content="prize"
-            >공통알랏2</button
-          >
-          <button
-            class="com-alert-btn"
-            data-title="2424"
-            data-custom-content="true"
-            data-model="retailPrice">공통알랏3</button
-          >
-          <button
-            class="com-alert-btn"
-            data-title="2424"
-            data-custom-content="true"
-            data-model="carrierPrice">공통알랏4</button
-          >
-          <button
-            class="com-alert-btn"
-            data-title="2424"
-            data-custom-content="true"
-            data-model="competitorPrice">공통알랏4</button
-          >
-          <!-- 공통 alert EEE -->
         </section>
       </main>
-      <script
-        is:inline
-        src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
-      ></script>
-      <script type="module" src="/public/assets/js/main.js"></script>
+
+      <div
+        th:fragment="
+              footer"
+        th:if="${preorderStatus} == 'before'"
+      >
+      </div>
+      <div class="com-alarm-btn-wrp">
+        <button
+          type="button"
+          class="com-alarm-btn"
+          onclick="javascript:PreorderCtrl.open();"
+          data-gtm-event-name="button_click"
+          data-gtm-event-category="클릭"
+          data-gtm-event-action="플로팅 영역 - 버튼 클릭"
+          data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_예약하기"
+          data-gtm-click-location="플로팅 영역"
+          data-gtm-click-text="예약신청_01-단계진입_예약하기"
+        >
+          <img
+            style="width:233px; height:31px;"
+            src="../assets/img/com-alarm-btn-txt.svg"
+          />
+        </button>
+      </div>
     </div>
+
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+    ></script>
+    <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="../assets/js/main/main.js"></script>
   </body>
 </html>

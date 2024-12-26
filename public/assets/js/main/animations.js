@@ -1,4 +1,3 @@
-// animations.js
 export const initializeAnimations = () => {
   function animateCounter(element, target, duration) {
     let start = 0;
@@ -21,14 +20,22 @@ export const initializeAnimations = () => {
     requestAnimationFrame(updateCounter);
   }
 
+  // 애니메이션 실행 여부를 추적하는 플래그
+  const animatedElements = new Set();
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
+        // 이미 애니메이션이 실행된 요소는 스킵
+        if (animatedElements.has(entry.target)) return;
+
         const rangeProgress = entry.target.querySelector(".range-progress");
         const savingsAmount = entry.target.querySelector(".savings-amount");
 
         if (entry.isIntersecting) {
-          // 영역에 들어왔을 때
+          // 애니메이션 실행 표시
+          animatedElements.add(entry.target);
+
           entry.target.classList.add("on");
 
           if (savingsAmount) savingsAmount.classList.add("on");
@@ -44,23 +51,14 @@ export const initializeAnimations = () => {
             const duration = parseInt(savingsAmount.dataset.duration) / 1.5;
             animateCounter(savingsAmount, target, duration);
           }
-        } else {
-          // 영역을 벗어났을 때
-          entry.target.classList.remove("on");
-          if (savingsAmount) savingsAmount.classList.remove("on");
-          if (rangeProgress) rangeProgress.classList.remove("on");
 
-          // 숫자를 0으로 리셋
-          if (savingsAmount) {
-            savingsAmount.textContent = "0";
-          }
+          // 해당 요소의 관찰을 중단
+          observer.unobserve(entry.target);
         }
       });
     },
     {
       threshold: 0.5,
-      // rootMargin을 추가하면 요소가 화면에 더 일찍/늦게 감지되도록 조정할 수 있습니다
-      // rootMargin: "-50px 0px"
     }
   );
 

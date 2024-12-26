@@ -338,8 +338,9 @@ html {
 .preorder-section .priceComparison .price-range-container .range-progress::after {
   content: "";
   position: absolute;
-  right: -0.0625rem;
+  right: -0.125rem;
   width: 10%;
+  top: -0.0625rem;
   background: #fff;
   height: 0.625rem;
   border-radius: 100px;

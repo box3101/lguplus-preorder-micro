@@ -2,69 +2,75 @@ export function initializeSwiper() {
   // 배경 스와이퍼 추가
   const bgSwiper = document.querySelector(".bg-swiper");
   if (bgSwiper) {
-    new Swiper(bgSwiper, {
-      direction: "horizontal",
-      loop: true,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      speed: 300,
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-      },
-      allowTouchMove: false,
-    });
+    setTimeout(() => {
+      new Swiper(bgSwiper, {
+        direction: "horizontal",
+        loop: true,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        speed: 300,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        allowTouchMove: false,
+      });
+    }, 100);
   }
 
   // 가격 스와이퍼 (price)
   const priceSwipers = document.querySelectorAll(".price-swiper");
   if (priceSwipers.length) {
     priceSwipers.forEach((element) => {
-      new Swiper(element, {
-        direction: "vertical",
-        loop: true,
-        autoplay: {
-          delay: 1500,
-          disableOnInteraction: false,
-        },
-        speed: 300,
-        effect: "creative",
-        creativeEffect: {
-          prev: {
-            translate: [0, "-50%", 0],
-            opacity: 0,
+      setTimeout(() => {
+        new Swiper(element, {
+          direction: "vertical",
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
           },
-          next: {
-            translate: [0, "50%", 0],
-            opacity: 0,
+          speed: 300,
+          effect: "creative",
+          creativeEffect: {
+            prev: {
+              translate: [0, "-50%", 0],
+              opacity: 0,
+            },
+            next: {
+              translate: [0, "50%", 0],
+              opacity: 0,
+            },
           },
-        },
-        grabCursor: false,
-        parallax: true,
-        allowTouchMove: false,
-      });
+          grabCursor: false,
+          parallax: true,
+          allowTouchMove: false,
+        });
+      }, 100);
     });
   }
 
   // 메인 스와이퍼 슬라이드
   const mainVisualSwiper = document.querySelector(".main-visual-swiper");
   if (mainVisualSwiper) {
-    new Swiper(mainVisualSwiper, {
-      direction: "horizontal",
-      loop: true,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      speed: 300,
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-      },
-      allowTouchMove: false,
-    });
+    setTimeout(() => {
+      new Swiper(mainVisualSwiper, {
+        direction: "horizontal",
+        loop: true,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        speed: 300,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        allowTouchMove: false,
+      });
+    }, 100);
   }
 
   // Lucky Draw 메인 스와이퍼
@@ -133,7 +139,7 @@ export function initializeSwiper() {
         fadeEffect: {
           crossFade: true,
         },
-        speed: 500,
+        speed: 300,
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,

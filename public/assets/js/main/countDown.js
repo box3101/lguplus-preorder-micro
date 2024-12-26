@@ -21,8 +21,9 @@ export function initializeCountdown() {
       (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    countdownElement.textContent = `${days}일 ${hours}시간 ${minutes}분`;
+    countdownElement.textContent = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
   }
 
   const countdownInterval = setInterval(updateCountdown, 1000);

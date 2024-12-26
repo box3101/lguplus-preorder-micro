@@ -1,0 +1,108 @@
+---
+import Accordian from './common/Accordian.astro';
+---
+
+<article class="preorder-coupon">
+  <div class="first-landing-coupon common-inner">
+    <div class="coupon-header">
+      <h2 class="coupon-title" data-aos="fade-up" data-aos-duration="1000">
+        <img
+          style="width: 180px !important;"
+          src="../assets/img/coupon-title.png"
+        />
+      </h2>
+      <p
+        class="coupon-subtitle mt-20"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      >
+        <img
+          style="width: 386px !important;"
+          src="../assets/img/coupon-sub-title.svg"
+        />
+      </p>
+    </div>
+
+    <div
+      class="coupon-content"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="400"
+    >
+      <img
+        style="width: 468px!important;"
+        src="../assets/img/preorder-coupon-img.png"
+      />
+    </div>
+
+    <p
+      class="coupon-date"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+    >
+      쿠폰 발송 : <span class="c-main-color">1월 4째 주</span>
+    </p>
+
+    <div
+      class="common-btn-wrp"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="400"
+    >
+      <div class="toast dongdong-effect">
+        <img
+          style="width: 217px !important;"
+          src="../assets/img/coupon-toast.svg"
+        />
+      </div>
+      <button
+        class="common-btn"
+        data-gtm-click-location="사전예약 콘텐츠 영역"
+        data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+        data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+        data-gtm-event-category="클릭"
+        data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+        data-gtm-event-name="button_click"
+        type="button"
+      >
+        내 당첨금 확인하기
+        <i class="arrow-right animate"></i>
+      </button>
+    </div>
+
+    <!-- 아코디언 -->
+    <Accordian title="쿠폰 사용방법 ">
+      <ul>
+        <li>
+          <span class="number">①</span>
+          <div class="text">
+            쿠폰은 가입 신청서를 쓸 때 사용해 주세요.
+            <br />(단, 이 사이트에서 예약한 휴대폰이어야 해요.)
+          </div>
+        </li>
+        <li>
+          <span class="number">②</span>
+          <div class="text">
+            수신한 본인만 사용할 수 있어요.
+            <br />(본인 인증을 하기 때문에 양도가 어려워요.)
+          </div>
+        </li>
+        <li>
+          <span class="number">③</span>
+          <div class="text">1회만 사용할 수 있어요.</div>
+        </li>
+        <li>
+          <span class="number">④</span>
+          <div class="text">
+            선착순은 가입 신청서에 등록한 순서예요.
+            <br />(매진이 되면 수신한 쿠폰을 사용할 수 없어요.
+            <br />쿠폰을 받으면 신청서에 서둘러 등록해 주세요.)
+          </div>
+        </li>
+      </ul>
+    </Accordian>
+    <!-- 아코디언 EEE -->
+  </div>
+</article>

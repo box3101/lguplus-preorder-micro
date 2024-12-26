@@ -1,0 +1,102 @@
+---
+const benefitItems = [
+  {
+    tag: '01',
+    title: '기계값 할인을',
+    discountAmount: `'더' 받게 돼요'`,
+    description1: 'U⁺ 닷컴은, 공시지원금을</br>15% 더 드리기 때문이에요',
+    imageContent: '../assets/img/benefit-img.svg',
+    imageWidth: '299px',
+  },
+  {
+    tag: '02',
+    title: '할인 쿠폰으로',
+    discountAmount: `'20만원'이 또 할인돼요`,
+    description1: `[알람받기] 누르면 받을 수 있어요`,
+    description2: `</br>🤫 근데 알람 안에 '깜짝 선물' 있음`,
+    imageContent: '../assets/img/benefit-img2.svg',
+    imageWidth: '260px',
+  },
+  {
+    tag: '03',
+    title: '카드 결제하면',
+    discountAmount: '현금을 돌려 받아요',
+    description1: '결제한 액수의 5%를 받아요</br>할부는 무이자예요',
+    description2: '(최대 24개월)',
+    imageContent: '../assets/img/benefit-img3.svg',
+    imageWidth: '267px',
+  },
+  {
+    tag: '04',
+    title: '새로운 갤럭시',
+    discountAmount: '출시일 보다 빨리 받아요',
+    description1:
+      '알람 받고 사전예약 하면</br><span>전국에서 가장 빨리</span> 받아볼 수 있어요',
+    imageContent: '../assets/img/benefit-img4.svg',
+    imageWidth: '317px',
+  },
+];
+---
+
+<article class="discount-card">
+  <div class="common-inner">
+    <div class="discount-header">
+      <h2 data-aos="fade-up" data-aos-duration="600">
+        <img
+          style="width: 142px!important;"
+          src="../assets/img/benefit-title.svg"
+        />
+      </h2>
+      <h3
+        class="mt-20"
+        data-aos="fade-up"
+        data-aos-duration="600"
+        data-aos-delay="200"
+      >
+        <img
+          style="width: 424px!important;"
+          src="../assets/img/benefit-sub-title.svg"
+        />
+      </h3>
+    </div>
+
+    <div class="benefit-cards-container">
+      {
+        benefitItems.map((item, index) => (
+          <div
+            class="benefit-card"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay={100 * (index + 1)}
+          >
+            <div class="benefit-content">
+              <span class="benefit-tag">{item.tag}</span>
+              <h3 class="benefit-title" set:html={item.title} />
+              <p class="discount-amount" set:html={item.discountAmount} />
+              <p class="benefit-description">
+                <span class="description-line1" set:html={item.description1} />
+                {item.description2 && (
+                  <span
+                    class="description-line2"
+                    set:html={item.description2}
+                  />
+                )}
+              </p>
+            </div>
+            <div
+              class="benefit-image"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <img
+                style={`width: ${item.imageWidth}!important`}
+                src={item.imageContent}
+                alt={`${item.tag} 이미지`}
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</article>
