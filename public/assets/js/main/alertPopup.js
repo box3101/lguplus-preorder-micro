@@ -39,12 +39,6 @@ export function showAlert(model, storage) {
   const data =
     benefitData[model]?.[storage] || benefitData["galaxy-s25"]["256GB"];
 
-  // 이미 있는 팝업이 있다면 제거
-  const existingPopup = document.querySelector(".common-alert");
-  if (existingPopup) {
-    existingPopup.remove();
-  }
-
   // alert 팝업 생성
   const alertHTML = `
    <div class="common-alert">

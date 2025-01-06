@@ -7,6 +7,8 @@ import PriceComparison from '../../components/PriceComparison.astro';
 import PreorderCoupon from '../../components/PreorderCoupon.astro';
 import LuckyDraw from '../../components/LuckyDraw.astro';
 import DisCountCard from '../../components/DisCountCard.astro';
+import TodayTomorrowTab from '../../components/TodayTomorrowTab.astro';
+import BenefitSummary from '../../components/BenefitSummary.astro';
 ---
 
 <!DOCTYPE html>
@@ -51,6 +53,17 @@ import DisCountCard from '../../components/DisCountCard.astro';
           <!-- 메인 비쥬얼 -->
           <MainVisual />
           <!-- 메인 비쥬얼 EEE -->
+
+          <!-- 모델 선택 -->
+          <ModelSelect />
+          <!-- 모델 선택 EEE -->
+
+          <!-- 오늘,내일 탭메뉴 -->
+          <TodayTomorrowTab />
+          <!-- 오늘,내일 탭메뉴 EEE -->
+
+          <!-- 혜택 요약 섹션 -->
+          <BenefitSummary />
 
           <!-- 쿠폰 영역 -->
           <PreorderCoupon />
@@ -169,6 +182,6 @@ import DisCountCard from '../../components/DisCountCard.astro';
       is:inline
       src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
     ></script>
-    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/main/main.js"></script>
   </body>
 </html>

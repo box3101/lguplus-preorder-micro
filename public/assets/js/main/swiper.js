@@ -1,38 +1,17 @@
 export function initializeSwiper() {
-  // 배경 스와이퍼 추가
-  const bgSwiper = document.querySelector(".bg-swiper");
-  if (bgSwiper) {
-    setTimeout(() => {
-      new Swiper(bgSwiper, {
-        direction: "horizontal",
-        loop: true,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        speed: 500, // 속도 더 빠르게 조정
-        autoplay: {
-          delay: 2000, // 딜레이 시간 단축
-          disableOnInteraction: false,
-        },
-        allowTouchMove: false,
-      });
-    }, 0);
-  }
-
   // 가격 스와이퍼 (price)
   const priceSwipers = document.querySelectorAll(".price-swiper");
   if (priceSwipers.length) {
     priceSwipers.forEach((element) => {
       setTimeout(() => {
         new Swiper(element, {
-          direction: "vertical",
+          direction: "horizontal",
           loop: true,
           autoplay: {
-            delay: 2000, // 딜레이 시간 단축
+            delay: 2500, // 딜레이 시간 자연스럽게 조정
             disableOnInteraction: false,
           },
-          speed: 500, // 속도 더 빠르게 조정
+          speed: 500, // 속도 자연스럽게 조정
           effect: "creative",
           creativeEffect: {
             prev: {
@@ -44,9 +23,6 @@ export function initializeSwiper() {
               opacity: 0,
             },
           },
-          grabCursor: false,
-          parallax: true,
-          allowTouchMove: false,
         });
       }, 0);
     });
@@ -59,69 +35,26 @@ export function initializeSwiper() {
       new Swiper(mainVisualSwiper, {
         direction: "horizontal",
         loop: true,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            translate: [0, "-50%", 0],
+            opacity: 0,
+          },
+          next: {
+            translate: [0, "50%", 0],
+            opacity: 0,
+          },
         },
-        speed: 500, // 속도 더 빠르게 조정
+        speed: 500, // 속도 자연스럽게 조정
         autoplay: {
-          delay: 2000, // 딜레이 시간 단축
+          delay: 2500, // 딜레이 시간 자연스럽게 조정
           disableOnInteraction: false,
         },
         allowTouchMove: false,
       });
     }, 0);
   }
-
-  // Lucky Draw 메인 스와이퍼
-  // const prizeDisplaySwiper = document.querySelector(".prize-display-swiper");
-  // if (prizeDisplaySwiper) {
-  //   const mainSwiper = new Swiper(prizeDisplaySwiper, {
-  //     effect: "fade",
-  //     fadeEffect: {
-  //       crossFade: true,
-  //     },
-  //     loop: true,
-  //     speed: 800,
-  //     allowTouchMove: false,
-  //   });
-  //   // Lucky Draw 썸네일 스와이퍼
-  //   const prizeThumbsSwiper = new Swiper(".prize-thumbs-swiper", {
-  //     slidesPerView: 3,
-  //     grid: {
-  //       rows: 2,
-  //       fill: "row",
-  //     },
-  //     spaceBetween: 10,
-  //     loop: false,
-  //     watchSlidesProgress: true,
-  //     allowTouchMove: true,
-  //   });
-  //   // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
-  //   const thumbSlides = document.querySelectorAll(
-  //     ".prize-thumbs-swiper .swiper-slide"
-  //   );
-  //   thumbSlides.forEach((slide, index) => {
-  //     slide.addEventListener("click", () => {
-  //       thumbSlides.forEach((s) =>
-  //         s.querySelector(".thumb-item").classList.remove("active")
-  //       );
-  //       slide.querySelector(".thumb-item").classList.add("active");
-
-  //       // Swiper 인스턴스를 사용하여 slideTo 메서드 호출
-  //       mainSwiper.slideTo(index);
-
-  //       const mainSlide = document.querySelector(
-  //         ".prize-display-swiper .swiper-slide-active"
-  //       );
-  //       if (mainSlide) {
-  //         mainSlide.style.animation = "none";
-  //         mainSlide.offsetHeight;
-  //         mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
-  //       }
-  //     });
-  //   });
-  // }
 
   // 컬러 스와이퍼 초기화
   const colorSwiper = document.querySelector(".color-swiper");
@@ -144,10 +77,9 @@ export function initializeSwiper() {
           delay: 3000,
           disableOnInteraction: false,
         },
-        scrollbar: {
-          el: element.querySelector(".swiper-scrollbar"),
-          draggable: true,
-          hide: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         observer: true,
         observeParents: true,
@@ -196,6 +128,77 @@ export function initializeSwiper() {
             initColorSwiper(activeContent);
           }
         }, 300);
+      });
+    });
+  }
+
+  // Lucky Draw 메인 스와이퍼
+  // Lucky Draw 메인 스와이퍼
+  const prizeDisplaySwiper = new Swiper(".prize-display-swiper", {
+    effect: "creative", // fade 대신 creative 효과 사용
+    creativeEffect: {
+      prev: {
+        translate: [0, 0, -400],
+        rotate: [0, 0, -45],
+        opacity: 0,
+      },
+      next: {
+        translate: [0, 0, -400],
+        rotate: [0, 0, 45],
+        opacity: 0,
+      },
+    },
+    loop: true,
+    speed: 800, // 속도를 좀 더 늘림
+    allowTouchMove: false,
+  });
+
+  // Lucky Draw 썸네일 스와이퍼
+  const prizeThumbsSwiper = new Swiper(".prize-thumbs-swiper", {
+    slidesPerView: 3,
+    grid: {
+      rows: 2,
+      fill: "row",
+    },
+    spaceBetween: 10,
+    loop: false,
+    watchSlidesProgress: true,
+    allowTouchMove: true,
+  });
+
+  // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
+  const thumbSlides = document.querySelectorAll(
+    ".prize-thumbs-swiper .swiper-slide"
+  );
+  thumbSlides.forEach((slide, index) => {
+    slide.addEventListener("click", () => {
+      // 클릭한 썸네일에 active 클래스 추가
+      thumbSlides.forEach((s) =>
+        s.querySelector(".thumb-item").classList.remove("active")
+      );
+      slide.querySelector(".thumb-item").classList.add("active");
+
+      // 메인 이미지 전환
+      prizeDisplaySwiper.slideTo(index);
+
+      // 메인 이미지에 추가 애니메이션 적용
+      const mainSlide = document.querySelector(
+        ".prize-display-swiper .swiper-slide-active"
+      );
+      if (mainSlide) {
+        mainSlide.style.animation = "none";
+        mainSlide.offsetHeight; // reflow
+        mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
+      }
+    });
+  });
+
+  const benefitSwipers = document.querySelectorAll(".benefit-swiper");
+  if (benefitSwipers.length) {
+    benefitSwipers.forEach((element) => {
+      new Swiper(element, {
+        slidesPerView: 1.2,
+        spaceBetween: 12,
       });
     });
   }

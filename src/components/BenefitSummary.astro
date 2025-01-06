@@ -1,0 +1,140 @@
+<article class="benefit-summary">
+  <div class="coupon-amount">
+    <p class="amount-title">쿠폰 선착순!</p>
+    <p class="max-amount">최고 당첨금: 20만원</p>
+
+    <!-- 혜택 스와이퍼 1 -->
+    <div class="benefit-group">
+      <div class="benefit-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>지금제보다,<br />15% 또 할인</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>선착순<br />4만원</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>추가 혜택<br />증정</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>추가 혜택<br />증정</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>추가 혜택<br />증정</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>추가 혜택<br />증정</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 혜택 스와이퍼 2 -->
+    <div class="benefit-group">
+      <div class="benefit-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>카드 혜택<br />최대 12만원</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>무이자<br />12개월</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>추가 캐시백<br />5만원</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 혜택 스와이퍼 3 -->
+    <div class="benefit-group">
+      <div class="benefit-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>갤럭시 버즈<br />증정</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>무선충전기<br />증정</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="benefit-box">
+              <p>케이스<br />증정</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <!-- 기존 아코디언 내용 유지 -->
+    </div>
+  </div>
+</article>
+
+<style lang="scss">
+  .benefit-summary {
+    .benefit-group {
+      margin: 20px 0;
+
+      .benefit-swiper {
+        .swiper-wrapper {
+          display: flex;
+          gap: 12px;
+        }
+
+        .swiper-slide {
+          width: 33.333%;
+
+          .benefit-box {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            p {
+              color: #333;
+              font-family: SUIT;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 1.4;
+            }
+          }
+        }
+
+        .swiper-scrollbar {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: 60px;
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+</style>
