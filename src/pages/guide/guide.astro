@@ -4,9 +4,7 @@ import Toast from '../../components/common/Toast.astro';
 import Notice from '../../components/Notice.astro';
 import ModelSelect from '../../components/ModelSelect.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
-import PreorderCoupon from '../../components/PreorderCoupon.astro';
 import LuckyDraw from '../../components/LuckyDraw.astro';
-import DisCountCard from '../../components/DisCountCard.astro';
 import TodayTomorrowTab from '../../components/TodayTomorrowTab.astro';
 import BenefitSummary from '../../components/BenefitSummary.astro';
 ---
@@ -65,89 +63,13 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <!-- 혜택 요약 섹션 -->
           <BenefitSummary />
 
-          <!-- 쿠폰 영역 -->
-          <PreorderCoupon />
-          <!-- 쿠폰 영역 EEE -->
-
-          <!-- 가격/할인 비교 섹션 -->
-          <PriceComparison />
-          <!-- 그곳보다가격/할인 비교 섹션 EEE -->
-
           <!-- 경품/상품 추첨 이벤트 -->
           <LuckyDraw />
           <!-- 경품/상품 추첨 이벤트 EEE -->
 
-          <!-- 휴대폰 교체 혜택 -->
-          <DisCountCard />
-          <!-- 휴대폰 교체 혜택 EEE -->
-
-          <!-- 뉴 갤럭시 커밍 순 -->
-          <section class="new-galaxy-coming-soon common-inner">
-            <div class="bg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="360"
-                height="294"
-                viewBox="0 0 360 294"
-                fill="none"
-              >
-                <g filter="url(#filter0_f_1695_1724)">
-                  <path
-                    d="M156.316 -240H219.474L330 220H30L156.316 -240Z"
-                    fill="url(#paint0_linear_1695_1724)"
-                    fill-opacity="0.2"></path>
-                </g>
-                <defs>
-                  <filter
-                    id="filter0_f_1695_1724"
-                    x="-44"
-                    y="-314"
-                    width="448"
-                    height="608"
-                    filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
-                  >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"
-                    ></feFlood>
-                    <feBlend
-                      mode="normal"
-                      in="SourceGraphic"
-                      in2="BackgroundImageFix"
-                      result="shape"></feBlend>
-                    <feGaussianBlur
-                      stdDeviation="37"
-                      result="effect1_foregroundBlur_1695_1724"
-                    ></feGaussianBlur>
-                  </filter>
-                  <linearGradient
-                    id="paint0_linear_1695_1724"
-                    x1="180"
-                    y1="-38.5"
-                    x2="180"
-                    y2="224"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="white"></stop>
-                    <stop offset="1" stop-color="#111111"></stop>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <h2 style=" position:relative; left:-7px;">
-              <img src="../assets/img/new-galaxy-coming-soon-title.svg" />
-            </h2>
-            <img
-              style="width: 235px!important;"
-              src="../assets/img/new-galaxy-coming-soon-img.png"
-            />
-            <p>
-              <img
-                style="width: 238.5px!important;"
-                src="../assets/img/new-galaxy-coming-soon-txt.png"
-              />
-            </p>
-          </section>
-          <!-- 뉴 갤럭시 커밍 순 EEE -->
+          <!-- 가격/할인 비교 섹션 -->
+          <PriceComparison />
+          <!-- 그곳보다가격/할인 비교 섹션 EEE -->
 
           <!-- 유의사항 -->
           <Notice />

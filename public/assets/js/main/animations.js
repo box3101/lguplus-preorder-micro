@@ -58,7 +58,8 @@ export const initializeAnimations = () => {
       });
     },
     {
-      threshold: 0.5,
+      // 요소가 80% 이상 보일 때 애니메이션 실행
+      threshold: 0.8,
     }
   );
 

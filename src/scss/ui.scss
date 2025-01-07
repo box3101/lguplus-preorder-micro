@@ -41,6 +41,14 @@
     background: #111;
     position: relative;
 
+    .bg-swiper {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      top: 0;
+      right: 0;
+    }
+
     .visual-content {
       padding-top: rem(66);
       position: relative;
@@ -98,64 +106,6 @@
         position: relative;
         top: rem(-8);
         left: rem(-3);
-      }
-    }
-  }
-
-  /* ==================== */
-  /*      preorder-coupon         */
-  /* ============= ======= */
-  .preorder-coupon {
-    background: rgba(129, 0, 245, 0.08);
-    padding-top: rem(97);
-    text-align: center;
-    padding-bottom: rem(63);
-    .coupon-content {
-      margin-top: rem(37);
-      position: relative;
-      overflow: hidden;
-
-      .coupon-bg {
-        .coupon-machine {
-          position: absolute;
-          top: 5px;
-          left: 50%;
-          margin-left: -116px;
-
-          .coupon-claw {
-            animation: floatClaw 2s ease-in-out infinite; // 집게만의 움직임
-          }
-        }
-      }
-    }
-    // 집게의 좀 더 짧은 상하 움직임
-    @keyframes floatClaw {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-25px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
-    }
-    .coupon-date {
-      margin-top: rem(20);
-      margin-bottom: rem(53);
-      font-size: rem(18);
-      font-weight: 600;
-      letter-spacing: -0.9px;
-    }
-    .coupon-header {
-      margin: 0 auto;
-      text-align: center;
-      .coupon-title {
-        margin: 0 auto;
-      }
-      .coupon-subtitle {
-        margin: 0 auto;
-        margin-top: rem(12);
       }
     }
   }
@@ -547,244 +497,23 @@
   }
 
   /* ==================== */
-  /*    discount-card      */
-  /* ============= ======= */
-  .discount-card {
-    background: rgba(254, 5, 146, 0.05);
-    padding-top: rem(60);
-    padding-bottom: rem(60);
-
-    h3 {
-      margin-top: rem(12);
-    }
-    .benefit-cards-container {
-      margin-top: rem(32);
-    }
-    .benefit-card {
-      margin-bottom: rem(30);
-      padding-left: rem(32);
-      padding-top: rem(32);
-      padding-bottom: rem(28);
-      padding-right: rem(32);
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 0, 140, 0.2);
-      background: #fff;
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-      .benefit-tag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: rem(14);
-        height: rem(16);
-        border-radius: 100px;
-        background: #c1c1c1;
-        padding: rem(9) rem(10);
-        font-size: rem(13);
-        font-weight: 700;
-        color: #fff;
-        letter-spacing: -0.26px;
-      }
-      .benefit-title {
-        font-size: rem(24);
-        font-weight: 700;
-        color: #333;
-        letter-spacing: -1.2px;
-        font-family: SUIT;
-      }
-      .discount-amount {
-        font-size: rem(24);
-        font-weight: 700;
-        color: #ff008c;
-        letter-spacing: -1.2px;
-        font-family: SUIT;
-      }
-      .benefit-description {
-        margin-top: rem(8);
-      }
-      .description-line1 {
-        font-size: rem(16);
-        font-weight: 400;
-        color: #777;
-        letter-spacing: -0.8px;
-        color: #777;
-        font-family: SUIT;
-        line-height: 24px; /* 150% */
-        span {
-          font-weight: 700;
-        }
-      }
-      .description-line2 {
-        font-size: rem(12);
-        font-weight: 400;
-        color: #777;
-        letter-spacing: -0.6px;
-        font-family: SUIT;
-      }
-      .benefit-image img {
-        margin-left: auto;
-        margin-right: 0;
-        margin-top: rem(30);
-      }
-    }
-  }
-
-  /* ==================== */
-  /*      요금제 혜택      */
-  /* ==================== */
-  .plan-benefits {
-    .common-inner {
-      padding: rem(60) rem(20);
-    }
-
-    .coupon-title {
-      text-align: center;
-      margin-bottom: rem(20);
-      img {
-        width: rem(180) !important;
-      }
-    }
-
-    .coupon-subtitle {
-      text-align: center;
-      img {
-        width: rem(386) !important;
-      }
-    }
-
-    .mt-20 {
-      margin-top: rem(20);
-    }
-
-    .plan-benefits-cards {
-      margin-top: rem(40);
-    }
-
-    .plan-card {
-      background: #fff;
-      border-radius: rem(24);
-      padding: rem(40) rem(20);
-      box-shadow: 0 rem(4) rem(24) rgba(0, 0, 0, 0.08);
-      margin-bottom: rem(16);
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      .plan-content {
-        .plan-number {
-          display: inline-block;
-          font-size: rem(18);
-          font-weight: 700;
-          color: #666;
-          margin-bottom: rem(24);
-        }
-
-        .plan-title {
-          font-size: rem(24);
-          font-weight: 700;
-          line-height: 1.4;
-          margin-bottom: rem(16);
-          letter-spacing: -0.48px;
-          font-family: SUIT;
-        }
-
-        .plan-description {
-          font-size: rem(16);
-          color: #666;
-          line-height: 1.6;
-          letter-spacing: -0.32px;
-          font-family: SUIT;
-        }
-      }
-
-      .plan-image {
-        margin: rem(40) 0;
-        text-align: center;
-        img {
-          width: rem(260) !important;
-        }
-      }
-
-      .plan-notice {
-        .notice-text {
-          font-size: rem(12);
-          color: #999;
-          line-height: 1.6;
-          margin-bottom: rem(8);
-          letter-spacing: -0.24px;
-          font-family: SUIT;
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  /* ==================== */
-  /*  today-tomorrow-section  */
-  /* ==================== */
-  .today-tomorrow-section {
-    .tab-group {
-      .common-tabs {
-        display: flex;
-        justify-content: center;
-        gap: rem(8);
-        margin-bottom: rem(24);
-
-        .common-tab-menu-item {
-          padding: rem(12) rem(24);
-          font-size: rem(16);
-          font-weight: 500;
-          color: #666;
-          cursor: pointer;
-          border-radius: rem(100);
-          transition: all 0.3s;
-
-          &.active {
-            background: #000;
-            color: #fff;
-            font-weight: 700;
-          }
-        }
-      }
-
-      .tab-contents {
-        .common-tab-content {
-          display: none;
-
-          &.active {
-            display: block;
-          }
-        }
-      }
-    }
-  }
-
-  /* ==================== */
-  /*    new-galaxy-coming-soon      */
-  /* ============= ======= */
-  .new-galaxy-coming-soon {
-    padding-top: rem(60);
-    background: #1d1d1d;
-    position: relative;
-    .bg {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: rem(0);
-    }
-    p {
-      margin-top: rem(35);
-    }
-  }
-
-  /* ==================== */
   /*   model-select-wrp   */
   /* ============= ======= */
   .model-select-wrp {
+    .header-wrp {
+      h2 {
+        font-size: rem(24);
+        font-weight: 500;
+        color: #777;
+        letter-spacing: -1.2px;
+      }
+      h3 {
+        font-size: rem(34);
+        font-weight: 700;
+        color: #222;
+        letter-spacing: -1.7px;
+      }
+    }
     .swiper-scrollbar {
       position: relative;
       left: 50%;
@@ -886,6 +615,7 @@
 
     .common-tab-content {
       display: none;
+      padding: rem(20);
 
       &.active {
         display: block;
@@ -1520,64 +1250,69 @@ i.close-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #ff485b 0%, #f601bc 100%), #8100f5;
 }
 .bnf_tab_wrap .groupWrap .group ul li {
-  height: 48px;
-  line-height: 48px;
+  height: rem(48);
+  line-height: rem(48);
 }
 #btnAlarm.ios_alarm + .bnf_bottomSheet .bnf_btn_wrap .order_btn {
   img {
     position: relative;
-    top: 2px;
+    top: rem(2);
   }
 }
 .bnf_tab_wrap {
   height: auto;
 }
 .bnf_bottomSheet .timerWrap.ty2 {
-  bottom: 45px;
+  bottom: rem(45);
 }
 #myModalaler_alarm_stop .modal-title span {
   color: #202425;
   text-align: center;
   font-family: SUIT;
-  font-size: 22px;
+  font-size: rem(22);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -1.1px;
+  letter-spacing: rem(-1.1);
 }
 .modal.alertPopup .modal-body .alertPopInner p {
   text-align: center;
-  margin-top: 19px;
+  margin-top: rem(19);
   color: #666;
   text-align: center;
   font-family: SUIT;
-  font-size: 14px;
+  font-size: rem(14);
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.7px;
+  line-height: rem(20);
+  letter-spacing: rem(-0.7);
   span {
     color: #111;
     font-family: SUIT;
-    font-size: 14px;
+    font-size: rem(14);
     font-style: normal;
     font-weight: 700;
-    line-height: 20px;
-    letter-spacing: -0.7px;
+    line-height: rem(20);
+    letter-spacing: rem(-0.7);
   }
 }
 #myModalaler_alarm_stop .btn_area button {
   color: #fff;
   text-align: center;
   font-family: SUIT;
-  font-size: 14px;
+  font-size: rem(14);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -0.7px;
+  letter-spacing: rem(-0.7);
   flex: 1;
+  max-width: rem(120);
+  border-radius: rem(50);
+  background: linear-gradient(90deg, #ff485b 0%, #f601bc 100%), #03e05a;
 }
 #myModalaler_alarm_stop .btn_area button.cancel_btn {
   flex: 0 0 100px;
@@ -1595,6 +1330,8 @@ i.close-btn {
 }
 #myModalaler_alarm_stop.iphone2024 .btn_area {
   gap: 0 rem(10);
+  display: flex;
+  justify-content: center;
 }
 ._event .modal-body .pop_inner .tab-wrap .tab-btn-wrap.step1 .step-btn02:before,
 ._event .modal-body .pop_inner .tab-wrap .tab-btn-wrap.step2 .step-btn03:before,
@@ -1611,6 +1348,15 @@ i.close-btn {
   background: rgba(212, 212, 212, 0.15);
   height: auto;
   padding: rem(62) rem(0);
+}
+._event .modal-body .pop_inner .tab-wrap .tab-btn-wrap button {
+  -webkit-touch-callout: none; /* iOS에서 길게 터치할 때 메뉴 방지 */
+  -webkit-user-select: none; /* iOS에서 텍스트 선택 방지 */
+  -webkit-tap-highlight-color: transparent; /* iOS에서 터치 시 하이라이트 효과 제거 */
+  -webkit-appearance: none; /* iOS의 기본 버튼 스타일 제거 */
+  cursor: none; /* 포인터(마우스 커서) 숨기기 */
+  pointer-events: none; /* 포인터 이벤트 비활성화 */
+  touch-action: none; /* 터치 액션 비활성화 */
 }
 ._event .modal-body .pop_inner .tab-wrap .tab-wrap__inner .step1_wrap .infoTxt {
   color: var(--Basic-Gray_2, #202425);
@@ -1676,7 +1422,35 @@ i.close-btn {
     background: #fff !important;
     color: #000 !important;
     box-shadow: none !important;
-    margin-top: 10px !important;
+    margin-top: rem(10) !important;
+  }
+  .title2 {
+    color: #666;
+    text-align: center;
+    font-family: SUIT;
+    font-size: rem(14);
+    font-style: normal;
+    font-weight: 400;
+    line-height: rem(25); /* 138.889% */
+    letter-spacing: rem(-0.9);
+    .main-color {
+      color: #ff0090;
+      font-family: SUIT;
+      font-size: rem(14);
+      font-style: normal;
+      font-weight: 700;
+      line-height: rem(25);
+      letter-spacing: rem(-0.9);
+    }
+    span {
+      color: #000;
+      font-family: SUIT;
+      font-size: rem(14);
+      font-style: normal;
+      font-weight: 700;
+      line-height: rem(25);
+      letter-spacing: rem(-0.9);
+    }
   }
 }
 .modal.alertPopup .modal-content.type-2 .modal-body .alertPopInner .infoTxt_m {
@@ -1787,4 +1561,26 @@ footer {
 }
 .quickWrap .btnTop {
   display: block;
+}
+
+.preorder-section .bg-img {
+  @media screen and (max-width: 345px) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+.preorder-section .plan-benefits .plan-card .plan-image img {
+  @media screen and (max-width: 345px) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+// 잠깐 주석처리
+.toast-message,
+.timerWrap.ty2.bnf_timer,
+.bnf_bottomSheet .bnf_btn_wrap .order_btn::before {
+  display: none !important;
 }
