@@ -1,17 +1,45 @@
 <article class="today-tomorrow-section">
-  <div class="tab-group today-tomorrow-tab">
-    <!-- 탭 메뉴 -->
-    <ul class="common-tabs">
-      <li class="common-tab-menu-item active" data-tab="today">오늘</li>
-      <li class="common-tab-menu-item" data-tab="tomorrow">내일</li>
-    </ul>
+  <div class="common-inner">
+    <div class="tab-group today-tomorrow-tab">
+      <!-- 탭 메뉴 -->
+      <ul class="common-tab-menu common-tabs">
+        <li class="common-tab-menu-item active" data-tab="today">
+          <button type="button">오늘</button>
+        </li>
+        <li class="common-tab-menu-item" data-tab="tomorrow">
+          <button type="button">내일</button>
+        </li>
+      </ul>
 
-    <!-- 탭 컨텐츠 -->
-    <div class="tab-contents">
-      <!-- 오늘 탭 컨텐츠 -->
-      <div id="today" class="common-tab-content active">1</div>
-      <!-- 내일 탭 컨텐츠 -->
-      <div id="tomorrow" class="common-tab-content">2</div>
+      <!-- 탭 컨텐츠 -->
+      <div class="common-tab-menu-wrp">
+        <!-- 오늘 탭 컨텐츠 -->
+        <div id="today" class="common-tab-content active">
+          <div class="coupon-wrap">
+            <div class="coupon">
+              <div class="coupon-amount">
+                <span class="amount">200,000</span>
+                <span class="unit">원</span>
+              </div>
+              <div class="coupon-label">즉시 할인쿠폰</div>
+            </div>
+            <div class="remaining">
+              <span class="count">3,000</span>
+              <span class="text">명</span>
+            </div>
+          </div>
+        </div>
+        <!-- 내일 탭 컨텐츠 -->
+        <div id="tomorrow" class="common-tab-content">2</div>
+      </div>
+
+      <div class="common-btn-wrp mt-24">
+        <button class="common-btn" data-gtm-click-location="사전예약 콘텐츠 영역" data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기" data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭" data-gtm-event-category="클릭" data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기" data-gtm-event-name="button_click" type="button">
+          오늘 쿠폰 한번에 받기
+          <i class="arrow-right animate"></i>
+        </button>
+        <p>※ 가입 신청서에서 용량/색상 변경 가능</p>
+      </div>
     </div>
   </div>
 </article>

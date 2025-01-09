@@ -957,8 +957,9 @@
       .storage-icon {
         position: absolute;
         top: rem(-18);
-        left: 50%;
-        transform: translateX(-50%);
+        right: 0;
+        left: 0;
+        margin: 0 auto;
       }
       .storage-info {
         width: 100%;
@@ -1463,13 +1464,20 @@
     align-items: center;
     width: 100%;
     height: rem(60);
-    border: 1px solid #8100f5;
-    color: #8100f5;
-    background-color: #fff;
+    border: 1px solid #FF18AA;
+    color: #fff;
+    background-color: #FF18AA;
     border-radius: rem(100);
     font-size: rem(18);
     font-weight: 700;
     letter-spacing: -0.9px;
+  }
+  p{
+    margin-top: rem(14);
+    text-align: center;
+    font-size: rem(13);
+    color: #777;
+    font-weight: 400;
   }
 }
 .com-alarm-btn-wrp {
@@ -1589,8 +1597,8 @@
   left: rem(10);
   width: rem(8);
   height: rem(8);
-  border-bottom: 2px solid #8100f5;
-  border-right: 2px solid #8100f5;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
   transform: rotate(-45deg);
 
   /* 애니메이션 상태 클래스 */

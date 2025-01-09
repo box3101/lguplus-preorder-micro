@@ -906,8 +906,9 @@
 .preorder-section .model-select-wrp .storage-price-box .storage-icon {
   position: absolute;
   top: -1.125rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 .preorder-section .model-select-wrp .storage-price-box .storage-info {
   width: 100%;
@@ -6497,13 +6498,20 @@
   align-items: center;
   width: 100%;
   height: 3.75rem;
-  border: 1px solid #8100f5;
-  color: #8100f5;
-  background-color: #fff;
+  border: 1px solid #FF18AA;
+  color: #fff;
+  background-color: #FF18AA;
   border-radius: 6.25rem;
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.9px;
+}
+.common-btn-wrp p {
+  margin-top: 0.875rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #777;
+  font-weight: 400;
 }
 
 .com-alarm-btn-wrp {
@@ -6613,8 +6621,8 @@
   left: 0.625rem;
   width: 0.5rem;
   height: 0.5rem;
-  border-bottom: 2px solid #8100f5;
-  border-right: 2px solid #8100f5;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
   transform: rotate(-45deg);
   /* 애니메이션 상태 클래스 */
 }

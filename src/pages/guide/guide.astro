@@ -16,6 +16,8 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
     <title>사전예약</title>
     <link rel="stylesheet" href={`../assets/css/common.css?v=${Date.now()}`} />
     <link rel="stylesheet" href="../assets/css/ui.css" />
+    <link rel="stylesheet" href="/src/css/ui.css" />
+
 
     <link
       rel="stylesheet"
@@ -35,13 +37,18 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <ModelSelect />
           <!-- 모델 선택 EEE -->
 
-
-          <!-- 혜택 요약 섹션 -->
-          <BenefitSummary />
+          <!-- 오늘 내일 쿠폰 -->
+          <TodayTomorrowTab/>
+          <!-- 오늘 내일 쿠폰 EEE -->
 
           <!-- 경품/상품 추첨 이벤트 -->
           <LuckyDraw />
           <!-- 경품/상품 추첨 이벤트 EEE -->
+
+          <!-- 혜택 요약 섹션 -->
+          <BenefitSummary />
+          <!-- 혜택 요약 섹션 EEE -->
+     
 
           <!-- 가격/할인 비교 섹션 -->
           <PriceComparison />
