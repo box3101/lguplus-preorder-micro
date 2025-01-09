@@ -338,9 +338,8 @@ const models = [
   },
 ];
 ---
-
 <article class="model-select-wrp">
-  <div class="header-wrp">
+  <div class="header-wrp" data-aos="fade-down" data-aos-duration="1200">
     <h3>
       <img
         style="width: 273px!important;"
@@ -350,7 +349,7 @@ const models = [
     </h3>
   </div>
   <div class="tab-group model-select">
-    <div class="common-tab-menu-wrp common-inner">
+    <div class="common-tab-menu-wrp common-inner" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
       <ul class="common-tab-menu model-tab">
         {
           models.map((model) => (
@@ -372,7 +371,7 @@ const models = [
             }`}
             id={model.id}
           >
-            <div class="tab-group color-select">
+            <div class="tab-group color-select" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
               {model.colors.map((color) => (
                 <div
                   class={`common-tab-content ${color.active ? 'active' : ''}`}
@@ -415,8 +414,8 @@ const models = [
               </ul>
             </div>
 
-            <div class="tab-group storage-select">
-              <ul class="common-tab-menu common-tabs storage-tab">
+            <div class="tab-group storage-select" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+              <ul class="common-tab-menu common-tabs storage-tab" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
                 {model.storage.map((storage) => (
                   <li
                     class={`common-tab-menu-item ${
@@ -433,6 +432,9 @@ const models = [
                 <div
                   class={`common-tab-content ${storage.active ? 'active' : ''}`}
                   id={`${model.id}-${storage.size}`}
+                  data-aos="fade-up" 
+                  data-aos-duration="1200"
+                  data-aos-delay="1000"
                 >
                   <div class="storage-price-box">
                     <div class="storage-info">
@@ -527,7 +529,7 @@ const models = [
           </div>
         ))
       }
-      <div class="common-btn-wrp mt-24">
+      <div class="common-btn-wrp mt-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
         <button class="common-btn" data-gtm-click-location="사전예약 콘텐츠 영역" data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기" data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭" data-gtm-event-category="클릭" data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기" data-gtm-event-name="button_click" type="button">
           이 가격에 예약하기
           <i class="arrow-right animate"></i>
@@ -536,4 +538,6 @@ const models = [
       </div>
     </div>
   </div>
+</div>
+
 </article>
