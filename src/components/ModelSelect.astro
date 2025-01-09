@@ -339,7 +339,7 @@ const models = [
 ];
 ---
 <article class="model-select-wrp">
-  <div class="header-wrp" data-aos="fade-down" data-aos-duration="1200">
+  <div class="header-wrp" data-aos="fade-down" data-aos-duration="1000">
     <h3>
       <img
         style="width: 273px!important;"
@@ -371,7 +371,7 @@ const models = [
             }`}
             id={model.id}
           >
-            <div class="tab-group color-select" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
+            <div class="tab-group color-select" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
               {model.colors.map((color) => (
                 <div
                   class={`common-tab-content ${color.active ? 'active' : ''}`}
@@ -414,8 +414,8 @@ const models = [
               </ul>
             </div>
 
-            <div class="tab-group storage-select" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
-              <ul class="common-tab-menu common-tabs storage-tab" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
+            <div class="tab-group storage-select" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+              <ul class="common-tab-menu common-tabs storage-tab" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
                 {model.storage.map((storage) => (
                   <li
                     class={`common-tab-menu-item ${
@@ -433,7 +433,7 @@ const models = [
                   class={`common-tab-content ${storage.active ? 'active' : ''}`}
                   id={`${model.id}-${storage.size}`}
                   data-aos="fade-up" 
-                  data-aos-duration="1200"
+                  data-aos-duration="1000"
                   data-aos-delay="1000"
                 >
                   <div class="storage-price-box">
