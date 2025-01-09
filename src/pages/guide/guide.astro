@@ -1,6 +1,5 @@
 ---
 import MainVisual from '../../components/MainVisual.astro';
-import Toast from '../../components/common/Toast.astro';
 import Notice from '../../components/Notice.astro';
 import ModelSelect from '../../components/ModelSelect.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
@@ -15,8 +14,8 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>사전예약</title>
-    <link rel="stylesheet" href="../assets/css/common.css" />
-    <link rel="stylesheet" href="/public/assets/css/ui.css" />
+    <link rel="stylesheet" href={`../assets/css/common.css?v=${Date.now()}`} />
+    <link rel="stylesheet" href="../assets/css/ui.css" />
 
     <link
       rel="stylesheet"
@@ -36,9 +35,6 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <ModelSelect />
           <!-- 모델 선택 EEE -->
 
-          <!-- 오늘,내일 탭메뉴 -->
-          <TodayTomorrowTab />
-          <!-- 오늘,내일 탭메뉴 EEE -->
 
           <!-- 혜택 요약 섹션 -->
           <BenefitSummary />
@@ -56,22 +52,6 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <!-- 유의사항 EEE -->
         </section>
       </main>
-
-      <div class="com-alarm-btn-wrp">
-        <button
-          type="button"
-          class="com-alarm-btn"
-          onclick="javascript:PreorderCtrl.open();"
-          data-gtm-event-name="button_click"
-          data-gtm-event-category="클릭"
-          data-gtm-event-action="플로팅 영역 - 버튼 클릭"
-          data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_예약하기"
-          data-gtm-click-location="플로팅 영역"
-          data-gtm-click-text="예약신청_01-단계진입_예약하기"
-        >
-          <img src="../assets/img/com-alarm-btn-txt.svg" />
-        </button>
-      </div>
     </div>
 
     <script

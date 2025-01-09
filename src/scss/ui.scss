@@ -951,6 +951,9 @@
       border-radius: rem(12);
       border: rem(1) dashed #ccc;
       background: #f1f1f1;
+      .storage-text{
+        margin-top: 30px;
+      }
       .storage-icon {
         position: absolute;
         top: rem(-18);
@@ -1062,6 +1065,7 @@
     }
 
     .price-info {
+      position: relative;
       margin-top: rem(24);
       text-align: left;
 
@@ -1097,58 +1101,28 @@
 
       .reservation-price {
         margin-top: rem(4);
-        color: #333;
-        font-family: SUIT;
-        font-size: rem(20);
-        font-weight: 700;
-        letter-spacing: rem(-1);
       }
 
       .savings {
         margin-top: rem(4);
-        color: #8100f5;
-        font-family: SUIT;
-        font-size: rem(12);
-        font-weight: 700;
-        letter-spacing: rem(-0.6);
       }
 
       .accordion {
-        position: relative;
-        margin-top: rem(16);
-        text-align: center;
+        text-align: right;
 
-        .accordion-icon {
-          width: rem(12);
-          height: rem(12);
-          margin-right: rem(4);
-          vertical-align: middle;
+        .accordion-txt-wrp {
+          position: relative;
+          right: 0;
+          bottom: rem(18);
         }
-
         .accordion-txt {
           color: #999;
-          font-family: SUIT;
-          font-size: rem(12);
-          font-weight: 400;
-          letter-spacing: rem(-0.6);
-          vertical-align: middle;
-        }
-
-        .arrow-down {
-          display: inline-block;
-          width: rem(12);
-          height: rem(12);
-          margin-left: rem(4);
-          background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%23999999' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-            no-repeat center;
-          vertical-align: middle;
-          transition: transform 0.3s;
         }
 
         .accordion-content {
           display: none;
           padding: rem(24) rem(20);
-          margin-top: rem(16);
+          margin-top: rem(8);
           border-radius: rem(8);
           background: #f7f7f7;
           text-align: left;
@@ -1196,35 +1170,26 @@
 
           .benefit-notice {
             margin-top: rem(16);
+            display: flex;
+            justify-content: center;
 
             ul li {
               position: relative;
-              padding-left: rem(8);
               color: #999;
               font-family: SUIT;
               font-size: rem(10);
               font-weight: 400;
               letter-spacing: rem(-0.5);
               line-height: rem(16);
-
-              &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: rem(7);
-                width: rem(2);
-                height: rem(2);
-                border-radius: 50%;
-                background: #999;
+              text-align: center;
+              &.last {
+                margin-top: rem(16);
               }
             }
           }
         }
 
         &.active {
-          .arrow-down {
-            transform: rotate(180deg);
-          }
 
           .accordion-content {
             display: block;
@@ -1544,10 +1509,9 @@
 /*      공통  아코디언  */
 /* ==================== */
 .accordion {
-  margin-top: rem(20);
   &.active {
     .arrow-down {
-      top: rem(2);
+      top: rem(-1);
       transform: rotate(225deg);
     }
   }
@@ -1562,7 +1526,6 @@
   .accordion-txt {
     padding-bottom: rem(5);
     display: inline-block;
-    border-bottom: 1px solid #555;
     font-size: rem(13);
     color: #555;
     font-weight: 400;
@@ -1611,13 +1574,13 @@
 .arrow-down {
   transition: all 0.3s ease;
   position: relative;
-  top: rem(-2);
+  top: rem(-4);
   left: rem(5);
   display: inline-block;
-  width: rem(7);
-  height: rem(7);
-  border-bottom: 1px solid #333;
-  border-right: 1px solid #333;
+  width: rem(5);
+  height: rem(5);
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
 .arrow-right {

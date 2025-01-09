@@ -11,25 +11,59 @@ const models = [
         active: true,
         images: [
           'S24U_t-gray_01.jpg',
-          'S24U_t-gray_01.jpg',
-          'S24U_t-gray_01.jpg',
+          'S24U_t-gray_02.jpg', 
+          'S24U_t-gray_03.jpg',
         ],
       },
-      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
-      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
-      { name: 'blue', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      {
+        subTitle: '티타늄 화이트',
+        name: 'white',
+        active: false,
+        images: [
+          'S24U_t-white_01.jpg',
+          'S24U_t-white_02.jpg',
+          'S24U_t-white_03.jpg'
+        ]
+      },
+      {
+        subTitle: '티타늄 바이올렛',
+        name: 'violet',
+        active: false,
+        images: [
+          'S24U_t-violet_01.jpg',
+          'S24U_t-violet_02.jpg',
+          'S24U_t-violet_03.jpg'
+        ]
+      },
+      {
+        subTitle: '티타늄 옐로우',
+        name: 'yellow',
+        active: false,
+        images: [
+          'S24U_t-yellow_01.jpg',
+          'S24U_t-yellow_02.jpg',
+          'S24U_t-yellow_03.jpg'
+        ]
+      },
     ],
     storage: [
       {
         size: '256GB',
         active: true,
-        price: 1232233,
+        price: 1598400,
         discount: 150000,
         savings: 140000,
+        storagePrice: {
+          others: 286000,
+          uplus: 0,
+          notice: "많은 256GB 사용자들이 '<span>예약</span>'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '510,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '40,000원' },
-          { label: '쓰던 폰 반납', value: '650,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '40,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '650,000원' },
+          { label: '용량 업그레이드', value: '200,000원' },
+          { label: '쓰던 폰 반납', value: '200,000원' },
           { label: '쓰던 폰 추가보상', value: '200,000원' },
         ],
         totalBenefit: '1,400,000원',
@@ -37,13 +71,20 @@ const models = [
       {
         size: '512GB',
         active: false,
-        price: 1332233,
+        price: 1728000,
         discount: 170000,
         savings: 160000,
+        storagePrice: {
+          others: 386000,
+          uplus: 0,
+          notice: "많은 512GB 사용자들이 '<span>예약</span>'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '520,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '45,000원' },
-          { label: '쓰던 폰 반납', value: '670,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '45,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '670,000원' },
+          { label: '용량 업그레이드', value: '220,000원' },
+          { label: '쓰던 폰 반납', value: '220,000원' },
           { label: '쓰던 폰 추가보상', value: '220,000원' },
         ],
         totalBenefit: '1,455,000원',
@@ -51,13 +92,20 @@ const models = [
       {
         size: '1TB',
         active: false,
-        price: 1532233,
+        price: 1987200,
         discount: 200000,
         savings: 180000,
+        storagePrice: {
+          others: 486000,
+          uplus: 0,
+          notice: "많은 1TB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '530,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '50,000원' },
-          { label: '쓰던 폰 반납', value: '690,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '50,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '690,000원' },
+          { label: '용량 업그레이드', value: '240,000원' },
+          { label: '쓰던 폰 반납', value: '240,000원' },
           { label: '쓰던 폰 추가보상', value: '240,000원' },
         ],
         totalBenefit: '1,510,000원',
@@ -73,23 +121,61 @@ const models = [
         subTitle: '티타늄 블랙',
         name: 'gray',
         active: true,
-        images: ['01.jpg', '02.jpg', '03.jpg'],
+        images: [
+          'S24P_t-gray_01.jpg',
+          'S24P_t-gray_02.jpg',
+          'S24P_t-gray_03.jpg'
+        ],
       },
-      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
-      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
-      { name: 'blue', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      {
+        subTitle: '티타늄 화이트',
+        name: 'white',
+        active: false,
+        images: [
+          'S24P_t-white_01.jpg',
+          'S24P_t-white_02.jpg',
+          'S24P_t-white_03.jpg'
+        ]
+      },
+      {
+        subTitle: '티타늄 바이올렛',
+        name: 'violet',
+        active: false,
+        images: [
+          'S24P_t-violet_01.jpg',
+          'S24P_t-violet_02.jpg',
+          'S24P_t-violet_03.jpg'
+        ]
+      },
+      {
+        subTitle: '티타늄 옐로우',
+        name: 'yellow',
+        active: false,
+        images: [
+          'S24P_t-yellow_01.jpg',
+          'S24P_t-yellow_02.jpg',
+          'S24P_t-yellow_03.jpg'
+        ]
+      },
     ],
     storage: [
       {
         size: '256GB',
         active: true,
-        price: 1232233,
+        price: 1350400,
         discount: 150000,
         savings: 140000,
+        storagePrice: {
+          others: 286000,
+          uplus: 0,
+          notice: "많은 256GB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '510,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '40,000원' },
-          { label: '쓰던 폰 반납', value: '650,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '40,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '650,000원' },
+          { label: '용량 업그레이드', value: '200,000원' },
+          { label: '쓰던 폰 반납', value: '200,000원' },
           { label: '쓰던 폰 추가보상', value: '200,000원' },
         ],
         totalBenefit: '1,400,000원',
@@ -97,13 +183,20 @@ const models = [
       {
         size: '512GB',
         active: false,
-        price: 1332233,
+        price: 1480000,
         discount: 170000,
         savings: 160000,
+        storagePrice: {
+          others: 386000,
+          uplus: 0,
+          notice: "많은 512GB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '520,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '45,000원' },
-          { label: '쓰던 폰 반납', value: '670,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '45,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '670,000원' },
+          { label: '용량 업그레이드', value: '220,000원' },
+          { label: '쓰던 폰 반납', value: '220,000원' },
           { label: '쓰던 폰 추가보상', value: '220,000원' },
         ],
         totalBenefit: '1,455,000원',
@@ -111,17 +204,24 @@ const models = [
       {
         size: '1TB',
         active: false,
-        price: 1532233,
-        discount: 200000,
-        savings: 180000,
+        price: 1610000,
+        discount: 190000,
+        savings: 170000,
+        storagePrice: {
+          others: 486000,
+          uplus: 0,
+          notice: "많은 1TB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '530,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '50,000원' },
-          { label: '쓰던 폰 반납', value: '690,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '50,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '690,000원' },
+          { label: '용량 업그레이드', value: '240,000원' },
+          { label: '쓰던 폰 반납', value: '240,000원' },
           { label: '쓰던 폰 추가보상', value: '240,000원' },
         ],
         totalBenefit: '1,510,000원',
-      },
+      }
     ],
   },
   {
@@ -133,23 +233,61 @@ const models = [
         subTitle: '티타늄 블랙',
         name: 'gray',
         active: true,
-        images: ['01.jpg', '02.jpg', '03.jpg'],
+        images: [
+          'S24_t-gray_01.jpg',
+          'S24_t-gray_02.jpg',
+          'S24_t-gray_03.jpg'
+        ],
       },
-      { name: 'white', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
-      { name: 'black', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
-      { name: 'blue', active: false, images: ['01.jpg', '02.jpg', '03.jpg'] },
+      {
+        subTitle: '티타늄 화이트',
+        name: 'white',
+        active: false,
+        images: [
+          'S24_t-white_01.jpg',
+          'S24_t-white_02.jpg',
+          'S24_t-white_03.jpg'
+        ]
+      },
+      {
+        subTitle: '티타늄 바이올렛',
+        name: 'violet',
+        active: false,
+        images: [
+          'S24_t-violet_01.jpg',
+          'S24_t-violet_02.jpg',
+          'S24_t-violet_03.jpg'
+        ]
+      },
+      {
+        subTitle: '티타늄 옐로우',
+        name: 'yellow',
+        active: false,
+        images: [
+          'S24_t-yellow_01.jpg',
+          'S24_t-yellow_02.jpg',
+          'S24_t-yellow_03.jpg'
+        ]
+      },
     ],
     storage: [
       {
         size: '256GB',
         active: true,
-        price: 1332233,
+        price: 1155000,
         discount: 160000,
         savings: 150000,
+        storagePrice: {
+          others: 286000,
+          uplus: 0,
+          notice: "많은 256GB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '520,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '45,000원' },
-          { label: '쓰던 폰 반납', value: '670,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '45,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '670,000원' },
+          { label: '용량 업그레이드', value: '220,000원' },
+          { label: '쓰던 폰 반납', value: '220,000원' },
           { label: '쓰던 폰 추가보상', value: '220,000원' },
         ],
         totalBenefit: '1,455,000원',
@@ -157,13 +295,20 @@ const models = [
       {
         size: '512GB',
         active: false,
-        price: 1432233,
+        price: 1284800,
         discount: 180000,
         savings: 170000,
+        storagePrice: {
+          others: 386000,
+          uplus: 0,
+          notice: "많은 512GB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '530,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '50,000원' },
-          { label: '쓰던 폰 반납', value: '690,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '50,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '690,000원' },
+          { label: '용량 업그레이드', value: '240,000원' },
+          { label: '쓰던 폰 반납', value: '240,000원' },
           { label: '쓰던 폰 추가보상', value: '240,000원' },
         ],
         totalBenefit: '1,510,000원',
@@ -171,17 +316,24 @@ const models = [
       {
         size: '1TB',
         active: false,
-        price: 1632233,
-        discount: 210000,
+        price: 1414600,
+        discount: 200000,
         savings: 190000,
+        storagePrice: {
+          others: 486000,
+          uplus: 0,
+          notice: "많은 1TB 사용자들이 '예약'으로 구매했어요"
+        },
         benefitList: [
           { label: '공시지원금', value: '540,000원' },
-          { label: '뽑기 즉시 할인 쿠폰', value: '55,000원' },
-          { label: '쓰던 폰 반납', value: '710,000원' },
+          { label: '알람즉시 할인 랜덤쿠폰', value: '55,000원' },
+          { label: '예약 즉시 할인 랜덤 쿠폰', value: '710,000원' },
+          { label: '용량 업그레이드', value: '260,000원' },
+          { label: '쓰던 폰 반납', value: '260,000원' },
           { label: '쓰던 폰 추가보상', value: '260,000원' },
         ],
         totalBenefit: '1,565,000원',
-      },
+      }
     ],
   },
 ];
@@ -277,7 +429,7 @@ const models = [
                 ))}
               </ul>
 
-              {model.storage.map((storage) => (
+              {model.storage.map((storage, index) => (
                 <div
                   class={`common-tab-content ${storage.active ? 'active' : ''}`}
                   id={`${model.id}-${storage.size}`}
@@ -286,27 +438,33 @@ const models = [
                     <div class="storage-info">
                       <div class="storage-icon">
                         <img
-                          src="../assets/img/moel-sel-tootop01.svg"
+                          src={`../assets/img/model-sel-tootop0${index + 1}.svg`}
                           alt="저장공간 아이콘"
                         />
                       </div>
-                      <div class="price-info">
-                        <div class="price">
-                          <span class="left">다른 곳</span>
-                          <span class="right">
-                            286,000<span>원</span>
-                          </span>
+                      {index === 2 ? (
+                        <div class="storage-text">
+                          <p>1TB 업그레이드 비용</p>
+                          <p>다른 곳보다 <span>136,000원</span> 저렴</p>
                         </div>
-                        <div class="discount">
-                          <span class="left">유플닷컴</span>
-                          <span class="right">
-                            0<span>원</span>
-                          </span>
+                      ) : (
+                        <div class="price-info">
+                          <div class="price">
+                            <span class="left">다른 곳</span>
+                            <span class="right">
+                              {storage.storagePrice.others.toLocaleString()}<span>원</span>
+                            </span>
+                          </div>
+                          <div class="discount">
+                            <span class="left">유플닷컴</span>
+                            <span class="right">
+                              {storage.storagePrice.uplus}<span>원</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
-                    <p class="notice">
-                      많은 512GB 사용자들이 <span>’예약’</span>으로 구매했어요
+                    <p class="notice" set:html={storage.storagePrice.notice}>
                     </p>
                   </div>
                   <div class="price-info">
@@ -315,15 +473,20 @@ const models = [
                       <span>{storage.price.toLocaleString()}</span>
                       <em>원</em>
                     </p>
-                    <p class="reservation-price">
-                      오늘 예약하면 {storage.discount.toLocaleString()}
-                      <em>원</em>
-                    </p>
+                    <i class="arrow-down"></i>
+                    <div class="reservation-price">
+                      오늘 혜택 적용가
+                      <p>
+                        <span>{storage.discount.toLocaleString()}</span>
+                        <em>원</em>
+                      </p>
+                    </div>
                     <p class="savings">
                       지급제보다 최대 {storage.savings.toLocaleString()}
                       <em>원</em> 저렴
                     </p>
                     <div class="accordion">
+                      <div class="accordion-txt-wrp">
                       <button
                         class="accordion-txt"
                         data-gtm-event-name="button_click"
@@ -333,12 +496,13 @@ const models = [
                         data-gtm-click-location="사전알람 콘텐츠 영역"
                         data-gtm-click-text="쿠폰 사용 방법"
                       >
-                        자세히 보기
+                        자세히
                       </button>
                       <i class="arrow-down" />
-                      <div class="accordion-content">
+                    </div> 
+                        <div class="accordion-content">
                         <ul class="benefit-list">
-                          {storage.benefitList?.map((benefit) => (
+                          {storage.benefitList.map((benefit) => (
                             <li>
                               <span class="benefit-label">{benefit.label}</span>
                               <strong class="benefit-value">
@@ -347,17 +511,11 @@ const models = [
                             </li>
                           ))}
                         </ul>
-                        <div class="total-benefit">
-                          <strong>{storage.totalBenefit}</strong> 혜택 적용됨
-                        </div>
                         <div class="benefit-notice">
                           <ul>
-                            <li>Galaxy S25 1TB 구매 시 혜택</li>
-                            <li>5G 프리미어+ 에센셜 요금제 공시지원금</li>
-                            <li>25년 1월 첫 출시 판매가 기준</li>
-                            <li>
-                              혜택이 종료될 경우 최종 혜택가가 변경될 수 있어요
-                            </li>
+                            <li>※ 5G 프리미어 에센셜 요금제 공시지원금</li>
+                            <li>Galaxy S25 Ultra 256GB A등급, 24.09 셀로 판매가 기준</li>
+                            <li class="last">※ 선착순 혜택이 종료될 경우 최종 혜택가가 변경될 수 있습니다.</li>
                           </ul>
                         </div>
                       </div>
