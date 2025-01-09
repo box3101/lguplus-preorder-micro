@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 :root {
   font-size: 15px;
 }
@@ -18,10 +19,22 @@
   /*      visual         */
   /* ============= ======= */
   /* ==================== */
+  /*      preorder-coupon         */
+  /* ============= ======= */
+  /* ==================== */
   /*    priceComparison         */
   /* ============= ======= */
   /* ==================== */
   /*    lucky-draw       */
+  /* ============= ======= */
+  /* ==================== */
+  /*    discount-card      */
+  /* ============= ======= */
+  /* ==================== */
+  /*      요금제 혜택      */
+  /* ==================== */
+  /* ==================== */
+  /*    new-galaxy-coming-soon      */
   /* ============= ======= */
   /* ==================== */
   /*   model-select-wrp   */
@@ -47,32 +60,55 @@
 .preorder-section .main-visual {
   box-sizing: border-box;
   padding-top: 3.125rem;
-  padding-bottom: 2.5rem;
   text-align: center;
   width: 100%;
   background-color: #ccc;
   background-position: center;
-  padding-bottom: 1.875rem;
+  padding-bottom: 3.125rem;
   background: #111;
   position: relative;
+  overflow: hidden;
+}
+.preorder-section .main-visual svg {
+  position: relative;
+  z-index: 3;
+  top: 8.75rem;
 }
 .preorder-section .main-visual .bg-swiper {
   position: absolute;
-  z-index: 4;
+  z-index: 2;
   left: 0;
   top: 0;
   right: 0;
 }
 .preorder-section .main-visual .visual-content {
-  padding-top: 4.125rem;
   position: relative;
-  z-index: 5;
+  z-index: 3;
+}
+.preorder-section .main-visual .visual-content:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: -4.875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("../img/bg-main-visual.png") no-repeat center;
+  width: 20.75rem;
+  height: 7.5625rem;
+  background-size: cover;
+}
+.preorder-section .main-visual .top-info {
+  margin-top: 2.1875rem;
+  position: relative;
+  z-index: 4;
 }
 .preorder-section .main-visual .top-img {
-  margin-bottom: 0.875rem;
+  margin-bottom: 0.625rem;
 }
 .preorder-section .main-visual .price-swiper {
-  height: 5.0625rem;
+  height: 7.8125rem;
+  position: relative;
+  z-index: 4;
   margin: 0 auto;
   text-align: center;
 }
@@ -89,32 +125,60 @@
   height: 100%;
 }
 .preorder-section .main-visual .mid-info {
-  margin-top: 0.875rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  color: #aaa;
 }
-.preorder-section .main-visual .mid-info em {
-  color: #eee;
+.preorder-section .preorder-coupon {
+  background: rgba(129, 0, 245, 0.08);
+  padding-top: 6.0625rem;
   text-align: center;
-  font-family: SUIT;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.8px;
+  padding-bottom: 3.9375rem;
 }
-.preorder-section .main-visual .mid-info span {
-  display: inline-block;
-  color: rgba(238, 238, 238, 0.5);
-  font-family: SUIT;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: -1.1px;
+.preorder-section .preorder-coupon .coupon-content {
+  margin-top: 2.3125rem;
   position: relative;
-  top: -0.5rem;
-  left: -0.1875rem;
+  overflow: hidden;
+}
+.preorder-section .preorder-coupon .coupon-content .coupon-bg .coupon-machine {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -116px;
+}
+.preorder-section .preorder-coupon .coupon-content .coupon-bg .coupon-machine .coupon-claw {
+  animation: floatClaw 2s ease-in-out infinite;
+}
+@keyframes floatClaw {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.preorder-section .preorder-coupon .coupon-date {
+  margin-top: 1.25rem;
+  margin-bottom: 3.3125rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.9px;
+}
+.preorder-section .preorder-coupon .coupon-header {
+  margin: 0 auto;
+  text-align: center;
+}
+.preorder-section .preorder-coupon .coupon-header .coupon-title {
+  margin: 0 auto;
+}
+.preorder-section .preorder-coupon .coupon-header .coupon-subtitle {
+  margin: 0 auto;
+  margin-top: 0.75rem;
 }
 .preorder-section .priceComparison {
   padding-top: 3.75rem;
@@ -476,26 +540,613 @@
   top: 0;
   left: 0;
 }
-.preorder-section .model-select-wrp .header-wrp h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #777;
-  letter-spacing: -1.2px;
+.preorder-section .discount-card {
+  background: rgba(254, 5, 146, 0.05);
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
 }
-.preorder-section .model-select-wrp .header-wrp h3 {
-  font-size: 2.125rem;
+.preorder-section .discount-card h3 {
+  margin-top: 0.75rem;
+}
+.preorder-section .discount-card .benefit-cards-container {
+  margin-top: 2rem;
+}
+.preorder-section .discount-card .benefit-card {
+  margin-bottom: 1.875rem;
+  padding-left: 1.875rem;
+  padding-top: 2rem;
+  padding-bottom: 1.75rem;
+  padding-right: 1.875rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 140, 0.2);
+  background: #fff;
+}
+.preorder-section .discount-card .benefit-card:last-of-type {
+  margin-bottom: 0;
+}
+.preorder-section .discount-card .benefit-card .benefit-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.875rem;
+  height: 1rem;
+  border-radius: 100px;
+  background: #c1c1c1;
+  padding: 0.5625rem 0.625rem;
+  font-size: 0.8125rem;
   font-weight: 700;
-  color: #222;
-  letter-spacing: -1.7px;
+  color: #fff;
+  letter-spacing: -0.26px;
 }
-.preorder-section .model-select-wrp .swiper-scrollbar {
+.preorder-section .discount-card .benefit-card .benefit-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -1.2px;
+  font-family: SUIT;
+}
+.preorder-section .discount-card .benefit-card .discount-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff008c;
+  letter-spacing: -1.2px;
+  font-family: SUIT;
+}
+.preorder-section .discount-card .benefit-card .benefit-description {
+  margin-top: 0.5rem;
+}
+.preorder-section .discount-card .benefit-card .description-line1 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.8px;
+  color: #777;
+  font-family: SUIT;
+  line-height: 24px; /* 150% */
+}
+.preorder-section .discount-card .benefit-card .description-line1 span {
+  font-weight: 700;
+}
+.preorder-section .discount-card .benefit-card .description-line2 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.6px;
+  font-family: SUIT;
+}
+.preorder-section .discount-card .benefit-card .benefit-image img {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 1.875rem;
+}
+.preorder-section .plan-benefits {
+  background: #1f1f1f;
+}
+.preorder-section .plan-benefits .common-inner {
+  padding: 3.75rem 1.25rem;
+}
+.preorder-section .plan-benefits .coupon-title {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.preorder-section .plan-benefits .coupon-title img {
+  width: 11.25rem !important;
+}
+.preorder-section .plan-benefits .coupon-subtitle {
+  text-align: center;
+}
+.preorder-section .plan-benefits .coupon-subtitle img {
+  width: 24.125rem !important;
+}
+.preorder-section .plan-benefits .mt-20 {
+  margin-top: 1.25rem;
+}
+.preorder-section .plan-benefits .plan-benefits-cards {
+  margin-top: 2.5rem;
+}
+.preorder-section .plan-benefits .plan-card:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .plan-benefits .plan-card .plan-content .plan-number {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.preorder-section .plan-benefits .plan-card .plan-content .plan-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  letter-spacing: -0.48px;
+  font-family: SUIT;
+}
+.preorder-section .plan-benefits .plan-card .plan-content .plan-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  letter-spacing: -0.32px;
+  font-family: SUIT;
+}
+.preorder-section .plan-benefits .plan-card .plan-image {
+  margin: 0.875rem auto;
+  text-align: center;
+  margin-top: 1.875rem;
+  max-width: 19.5rem;
+}
+.preorder-section .plan-benefits .plan-card .plan-image img {
+  width: 16.25rem !important;
+}
+.preorder-section .plan-benefits .plan-card .plan-notice {
+  margin-top: 0.875rem;
+}
+.preorder-section .plan-benefits .plan-card .plan-notice .notice-text {
+  text-align: left;
+  color: #999;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.6px;
+}
+.preorder-section .plan-benefits .plan-card .plan-notice .notice-text:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .new-galaxy-coming-soon {
+  padding-top: 3.75rem;
+  background: #1d1d1d;
   position: relative;
+}
+.preorder-section .new-galaxy-coming-soon .bg {
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 60px;
+  top: 0rem;
 }
-.preorder-section .model-select-wrp .swiper-scrollbar-drag {
-  width: 33.3%;
+.preorder-section .new-galaxy-coming-soon p {
+  margin-top: 2.1875rem;
+}
+.preorder-section .model-select-wrp {
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+.preorder-section .model-select-wrp .swiper-button-prev {
+  position: absolute;
+  left: -0.125rem !important;
+}
+.preorder-section .model-select-wrp .swiper-button-prev::after {
+  content: "";
+  width: 0.625rem;
+  height: 1.0625rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17' viewBox='0 0 10 17' fill='none'%3E%3Cpath d='M8 17L10 14.875L2 6.375L-5.82128e-07 8.5L8 17Z' fill='%23333333'/%3E%3Cpath d='M-5.82128e-07 8.5L2 10.625L10 2.125L8 -8.74228e-08L-5.82128e-07 8.5Z' fill='%23333333'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.preorder-section .model-select-wrp .swiper-button-next {
+  position: absolute;
+  right: -0.5rem !important;
+}
+.preorder-section .model-select-wrp .swiper-button-next::after {
+  content: "";
+  width: 0.625rem;
+  height: 1.0625rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17' viewBox='0 0 10 17' fill='none'%3E%3Cpath d='M2 17L-9.28867e-08 14.875L8 6.375L10 8.5L2 17Z' fill='%23333333'/%3E%3Cpath d='M10 8.5L8 10.625L-4.91261e-07 2.125L2 -8.74228e-08L10 8.5Z' fill='%23333333'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.preorder-section .model-select-wrp .tab-group.model-select {
+  margin-top: 1.5rem;
+}
+.preorder-section .model-select-wrp .tit-wrp {
+  text-align: center;
+}
+.preorder-section .model-select-wrp .tit-wrp .model-title {
+  color: #333;
+  text-align: center;
+  font-family: "pretendard";
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+.preorder-section .model-select-wrp .tit-wrp .color-title {
+  margin-top: 0.5rem;
+  color: #333;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: -0.05rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 0.0625rem solid #ddd;
+  margin-bottom: 2.8125rem;
+}
+.preorder-section .model-select-wrp .color-select img {
+  width: 11.1875rem !important;
+}
+.preorder-section .model-select-wrp .model-tab {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.preorder-section .model-select-wrp .model-tab li button {
+  padding: 0.75rem;
+  color: #888;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  border-radius: 6.25rem;
+  background: #f1f1f1;
+  letter-spacing: -0.0375rem;
+}
+.preorder-section .model-select-wrp .common-tab-content-wrp {
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  border: 0.0625rem solid #ddd;
+  background: #fff;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+.preorder-section .model-select-wrp .color-tab {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.preorder-section .model-select-wrp .color-tab.color-tab {
+  margin-top: 2.625rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.preorder-section .model-select-wrp .color-tab::-webkit-scrollbar {
+  display: none;
+}
+.preorder-section .model-select-wrp .color-tab li {
+  flex: 0 0 auto;
+}
+.preorder-section .model-select-wrp .color-tab li button {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.375rem;
+}
+.preorder-section .model-select-wrp .color-tab li button.gray {
+  background-color: #d6dde0;
+}
+.preorder-section .model-select-wrp .color-tab li button.black {
+  background-color: red;
+}
+.preorder-section .model-select-wrp .color-tab li button.white {
+  background-color: #d8d4c9;
+}
+.preorder-section .model-select-wrp .color-tab li button.blue {
+  background-color: #03e05a;
+}
+.preorder-section .model-select-wrp .color-tab li.active button {
+  position: relative;
+  border: 0.125rem solid #000;
+}
+.preorder-section .model-select-wrp .color-tab li.active button::after {
+  position: absolute;
+  left: 33%;
+  top: 27%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-bottom: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+.preorder-section .model-select-wrp .storage-tab {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
+}
+.preorder-section .model-select-wrp .storage-tab li {
+  display: flex;
+  padding: 0.625rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  background: #f5f5f5;
+  border-radius: 6.25rem;
+}
+.preorder-section .model-select-wrp .storage-tab li button {
+  width: 100%;
+  height: 100%;
+  color: #777;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: -0.04375rem;
+}
+.preorder-section .model-select-wrp .storage-tab li.active {
+  background: #fff;
+  border-radius: 6.25rem;
+  border: 0.0625rem solid #282828;
+}
+.preorder-section .model-select-wrp .storage-tab li.active button {
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.25rem;
+}
+.preorder-section .model-select-wrp .storage-price-box {
+  position: relative;
+  margin-top: 2.5rem;
+  display: flex;
+  padding: 0.3125rem 1.875rem 1.25rem 1.875rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.75rem;
+  border: 0.0625rem dashed #ccc;
+  background: #f1f1f1;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-icon {
+  position: absolute;
+  top: -1.125rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info {
+  width: 100%;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5625rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .price .left {
+  display: flex;
+  width: 5rem;
+  padding: 0.25rem 0.625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.25rem;
+  background: #999;
+  color: #fff;
+  font-family: SUIT;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.03125rem;
+  box-sizing: border-box;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .price .right {
+  color: #555;
+  font-family: Outfit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4375rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .price .right span {
+  color: #555;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.0375rem;
+  display: inline-block;
+  margin-left: 0.125rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .discount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .discount .left {
+  display: flex;
+  width: 5rem;
+  padding: 0.25rem 0.625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  background: #8100f5;
+  color: #fff;
+  font-family: SUIT;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.03125rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .discount .right {
+  color: #8100f5;
+  font-family: Outfit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4375rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-info .price-info .discount .right span {
+  color: #8100f5;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.0375rem;
+  display: inline-block;
+  margin-left: 0.125rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .notice {
+  margin-top: 0.75rem;
+  color: #999;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.03125rem;
+}
+.preorder-section .model-select-wrp .storage-price-box .notice span {
+  color: #000;
+  font-family: SUIT;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.03125rem;
+}
+.preorder-section .model-select-wrp .price-info {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.preorder-section .model-select-wrp .price-info .original-price {
+  color: #555;
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.7px;
+  line-height: 1.6;
+}
+.preorder-section .model-select-wrp .price-info .original-price span {
+  color: #555;
+  font-family: Outfit;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.preorder-section .model-select-wrp .price-info .original-price em {
+  color: #555;
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.7px;
+  display: inline-block;
+  margin-left: 3px;
+}
+.preorder-section .model-select-wrp .price-info .reservation-price {
+  margin-top: 0.25rem;
+  color: #333;
+  font-family: SUIT;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.0625rem;
+}
+.preorder-section .model-select-wrp .price-info .savings {
+  margin-top: 0.25rem;
+  color: #8100f5;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.0375rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion {
+  position: relative;
+  margin-top: 1rem;
+  text-align: center;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-txt {
+  color: #999;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.0375rem;
+  vertical-align: middle;
+}
+.preorder-section .model-select-wrp .price-info .accordion .arrow-down {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.25rem;
+  background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%23999999' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content {
+  display: none;
+  padding: 1.5rem 1.25rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background: #f7f7f7;
+  text-align: left;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-label {
+  color: #666;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.0375rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-value {
+  color: #333;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.0375rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .total-benefit {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e6e6e6;
+  color: #333;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.0375rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .total-benefit strong {
+  color: #8100f5;
+  font-weight: 700;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice {
+  margin-top: 1rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice ul li {
+  position: relative;
+  padding-left: 0.5rem;
+  color: #999;
+  font-family: SUIT;
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: -0.03125rem;
+  line-height: 1rem;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4375rem;
+  width: 0.125rem;
+  height: 0.125rem;
+  border-radius: 50%;
+  background: #999;
+}
+.preorder-section .model-select-wrp .price-info .accordion.active .arrow-down {
+  transform: rotate(180deg);
+}
+.preorder-section .model-select-wrp .price-info .accordion.active .accordion-content {
+  display: block;
 }
 .preorder-section .toast-message {
   position: fixed;
@@ -554,23 +1205,8 @@
     opacity: 1;
   }
 }
-.preorder-section .common-tab-menu-wrp .common-tab-menu {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.preorder-section .common-tab-menu-wrp .common-tab-menu-item {
-  padding: 0.625rem 1.25rem;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-.preorder-section .common-tab-menu-wrp .common-tab-menu-item.active {
-  background-color: #ccc;
-}
 .preorder-section .common-tab-menu-wrp .common-tab-content {
   display: none;
-  padding: 1.25rem;
 }
 .preorder-section .common-tab-menu-wrp .common-tab-content.active {
   display: block;
@@ -652,81 +1288,6 @@
 }
 .preorder-section .common-notice-wrp .common-notice-content.active {
   padding: 1.25rem;
-}
-
-/* ==================== */
-/*      공통 alert 팝업        */
-/* ==================== */
-.common-alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.common-alert .alert-content {
-  background-color: #fff;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 16px;
-  overflow: hidden;
-}
-.common-alert .alert-body {
-  padding: 24px;
-}
-.common-alert .alert-title {
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.common-alert .alert-benefit-list {
-  margin-bottom: 20px;
-}
-.common-alert .alert-benefit-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-.common-alert .alert-benefit-list span {
-  color: #666;
-}
-.common-alert .alert-benefit-list strong {
-  color: #000;
-}
-.common-alert .alert-total {
-  background-color: #f8f8f8;
-  padding: 16px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.common-alert .alert-total strong {
-  color: #ff0066;
-}
-.common-alert .alert-notice {
-  font-size: 14px;
-  color: #666;
-}
-.common-alert .alert-notice p {
-  margin-bottom: 8px;
-}
-.common-alert .alert-close {
-  width: 100%;
-  padding: 16px;
-  background-color: #ff0066;
-  color: #fff;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-.common-alert .alert-close:hover {
-  background-color: #e5005c;
 }
 
 /* ==================== */

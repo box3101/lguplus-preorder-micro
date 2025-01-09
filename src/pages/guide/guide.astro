@@ -16,34 +16,14 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>사전예약</title>
     <link rel="stylesheet" href="../assets/css/common.css" />
-    <link rel="stylesheet" href="../assets/css/ui.css" />
+    <link rel="stylesheet" href="/public/assets/css/ui.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
   </head>
   <body>
-    <header th:fragment="header_alarm" class="header_alarm ip283_header_type2">
-      <div class="top-area iphone16">
-        <h2 class="logo">
-          <a
-            target="_blank"
-            href="https://www.lguplus.com/"
-            data-gtm-event-name="link_click"
-            data-gtm-event-category="클릭"
-            data-gtm-event-action="네비게이터 영역 - 링크 클릭"
-            data-gtm-event-label="컨텐츠 : 유플러스닷컴 바로가기"
-            data-gtm-click-location="네비게이터 영역"
-            data-gtm-click-text="유플러스닷컴 바로가기"
-            data-gtm-click-url="https://www.lguplus.com"
-            data-gtm-click-direction="외부"
-          >
-            33
-          </a>
-        </h2>
-      </div>
-    </header>
-
     <div id="content" class="content-wrapper preorder-section">
       <main class="container main-container">
         <!-- 사전예약 기간 -->
@@ -77,12 +57,6 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
         </section>
       </main>
 
-      <div
-        th:fragment="
-              footer"
-        th:if="${preorderStatus} == 'before'"
-      >
-      </div>
       <div class="com-alarm-btn-wrp">
         <button
           type="button"

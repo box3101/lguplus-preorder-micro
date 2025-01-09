@@ -1,4 +1,5 @@
 @import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 // px을 rem으로 변환하는 함수
 @function rem($px) {
@@ -32,35 +33,59 @@
   .main-visual {
     box-sizing: border-box;
     padding-top: rem(50);
-    padding-bottom: rem(40);
     text-align: center;
     width: 100%;
     background-color: #ccc;
     background-position: center;
-    padding-bottom: rem(30);
+    padding-bottom: rem(50);
     background: #111;
     position: relative;
+    overflow: hidden;
+
+    svg {
+      position: relative;
+      z-index: 3;
+      top: rem(140);
+    }
 
     .bg-swiper {
       position: absolute;
-      z-index: 4;
+      z-index: 2;
       left: 0;
       top: 0;
       right: 0;
     }
 
     .visual-content {
-      padding-top: rem(66);
       position: relative;
-      z-index: 5;
-    }
+      z-index: 3;
 
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        bottom: rem(-78);
+        left: 50%;
+        transform: translateX(-50%);
+        background: url('../img/bg-main-visual.png') no-repeat center;
+        width: rem(332);
+        height: rem(121);
+        background-size: cover;
+      }
+    }
+    .top-info {
+      margin-top: rem(35);
+      position: relative;
+      z-index: 4;
+    }
     .top-img {
-      margin-bottom: rem(14);
+      margin-bottom: rem(10);
     }
 
     .price-swiper {
-      height: rem(81);
+      height: rem(125);
+      position: relative;
+      z-index: 4;
       margin: 0 auto;
       text-align: center;
     }
@@ -79,33 +104,68 @@
       height: 100%;
     }
     .mid-info {
-      margin-top: rem(14);
-      margin-bottom: rem(8);
-      color: #fff;
-      font-size: rem(24);
-      font-weight: 600;
+      margin-top: rem(10);
+      font-size: rem(12);
+      font-weight: 400;
+      letter-spacing: rem(-0.48);
+      color: #aaa;
+    }
+  }
 
-      em {
-        color: #eee;
-        text-align: center;
-        font-family: SUIT;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: -0.8px;
+  /* ==================== */
+  /*      preorder-coupon         */
+  /* ============= ======= */
+  .preorder-coupon {
+    background: rgba(129, 0, 245, 0.08);
+    padding-top: rem(97);
+    text-align: center;
+    padding-bottom: rem(63);
+    .coupon-content {
+      margin-top: rem(37);
+      position: relative;
+      overflow: hidden;
+
+      .coupon-bg {
+        .coupon-machine {
+          position: absolute;
+          top: 5px;
+          left: 50%;
+          margin-left: -116px;
+
+          .coupon-claw {
+            animation: floatClaw 2s ease-in-out infinite; // 집게만의 움직임
+          }
+        }
       }
-
-      span {
-        display: inline-block;
-        color: rgba(238, 238, 238, 0.5);
-        font-family: SUIT;
-        font-size: rem(14);
-        font-weight: 500;
-        letter-spacing: -1.1px;
-        position: relative;
-        top: rem(-8);
-        left: rem(-3);
+    }
+    // 집게의 좀 더 짧은 상하 움직임
+    @keyframes floatClaw {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-25px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    .coupon-date {
+      margin-top: rem(20);
+      margin-bottom: rem(53);
+      font-size: rem(18);
+      font-weight: 600;
+      letter-spacing: -0.9px;
+    }
+    .coupon-header {
+      margin: 0 auto;
+      text-align: center;
+      .coupon-title {
+        margin: 0 auto;
+      }
+      .coupon-subtitle {
+        margin: 0 auto;
+        margin-top: rem(12);
       }
     }
   }
@@ -497,38 +557,686 @@
   }
 
   /* ==================== */
+  /*    discount-card      */
+  /* ============= ======= */
+  .discount-card {
+    background: rgba(254, 5, 146, 0.05);
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+
+    h3 {
+      margin-top: rem(12);
+    }
+    .benefit-cards-container {
+      margin-top: rem(32);
+    }
+    .benefit-card {
+      margin-bottom: rem(30);
+      padding-left: rem(30);
+      padding-top: rem(32);
+      padding-bottom: rem(28);
+      padding-right: rem(30);
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 0, 140, 0.2);
+      background: #fff;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .benefit-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(14);
+        height: rem(16);
+        border-radius: 100px;
+        background: #c1c1c1;
+        padding: rem(9) rem(10);
+        font-size: rem(13);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.26px;
+      }
+      .benefit-title {
+        font-size: rem(24);
+        font-weight: 700;
+        color: #333;
+        letter-spacing: -1.2px;
+        font-family: SUIT;
+      }
+      .discount-amount {
+        font-size: rem(24);
+        font-weight: 700;
+        color: #ff008c;
+        letter-spacing: -1.2px;
+        font-family: SUIT;
+      }
+      .benefit-description {
+        margin-top: rem(8);
+      }
+      .description-line1 {
+        font-size: rem(16);
+        font-weight: 400;
+        color: #777;
+        letter-spacing: -0.8px;
+        color: #777;
+        font-family: SUIT;
+        line-height: 24px; /* 150% */
+        span {
+          font-weight: 700;
+        }
+      }
+      .description-line2 {
+        font-size: rem(12);
+        font-weight: 400;
+        color: #777;
+        letter-spacing: -0.6px;
+        font-family: SUIT;
+      }
+      .benefit-image img {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: rem(30);
+      }
+    }
+  }
+
+  /* ==================== */
+  /*      요금제 혜택      */
+  /* ==================== */
+  .plan-benefits {
+    background: #1f1f1f;
+    .common-inner {
+      padding: rem(60) rem(20);
+    }
+
+    .coupon-title {
+      text-align: center;
+      margin-bottom: rem(20);
+      img {
+        width: rem(180) !important;
+      }
+    }
+
+    .coupon-subtitle {
+      text-align: center;
+      img {
+        width: rem(386) !important;
+      }
+    }
+
+    .mt-20 {
+      margin-top: rem(20);
+    }
+
+    .plan-benefits-cards {
+      margin-top: rem(40);
+    }
+
+    .plan-card {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .plan-content {
+        .plan-number {
+          display: inline-block;
+          font-size: rem(18);
+          font-weight: 700;
+          color: #666;
+          margin-bottom: rem(24);
+        }
+
+        .plan-title {
+          font-size: rem(24);
+          font-weight: 700;
+          line-height: 1.4;
+          margin-bottom: rem(16);
+          letter-spacing: -0.48px;
+          font-family: SUIT;
+        }
+
+        .plan-description {
+          font-size: rem(16);
+          color: #666;
+          line-height: 1.6;
+          letter-spacing: -0.32px;
+          font-family: SUIT;
+        }
+      }
+
+      .plan-image {
+        margin: rem(14) auto;
+        text-align: center;
+        margin-top: rem(30);
+        max-width: rem(312);
+        img {
+          width: rem(260) !important;
+        }
+      }
+
+      .plan-notice {
+        margin-top: rem(14);
+        .notice-text {
+          text-align: left;
+          color: #999;
+          font-family: SUIT;
+          font-size: rem(12);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 18px; /* 150% */
+          letter-spacing: -0.6px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* ==================== */
+  /*    new-galaxy-coming-soon      */
+  /* ============= ======= */
+  .new-galaxy-coming-soon {
+    padding-top: rem(60);
+    background: #1d1d1d;
+    position: relative;
+    .bg {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: rem(0);
+    }
+    p {
+      margin-top: rem(35);
+    }
+  }
+
+  /* ==================== */
   /*   model-select-wrp   */
   /* ============= ======= */
   .model-select-wrp {
-    .header-wrp {
-      h2 {
-        font-size: rem(24);
-        font-weight: 500;
-        color: #777;
-        letter-spacing: -1.2px;
-      }
-      h3 {
-        font-size: rem(34);
+    padding-bottom: rem(40);
+    padding-top: rem(40);
+    .swiper-button-prev {
+      position: absolute;
+      left: rem(-2) !important;
+    }
+    .swiper-button-prev::after {
+      content: '';
+      width: rem(10);
+      height: rem(17);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17' viewBox='0 0 10 17' fill='none'%3E%3Cpath d='M8 17L10 14.875L2 6.375L-5.82128e-07 8.5L8 17Z' fill='%23333333'/%3E%3Cpath d='M-5.82128e-07 8.5L2 10.625L10 2.125L8 -8.74228e-08L-5.82128e-07 8.5Z' fill='%23333333'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .swiper-button-next {
+      position: absolute;
+      right: rem(-8) !important;
+    }
+    .swiper-button-next::after {
+      content: '';
+      width: rem(10);
+      height: rem(17);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17' viewBox='0 0 10 17' fill='none'%3E%3Cpath d='M2 17L-9.28867e-08 14.875L8 6.375L10 8.5L2 17Z' fill='%23333333'/%3E%3Cpath d='M10 8.5L8 10.625L-4.91261e-07 2.125L2 -8.74228e-08L10 8.5Z' fill='%23333333'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .tab-group.model-select {
+      margin-top: rem(24);
+    }
+    .tit-wrp {
+      text-align: center;
+      .model-title {
+        color: #333;
+        text-align: center;
+        font-family: 'pretendard';
+        font-size: rem(26);
         font-weight: 700;
-        color: #222;
-        letter-spacing: -1.7px;
+      }
+      .color-title {
+        margin-top: rem(8);
+        color: #333;
+        text-align: center;
+        font-family: SUIT;
+        font-size: rem(16);
+        font-weight: 500;
+        line-height: rem(20);
+        letter-spacing: rem(-0.8);
+        padding-bottom: rem(14);
+        border-bottom: rem(1) solid #ddd;
+        margin-bottom: rem(45);
       }
     }
-    .swiper-scrollbar {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 60px;
+    .color-select {
+      img {
+        width: rem(179) !important;
+      }
     }
-    .swiper-scrollbar-drag {
-      width: 33.3%;
+    .model-tab {
+      display: flex;
+      gap: rem(12);
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      li {
+        button {
+          padding: rem(12);
+          color: #888;
+          font-size: rem(15);
+          font-weight: 800;
+          border-radius: rem(100);
+          background: #f1f1f1;
+          letter-spacing: rem(-0.6);
+        }
+      }
+    }
+    .common-tab-content-wrp {
+      border-radius: rem(16);
+      margin-top: rem(24);
+      border: rem(1) solid #ddd;
+      background: #fff;
+      padding: rem(24);
+      gap: rem(24);
+    }
+    .color-tab {
+      display: flex;
+      gap: rem(12);
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &.color-tab {
+        margin-top: rem(42);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      li {
+        flex: 0 0 auto;
+        button {
+          width: rem(30);
+          height: rem(30);
+          border-radius: rem(6);
+          &.gray {
+            background-color: #d6dde0;
+          }
+          &.black {
+            background-color: red;
+          }
+          &.white {
+            background-color: #d8d4c9;
+          }
+          &.blue {
+            background-color: #03e05a;
+          }
+        }
+        &.active {
+          button {
+            position: relative;
+            border: rem(2) solid #000;
+            &::after {
+              position: absolute;
+              left: 33%;
+              top: 27%;
+              transform: translate(-50%, -50%);
+              content: '';
+              display: block;
+              width: rem(7);
+              height: rem(7);
+              border-bottom: rem(2) solid #fff;
+              border-right: rem(2) solid #fff;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+    .storage-tab {
+      margin-top: rem(20);
+      display: flex;
+      gap: rem(10);
+      justify-content: center;
+      li {
+        display: flex;
+        padding: rem(10) rem(20);
+        justify-content: center;
+        align-items: center;
+        gap: rem(10);
+        background: #f5f5f5;
+        border-radius: rem(100);
+
+        button {
+          width: 100%;
+          height: 100%;
+          color: #777;
+          font-size: rem(14);
+          font-weight: 700;
+          line-height: rem(20);
+          letter-spacing: rem(-0.7);
+        }
+        &.active {
+          background: #fff;
+          border-radius: rem(100);
+          border: rem(1) solid #282828;
+          button {
+            color: #333;
+            font-size: rem(14);
+            font-weight: 800;
+            line-height: rem(20);
+          }
+        }
+      }
+    }
+    .storage-price-box {
+      position: relative;
+      margin-top: rem(40);
+      display: flex;
+      padding: rem(5) rem(30) rem(20) rem(30);
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      border-radius: rem(12);
+      border: rem(1) dashed #ccc;
+      background: #f1f1f1;
+      .storage-icon {
+        position: absolute;
+        top: rem(-18);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .storage-info {
+        width: 100%;
+        .price-info {
+          .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem(9);
+
+            .left {
+              display: flex;
+              width: rem(80);
+              padding: rem(4) rem(10);
+              justify-content: center;
+              align-items: center;
+              gap: rem(10);
+              border-radius: rem(4);
+              background: #999;
+              color: #fff;
+              font-family: SUIT;
+              font-size: rem(10);
+              font-weight: 700;
+              letter-spacing: rem(-0.5);
+              box-sizing: border-box;
+            }
+
+            .right {
+              color: #555;
+              font-family: Outfit;
+              font-size: rem(18);
+              font-weight: 700;
+              line-height: rem(23);
+              span {
+                color: #555;
+                font-family: SUIT;
+                font-size: rem(12);
+                font-weight: 400;
+                letter-spacing: rem(-0.6);
+                display: inline-block;
+                margin-left: rem(2);
+              }
+            }
+          }
+
+          .discount {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left {
+              display: flex;
+              width: rem(80);
+              padding: rem(4) rem(10);
+              justify-content: center;
+              align-items: center;
+              gap: rem(10);
+              box-sizing: border-box;
+              border-radius: rem(4);
+              background: #8100f5;
+              color: #fff;
+              font-family: SUIT;
+              font-size: rem(10);
+              font-weight: 700;
+              letter-spacing: rem(-0.5);
+            }
+
+            .right {
+              color: #8100f5;
+              font-family: Outfit;
+              font-size: rem(18);
+              font-weight: 700;
+              line-height: rem(23);
+              span {
+                color: #8100f5;
+                font-family: SUIT;
+                font-size: rem(12);
+                font-weight: 400;
+                letter-spacing: rem(-0.6);
+                display: inline-block;
+                margin-left: rem(2);
+              }
+            }
+          }
+        }
+      }
+
+      .notice {
+        margin-top: rem(12);
+        color: #999;
+        text-align: center;
+        font-family: SUIT;
+        font-size: rem(10);
+        font-weight: 700;
+        letter-spacing: rem(-0.5);
+        span {
+          color: #000;
+          font-family: SUIT;
+          font-size: rem(10);
+          font-weight: 700;
+          letter-spacing: rem(-0.5);
+        }
+      }
+    }
+
+    .price-info {
+      margin-top: rem(24);
+      text-align: left;
+
+      .original-price {
+        color: #555;
+        font-family: SUIT;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.7px;
+        line-height: 1.6;
+        span {
+          color: #555;
+          font-family: Outfit;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        em {
+          color: #555;
+          font-family: SUIT;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.7px;
+          display: inline-block;
+          margin-left: 3px;
+        }
+      }
+
+      .reservation-price {
+        margin-top: rem(4);
+        color: #333;
+        font-family: SUIT;
+        font-size: rem(20);
+        font-weight: 700;
+        letter-spacing: rem(-1);
+      }
+
+      .savings {
+        margin-top: rem(4);
+        color: #8100f5;
+        font-family: SUIT;
+        font-size: rem(12);
+        font-weight: 700;
+        letter-spacing: rem(-0.6);
+      }
+
+      .accordion {
+        position: relative;
+        margin-top: rem(16);
+        text-align: center;
+
+        .accordion-icon {
+          width: rem(12);
+          height: rem(12);
+          margin-right: rem(4);
+          vertical-align: middle;
+        }
+
+        .accordion-txt {
+          color: #999;
+          font-family: SUIT;
+          font-size: rem(12);
+          font-weight: 400;
+          letter-spacing: rem(-0.6);
+          vertical-align: middle;
+        }
+
+        .arrow-down {
+          display: inline-block;
+          width: rem(12);
+          height: rem(12);
+          margin-left: rem(4);
+          background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%23999999' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+            no-repeat center;
+          vertical-align: middle;
+          transition: transform 0.3s;
+        }
+
+        .accordion-content {
+          display: none;
+          padding: rem(24) rem(20);
+          margin-top: rem(16);
+          border-radius: rem(8);
+          background: #f7f7f7;
+          text-align: left;
+
+          .benefit-list {
+            li {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: rem(8);
+
+              .benefit-label {
+                color: #666;
+                font-family: SUIT;
+                font-size: rem(12);
+                font-weight: 400;
+                letter-spacing: rem(-0.6);
+              }
+
+              .benefit-value {
+                color: #333;
+                font-family: SUIT;
+                font-size: rem(12);
+                font-weight: 700;
+                letter-spacing: rem(-0.6);
+              }
+            }
+          }
+
+          .total-benefit {
+            margin-top: rem(16);
+            padding-top: rem(16);
+            border-top: 1px solid #e6e6e6;
+            color: #333;
+            font-family: SUIT;
+            font-size: rem(12);
+            font-weight: 400;
+            letter-spacing: rem(-0.6);
+
+            strong {
+              color: #8100f5;
+              font-weight: 700;
+            }
+          }
+
+          .benefit-notice {
+            margin-top: rem(16);
+
+            ul li {
+              position: relative;
+              padding-left: rem(8);
+              color: #999;
+              font-family: SUIT;
+              font-size: rem(10);
+              font-weight: 400;
+              letter-spacing: rem(-0.5);
+              line-height: rem(16);
+
+              &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: rem(7);
+                width: rem(2);
+                height: rem(2);
+                border-radius: 50%;
+                background: #999;
+              }
+            }
+          }
+        }
+
+        &.active {
+          .arrow-down {
+            transform: rotate(180deg);
+          }
+
+          .accordion-content {
+            display: block;
+          }
+        }
+      }
     }
   }
 
   /* ==================== */
   /*      toast-message       */
   /* ==================== */
-
   .toast-message {
     position: fixed;
     top: rem(20);
@@ -596,33 +1304,12 @@
   /*      공통 탭         */
   /* ==================== */
   .common-tab-menu-wrp {
-    .common-tab-menu {
-      display: flex;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-
-      &-item {
-        padding: rem(10) rem(20);
-        background-color: #f1f1f1;
-        cursor: pointer;
-
-        &.active {
-          background-color: #ccc;
-        }
-      }
-    }
-
     .common-tab-content {
       display: none;
-      padding: rem(20);
 
       &.active {
         display: block;
       }
-    }
-
-    .custom {
     }
   }
 
@@ -715,93 +1402,6 @@
       &.active {
         padding: rem(20);
       }
-    }
-  }
-}
-/* ==================== */
-/*      공통 alert 팝업        */
-/* ==================== */
-.common-alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-
-  .alert-content {
-    background-color: #fff;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .alert-body {
-    padding: 24px;
-  }
-
-  .alert-title {
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .alert-benefit-list {
-    margin-bottom: 20px;
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    span {
-      color: #666;
-    }
-
-    strong {
-      color: #000;
-    }
-  }
-
-  .alert-total {
-    background-color: #f8f8f8;
-    padding: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-
-    strong {
-      color: #ff0066;
-    }
-  }
-
-  .alert-notice {
-    font-size: 14px;
-    color: #666;
-
-    p {
-      margin-bottom: 8px;
-    }
-  }
-
-  .alert-close {
-    width: 100%;
-    padding: 16px;
-    background-color: #ff0066;
-    color: #fff;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #e5005c;
     }
   }
 }
