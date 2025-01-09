@@ -710,6 +710,7 @@
   margin-top: 2.1875rem;
 }
 .preorder-section .model-select-wrp {
+  overflow-x: hidden;
   padding-bottom: 2.5rem;
   padding-top: 2.5rem;
 }
