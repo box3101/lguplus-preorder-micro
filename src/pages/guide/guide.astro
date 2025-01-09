@@ -69,7 +69,7 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
       src="https://unpkg.com/aos@next/dist/aos.js"
     ></script>
     <script is:inline>
-      window.addEventListener('load', function() {
+      window.addEventListener('DOMContentLoaded', function() {
         if (typeof AOS !== 'undefined') {
           AOS.init();
         }
