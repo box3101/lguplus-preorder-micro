@@ -122,21 +122,12 @@ export function initializeSwiper() {
   const prizeDisplayEl = document.querySelector(".prize-display-swiper");
   if (prizeDisplayEl) {
     const prizeDisplaySwiper = new Swiper(".prize-display-swiper", {
-      effect: "creative", // fade 대신 creative 효과 사용
-      creativeEffect: {
-        prev: {
-          translate: [0, 0, -400],
-          rotate: [0, 0, -45],
-          opacity: 0,
-        },
-        next: {
-          translate: [0, 0, -400],
-          rotate: [0, 0, 45],
-          opacity: 0,
-        },
+      effect: "fade", 
+      fadeEffect: {
+        crossFade: true,
       },
       loop: true,
-      speed: 800, // 속도를 좀 더 늘림
+      speed: 600,
       allowTouchMove: false,
     });
 
@@ -168,15 +159,14 @@ export function initializeSwiper() {
         // 메인 이미지 전환
         prizeDisplaySwiper.slideTo(index);
 
-        // 메인 이미지에 추가 애니메이션 적용
-        const mainSlide = document.querySelector(
-          ".prize-display-swiper .swiper-slide-active"
-        );
-        if (mainSlide) {
-          mainSlide.style.animation = "none";
-          mainSlide.offsetHeight; // reflow
-          mainSlide.style.animation = "prizeReveal 0.8s ease-out forwards";
-        }
+        // 클릭한 슬라이드의 이미지 flip
+        const mainSlideImg = prizeDisplayEl.querySelector(`.swiper-slide:nth-child(${index + 1}) img`);
+        mainSlideImg.classList.add('flipped');
+
+        // 3초 후 flip 제거
+        setTimeout(() => {
+          mainSlideImg.classList.remove('flipped');
+        }, 200);
       });
     });
   }

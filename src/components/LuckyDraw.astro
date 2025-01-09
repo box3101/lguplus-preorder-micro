@@ -5,8 +5,8 @@ const prizes = [
     brand: '태그호이어',
     name: '포뮬라1 쿼츠 남성 시계',
     quantity: 1,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
+    image: '../assets/img/prize-img01.png',
+    thumbnail: '../assets/img/prize-img01.png',
     alt: '태그호이어 시계',
   },
   {
@@ -14,8 +14,8 @@ const prizes = [
     brand: '브랜드2',
     name: '상품2',
     quantity: 2,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
+    image: '../assets/img/prize-img02.png',
+    thumbnail: '../assets/img/prize-img02.png',
     alt: '상품2',
   },
   {
@@ -23,8 +23,8 @@ const prizes = [
     brand: '브랜드3',
     name: '상품3',
     quantity: 3,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
+    image: '../assets/img/prize-img03.png',
+    thumbnail: '../assets/img/prize-img03.png',
     alt: '상품3',
   },
   {
@@ -32,8 +32,8 @@ const prizes = [
     brand: '브랜드4',
     name: '상품4',
     quantity: 4,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
+    image: '../assets/img/prize-img04.png',
+    thumbnail: '../assets/img/prize-img04.png',
     alt: '상품4',
   },
   {
@@ -41,8 +41,8 @@ const prizes = [
     brand: '브랜드5',
     name: '상품5',
     quantity: 5,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
+    image: '../assets/img/prize-img05.png',
+    thumbnail: '../assets/img/prize-img05.png',
     alt: '상품5',
   },
   {
@@ -50,8 +50,8 @@ const prizes = [
     brand: '브랜드6',
     name: '상품6',
     quantity: 6,
-    image: 'https://via.placeholder.com/150x150',
-    thumbnail: 'https://via.placeholder.com/60x60',
+    image: '../assets/img/prize-img06.png',
+    thumbnail: '../assets/img/prize-img06.png',
     alt: '상품6',
   },
 ];
@@ -73,12 +73,10 @@ const prizes = [
               <div class="prize-circle">
                 <img src={prize.image} alt={prize.alt} />
                 <div class="prize-info">
-                  <span class="brand">{prize.brand}</span>
-                  <span class="name">{prize.name}</span>
-                  <span class="quantity">({prize.quantity}명)</span>
+                  <p class="name">{prize.name}</p>
+                  <p class="quantity">({prize.quantity}명)</p>
                 </div>
               </div>
-              <span class="lucky-badge">LUCKY DRAW</span>
             </div>
           </div>
         ))
@@ -89,10 +87,14 @@ const prizes = [
     <div class="swiper-wrapper">
       {
         prizes.map((prize, index) => (
-          <div class="swiper-slide">
-            <div class={`thumb-item ${index === 0 ? 'active' : ''}`}>
+          <div class="swiper-slide thumb-item-wrp">
+            <button class={`thumb-item ${index === 0 ? 'active' : ''}`}>
               <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
-            </div>
+              <div class="prize-info">
+                <p class="brand">{prize.brand}</p>
+                <p class="name">{prize.name}</p>
+              </div>
+            </button>
           </div>
         ))
       }

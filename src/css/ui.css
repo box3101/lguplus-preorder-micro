@@ -418,6 +418,18 @@
 .preorder-section .lucky-draw .prize-thumbs-swiper {
   margin-top: 2rem;
 }
+.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item {
+  background: pink;
+}
+.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item img {
+  width: 100% !important;
+  height: auto;
+}
 .preorder-section .lucky-draw .notice {
   margin-top: 1.4375rem;
   line-height: 1.5;
@@ -487,25 +499,41 @@
 }
 .preorder-section .prize-display-swiper {
   position: relative;
+  margin-top: 30px;
+}
+.preorder-section .prize-display-swiper .swiper-slide {
+  perspective: 1000px;
 }
 .preorder-section .prize-display-swiper .swiper-slide img {
   width: auto;
   height: auto;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  backface-visibility: hidden;
+}
+.preorder-section .prize-display-swiper .swiper-slide img.flipped {
+  transform: rotateY(180deg);
 }
 .preorder-section .prize-display-swiper .prize-item {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  border-radius: 50%;
-  box-sizing: border-box;
-  background: url("../img/2024-alarm/Thumb-nail.jpg") no-repeat center;
-  background-size: cover;
-  height: 23.0625rem;
   width: 100%;
-  max-width: 23.0625rem;
+  background: pink;
+  padding-top: 34px;
+  padding-bottom: 24px;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-circle {
   margin-top: 2.0625rem;
+  perspective: 1000px;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-circle img {
+  width: auto !important;
+  max-width: 74%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-circle img.flipped {
+  transform: rotateY(180deg);
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info {
   margin-top: 1.875rem;
