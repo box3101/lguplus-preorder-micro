@@ -1223,13 +1223,14 @@
 
         .accordion-content {
           display: none;
-          padding: rem(24) rem(20);
-          margin-top: rem(8);
-          border-radius: rem(8);
-          background: #f7f7f7;
-          text-align: left;
-
           .benefit-list {
+            padding: 18px 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            align-self: stretch;
+            border-radius: 8px;
+            background: rgba(255, 191, 233, 0.24);
             li {
               display: flex;
               justify-content: space-between;
@@ -1237,19 +1238,37 @@
               margin-bottom: rem(8);
 
               .benefit-label {
-                color: #666;
+                position: relative;
+                padding-left: 12px;
+                color: #282828;
                 font-family: SUIT;
-                font-size: rem(12);
+                font-size: 12px;
+                font-style: normal;
                 font-weight: 400;
-                letter-spacing: rem(-0.6);
+                line-height: 18px; /* 150% */
+                letter-spacing: -0.6px;
+
+                &:before {
+                  content: '·';
+                  position: absolute;
+                  left: 0;
+                }
+              }
+
+              &:last-child {
+                .benefit-label:before {
+                  content: '+';
+                }
               }
 
               .benefit-value {
-                color: #333;
+                color: #ff18aa;
                 font-family: SUIT;
-                font-size: rem(12);
+                font-size: 12px;
+                font-style: normal;
                 font-weight: 700;
-                letter-spacing: rem(-0.6);
+                line-height: 18px; /* 150% */
+                letter-spacing: -0.6px;
               }
             }
           }
@@ -1271,11 +1290,21 @@
           }
 
           .benefit-notice {
-            margin-top: rem(16);
-            display: flex;
-            justify-content: center;
+            margin-top: rem(14);
+            color: #777;
+            text-align: center;
+            font-family: SUIT;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px; /* 150% */
+            letter-spacing: -0.6px;
 
+            ul {
+              text-align: center;
+            }
             ul li {
+              display: block;
               position: relative;
               color: #999;
               font-family: SUIT;
@@ -1563,13 +1592,21 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: rem(60);
+    display: flex;
+    padding: 17px 82px 17px 83px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
     border: 1px solid #ff18aa;
+    background: linear-gradient(0deg, #ff18aa 0%, #ff18aa 100%),
+      linear-gradient(0deg, #0078ff 0%, #0078ff 100%),
+      linear-gradient(90deg, #43c0a8 0%, #3490df 100%);
     color: #fff;
-    background-color: #ff18aa;
-    border-radius: rem(100);
-    font-size: rem(18);
+    font-family: SUIT;
+    font-size: 18px;
+    font-style: normal;
     font-weight: 700;
+    line-height: normal;
     letter-spacing: -0.9px;
   }
   p {

@@ -1156,11 +1156,15 @@
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content {
   display: none;
-  padding: 1.5rem 1.25rem;
-  margin-top: 0.5rem;
-  border-radius: 0.5rem;
-  background: #f7f7f7;
-  text-align: left;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list {
+  padding: 18px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: rgba(255, 191, 233, 0.24);
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li {
   display: flex;
@@ -1169,18 +1173,32 @@
   margin-bottom: 0.5rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-label {
-  color: #666;
+  position: relative;
+  padding-left: 12px;
+  color: #282828;
   font-family: SUIT;
-  font-size: 0.75rem;
+  font-size: 12px;
+  font-style: normal;
   font-weight: 400;
-  letter-spacing: -0.0375rem;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.6px;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-label:before {
+  content: "·";
+  position: absolute;
+  left: 0;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li:last-child .benefit-label:before {
+  content: "+";
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-value {
-  color: #333;
+  color: #ff18aa;
   font-family: SUIT;
-  font-size: 0.75rem;
+  font-size: 12px;
+  font-style: normal;
   font-weight: 700;
-  letter-spacing: -0.0375rem;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.6px;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .total-benefit {
   margin-top: 1rem;
@@ -1197,11 +1215,21 @@
   font-weight: 700;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
+  margin-top: 0.875rem;
+  color: #777;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.6px;
+}
+.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice ul {
+  text-align: center;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice ul li {
+  display: block;
   position: relative;
   color: #999;
   font-family: SUIT;
@@ -6596,13 +6624,19 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 3.75rem;
+  display: flex;
+  padding: 17px 82px 17px 83px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
   border: 1px solid #ff18aa;
+  background: linear-gradient(0deg, #ff18aa 0%, #ff18aa 100%), linear-gradient(0deg, #0078ff 0%, #0078ff 100%), linear-gradient(90deg, #43c0a8 0%, #3490df 100%);
   color: #fff;
-  background-color: #ff18aa;
-  border-radius: 6.25rem;
-  font-size: 1.125rem;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
   letter-spacing: -0.9px;
 }
 .common-btn-wrp p {
