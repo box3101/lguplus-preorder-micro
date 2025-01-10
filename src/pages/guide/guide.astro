@@ -17,7 +17,10 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
     <link rel="stylesheet" href={`../assets/css/common.css?v=${Date.now()}`} />
     <link rel="stylesheet" href="../assets/css/ui.css" />
     <link rel="stylesheet" href="/src/css/ui.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="stylesheet"
@@ -38,21 +41,20 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <!-- 모델 선택 EEE -->
 
           <!-- 오늘 내일 쿠폰 -->
-          <TodayTomorrowTab/>
+          <TodayTomorrowTab />
           <!-- 오늘 내일 쿠폰 EEE -->
 
           <!-- 경품/상품 추첨 이벤트 -->
           <LuckyDraw />
           <!-- 경품/상품 추첨 이벤트 EEE -->
 
-          <!-- 혜택 요약 섹션 -->
-          <BenefitSummary />
-          <!-- 혜택 요약 섹션 EEE -->
-     
           <!-- 가격/할인 비교 섹션 -->
           <PriceComparison />
           <!-- 그곳보다가격/할인 비교 섹션 EEE -->
 
+          <!-- 혜택 요약 섹션 -->
+          <BenefitSummary />
+          <!-- 혜택 요약 섹션 EEE -->
         </section>
       </main>
     </div>
@@ -61,15 +63,13 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
       is:inline
       src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
     ></script>
-    <script 
-      is:inline
-      src="https://unpkg.com/aos@next/dist/aos.js"
-    ></script>
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script is:inline>
-      window.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('DOMContentLoaded', function () {
         if (typeof AOS !== 'undefined') {
           AOS.init({
             easing: 'ease-out-cubic',
+            once: true,
           });
         }
       });

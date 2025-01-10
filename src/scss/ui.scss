@@ -420,11 +420,35 @@
   /*    lucky-draw       */
   /* ============= ======= */
   .lucky-draw {
-    padding-top: rem(60);
-    padding-bottom: rem(60);
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+    background: #fff2f9;
     h3 {
       margin-top: rem(12);
       margin-bottom: rem(40);
+    }
+    .prize-info {
+      .name {
+        color: #272727;
+        text-align: center;
+        font-family: SUIT;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.6px;
+      }
+      .sub-name {
+        color: #8100f5;
+        text-align: center;
+        font-family: SUIT;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.6px;
+        margin-top: 2px;
+      }
     }
     .prize-thumbs-swiper {
       margin-top: rem(32);
@@ -433,11 +457,14 @@
         flex-wrap: wrap;
         gap: rem(14);
         .thumb-item {
-          background: pink;
-          img {
-            width: 100% !important;
-            height: auto;
-          }
+          display: flex;
+          flex-direction: column;
+          width: 94px;
+          height: 84px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 16px;
+          background: #fff;
         }
       }
     }
@@ -530,17 +557,24 @@
       }
     }
     .prize-item {
-      width: 100%;
-      background: pink;
-      padding-top: 34px;
+      padding-top: 24px;
       padding-bottom: 24px;
+      width: 100%;
+      border-radius: 16px;
+      background: linear-gradient(
+          156deg,
+          #ffcef4 16.67%,
+          #f64fcf 63.28%,
+          #ed2fc1 100%
+        ),
+        #fff;
+      box-shadow: 0px 4px 54px 0px rgba(255, 133, 236, 0.5) inset;
 
       .prize-circle {
-        margin-top: rem(33);
         perspective: 1000px;
         img {
           width: auto !important;
-          max-width: 74%;
+          height: 120px !important;
           transition: transform 0.6s;
           transform-style: preserve-3d;
           backface-visibility: hidden;
@@ -550,7 +584,7 @@
         }
       }
       .prize-info {
-        margin-top: rem(30);
+        margin-top: rem(9);
         .brand {
           font-size: rem(14);
           font-weight: 400;
@@ -559,22 +593,33 @@
           margin-bottom: rem(4);
         }
         .name {
-          font-size: rem(16);
+          color: #fff;
+          text-align: center;
+          font-family: SUIT;
+          font-size: 18px;
+          font-style: normal;
           font-weight: 700;
-          color: #000;
-          letter-spacing: -0.8px;
-          margin-bottom: rem(4);
-          line-height: 1.2;
+          line-height: normal;
+          letter-spacing: -0.9px;
         }
         .quantity {
-          display: inline-block;
-          padding: rem(4) rem(16);
-          border-radius: 100px;
-          background: #000;
+          margin-top: 8px;
+          display: inline-flex;
+          padding: 8px 14px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          border-radius: 85.714px;
+          background: #b91493;
           color: #fff;
-          font-size: rem(14);
-          font-weight: 500;
-          letter-spacing: -0.6px;
+          text-align: center;
+          font-family: SUIT;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: -0.7px;
         }
       }
       .lucky-badge {
@@ -982,6 +1027,32 @@
       background: #f1f1f1;
       .storage-text {
         margin-top: 30px;
+        color: #777;
+        text-align: center;
+        font-family: SUIT;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 157.143% */
+        letter-spacing: -0.7px;
+        .storage-text-sub {
+          color: #000;
+          font-family: SUIT;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: -0.8px;
+          span {
+            color: #8100f5;
+            font-family: SUIT;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: -0.8px;
+          }
+        }
       }
       .storage-icon {
         position: absolute;
@@ -1330,6 +1401,199 @@
   }
 
   /* ==================== */
+  /*   coupon-content   */
+  /* ============= ======= */
+  .coupon-content {
+    padding: rem(60) rem(24);
+    background: #222;
+    .accordion {
+      margin-top: rem(18);
+      text-align: center;
+      .accordion-icon {
+        position: relative;
+        top: rem(0);
+      }
+      .accordion-txt {
+        color: #fff;
+        font-family: SUIT;
+        font-size: rem(13);
+        letter-spacing: rem(-0.65);
+        padding-bottom: rem(5);
+        border-bottom: 1px solid #fff;
+      }
+      .arrow-down {
+        border-bottom: #fff solid 1px;
+        border-right: #fff solid 1px;
+      }
+    }
+    .tab-group {
+      max-width: rem(312);
+      margin: 0 auto;
+      background: #3f3f3f;
+      border-radius: rem(21);
+      .common-tab-content {
+        position: relative;
+
+        .coupon-bg {
+          > img {
+            @media screen and (max-width: 345px) {
+              min-width: 100% !important;
+              max-width: 100% !important;
+              width: 100% !important;
+            }
+          }
+        }
+
+        .coupon-machine {
+          position: absolute;
+          top: rem(120);
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 11;
+          @media screen and (max-width: 345px) {
+            top: rem(100);
+          }
+
+          .coupon-claw {
+            animation: fadeUp 1s 1;
+          }
+
+          @keyframes fadeUp {
+            0% {
+              opacity: 0;
+              transform: translateY(rem(20));
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+
+        &:last-child {
+          .coupon-machine {
+            top: rem(40);
+            left: 48%;
+            @media screen and (max-width: 345px) {
+              top: rem(20);
+              margin-left: rem(-10);
+            }
+          }
+        }
+      }
+    }
+    .common-tabs {
+      margin-top: rem(36);
+      position: relative;
+      z-index: 8;
+      display: flex;
+      gap: 0;
+      .common-tab-menu-item {
+        border: none;
+        padding: 0;
+        border-radius: 0;
+      }
+      .common-tab-menu-item.active {
+        background: transparent;
+        button {
+          color: #ff00a8;
+          text-align: center;
+          font-family: SUIT;
+          font-size: rem(20);
+          font-weight: 700;
+          letter-spacing: rem(-1);
+        }
+      }
+      li {
+        flex: 1;
+        height: rem(56);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        font-family: SUIT;
+        font-size: rem(20);
+        font-weight: 700;
+        letter-spacing: rem(-1);
+        box-sizing: border-box;
+        button {
+          color: #fff;
+          text-align: center;
+          font-family: SUIT;
+          font-size: rem(20);
+          font-weight: 700;
+          letter-spacing: rem(-1);
+          box-sizing: border-box;
+          cursor: pointer;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .tab-contents {
+      position: relative;
+      z-index: 7;
+      margin-top: rem(-56);
+    }
+    .coupon-content {
+      margin-top: rem(37);
+      position: relative;
+      overflow: hidden;
+
+      .coupon-bg {
+        > img {
+          @media screen and (max-width: 345px) {
+            min-width: 100% !important;
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+        }
+        .coupon-machine {
+          position: absolute;
+          top: rem(85);
+          left: 50%;
+          margin-left: rem(-116);
+
+          .coupon-claw {
+            animation: floatClaw 2s ease-in-out infinite;
+          }
+        }
+      }
+    }
+    @keyframes floatClaw {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(rem(-25));
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .coupon-date {
+      margin-top: rem(20);
+      margin-bottom: rem(53);
+      font-size: rem(18);
+      font-weight: 600;
+      letter-spacing: rem(-0.9);
+    }
+    .coupon-header {
+      margin: 0 auto;
+      text-align: center;
+      .coupon-title {
+        margin: 0 auto;
+      }
+      .coupon-subtitle {
+        margin: 0 auto;
+        margin-top: rem(12);
+      }
+    }
+  }
+
+  /* ==================== */
   /*      toast-message       */
   /* ==================== */
   .toast-message {
@@ -1594,6 +1858,8 @@
     width: 100%;
     display: flex;
     padding: 17px 82px 17px 83px;
+    padding-left: 0;
+    padding-right: 0;
     justify-content: center;
     align-items: center;
     border-radius: 100px;
@@ -1730,7 +1996,7 @@
 
 .arrow-right {
   position: relative;
-  top: rem(1);
+  top: rem(0);
   left: rem(10);
   width: rem(8);
   height: rem(8);

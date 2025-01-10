@@ -1,45 +1,148 @@
-<article class="today-tomorrow-section">
-  <div class="common-inner">
-    <div class="tab-group today-tomorrow-tab">
-      <!-- 탭 메뉴 -->
-      <ul class="common-tab-menu common-tabs">
-        <li class="common-tab-menu-item active" data-tab="today">
-          <button type="button">오늘</button>
-        </li>
-        <li class="common-tab-menu-item" data-tab="tomorrow">
-          <button type="button">내일</button>
-        </li>
-      </ul>
+<article class="coupon-content common-tab-menu-wrp">
+  <div class="coupon-header">
+    <div class="coupon-title">
+      <img
+        style="width: 208px!important;"
+        src="../assets/img/coupon-title.png"
+        alt="쿠폰 타이틀"
+      />
+    </div>
+  </div>
+  <div class="tab-group today-tomorrow-tab">
+    <!-- 탭 메뉴 -->
+    <ul class="common-tabs">
+      <li class="common-tab-menu-item active" data-tab="today">
+        <button
+          type="button"
+          class="tab-button"
+          data-gtm-event-name="button_click"
+          data-gtm-event-category="클릭"
+          data-gtm-event-action="오늘 콘텐츠 영역 - 버튼 클릭"
+          data-gtm-event-label="컨텐츠 : 쿠폰Tab-오늘"
+          data-gtm-click-location="오늘 콘텐츠 영역"
+          data-gtm-click-text="쿠폰Tab-오늘"
+        >
+          오늘
+        </button>
+      </li>
+      <li class="common-tab-menu-item" data-tab="tomorrow">
+        <button
+          type="button"
+          class="tab-button"
+          data-gtm-event-name="button_click"
+          data-gtm-event-category="클릭"
+          data-gtm-event-action="오늘 콘텐츠 영역 - 버튼 클릭"
+          data-gtm-event-label="컨텐츠 : 쿠폰Tab-사전예약"
+          data-gtm-click-location="오늘 콘텐츠 영역"
+          data-gtm-click-text="쿠폰Tab-사전예약"
+        >
+          내일
+        </button>
+      </li>
+    </ul>
 
-      <!-- 탭 컨텐츠 -->
-      <div class="common-tab-menu-wrp">
-        <!-- 오늘 탭 컨텐츠 -->
-        <div id="today" class="common-tab-content active">
-          <div class="coupon-wrap">
-            <div class="coupon">
-              <div class="coupon-amount">
-                <span class="amount">200,000</span>
-                <span class="unit">원</span>
-              </div>
-              <div class="coupon-label">즉시 할인쿠폰</div>
-            </div>
-            <div class="remaining">
-              <span class="count">3,000</span>
-              <span class="text">명</span>
-            </div>
+    <!-- 탭 컨텐츠 -->
+    <div class="tab-contents">
+      <!-- 오늘 탭 컨텐츠 -->
+      <div id="today" class="common-tab-content active">
+        <div class="coupon-bg">
+          <img
+            style="width: 312px !important"
+            src="../assets/img/bg-coupon1.png"
+          />
+          <div class="coupon-machine">
+            <img
+              class="coupon-claw bounce"
+              style="width: 232px !important"
+              src="../assets/img/coupon-cnt1.png"
+            />
           </div>
         </div>
-        <!-- 내일 탭 컨텐츠 -->
-        <div id="tomorrow" class="common-tab-content">2</div>
       </div>
-
-      <div class="common-btn-wrp mt-24">
-        <button class="common-btn" data-gtm-click-location="사전예약 콘텐츠 영역" data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기" data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭" data-gtm-event-category="클릭" data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기" data-gtm-event-name="button_click" type="button">
-          오늘 쿠폰 한번에 받기
-          <i class="arrow-right animate"></i>
-        </button>
-        <p>※ 가입 신청서에서 용량/색상 변경 가능</p>
+      <!-- 내일 탭 컨텐츠 -->
+      <div id="tomorrow" class="common-tab-content">
+        <div class="coupon-bg">
+          <img
+            style="width: 312px !important"
+            src="../assets/img/bg-coupon2.png"
+          />
+          <div class="coupon-machine">
+            <img
+              class="coupon-claw bounce"
+              style="width: 250px !important"
+              src="../assets/img/coupon-cnt2.png"
+            />
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="common-btn-wrp mt-24" data-aos="fade-up" data-aos-duration="1000">
+    <button
+      class="common-btn"
+      data-gtm-click-location="사전예약 콘텐츠 영역"
+      data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+      data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+      data-gtm-event-category="클릭"
+      data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+      data-gtm-event-name="button_click"
+      type="button"
+    >
+      오늘 쿠폰 한번에 받기
+      <i class="arrow-right animate"></i>
+    </button>
+  </div>
+  <div
+    class="accordion common-inner aos-init aos-animate"
+    data-aos="fade-up"
+    data-aos-delay="700"
+    data-aos-duration="800"
+  >
+    <img
+      class="accordion-icon"
+      src="https://hzymkqbfnbcs24719192.cdn.ntruss.com/mobile/img/2024-alarm/느낌표.svg"
+    />
+    <button
+      class="accordion-txt"
+      data-gtm-click-location="사전알람 콘텐츠 영역"
+      data-gtm-click-text="쿠폰 사용 방법"
+      data-gtm-event-action="사전알람 콘텐츠 영역 - 버튼 클릭"
+      data-gtm-event-category="클릭"
+      data-gtm-event-label="컨텐츠 : 쿠폰 사용 방법"
+      data-gtm-event-name="button_click"
+    >
+      쿠폰 사용방법
+    </button>
+    <i class="arrow-down"></i>
+    <div class="accordion-content" style="display: none;">
+      <ul>
+        <li>
+          <span class="number">①</span>
+          <div class="text">
+            쿠폰은 가입 신청서를 쓸 때 사용해 주세요.
+            <br />(단, 이 사이트에서 예약한 휴대폰이어야 해요.)
+          </div>
+        </li>
+        <li>
+          <span class="number">②</span>
+          <div class="text">
+            수신한 본인만 사용할 수 있어요.
+            <br />(본인 인증을 하기 때문에 양도가 어려워요.)
+          </div>
+        </li>
+        <li>
+          <span class="number">③</span>
+          <div class="text">1회만 사용할 수 있어요.</div>
+        </li>
+        <li>
+          <span class="number">④</span>
+          <div class="text">
+            선착순은 가입 신청서에 등록한 순서예요.
+            <br />(매진이 되면 수신한 쿠폰을 사용할 수 없어요. <br />쿠폰을
+            받으면 신청서에 서둘러 등록해 주세요.)
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </article>

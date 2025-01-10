@@ -122,7 +122,7 @@ export function initializeSwiper() {
   const prizeDisplayEl = document.querySelector(".prize-display-swiper");
   if (prizeDisplayEl) {
     const prizeDisplaySwiper = new Swiper(".prize-display-swiper", {
-      effect: "fade", 
+      effect: "fade",
       fadeEffect: {
         crossFade: true,
       },
@@ -138,7 +138,7 @@ export function initializeSwiper() {
         rows: 2,
         fill: "row",
       },
-      spaceBetween: 10,
+      spaceBetween: 12,
       loop: false,
       watchSlidesProgress: true,
       allowTouchMove: true,
@@ -160,12 +160,14 @@ export function initializeSwiper() {
         prizeDisplaySwiper.slideTo(index);
 
         // 클릭한 슬라이드의 이미지 flip
-        const mainSlideImg = prizeDisplayEl.querySelector(`.swiper-slide:nth-child(${index + 1}) img`);
-        mainSlideImg.classList.add('flipped');
+        const mainSlideImg = prizeDisplayEl.querySelector(
+          `.swiper-slide:nth-child(${index + 1}) img`
+        );
+        mainSlideImg.classList.add("flipped");
 
         // 3초 후 flip 제거
         setTimeout(() => {
-          mainSlideImg.classList.remove('flipped');
+          mainSlideImg.classList.remove("flipped");
         }, 200);
       });
     });

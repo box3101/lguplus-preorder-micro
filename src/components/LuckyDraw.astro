@@ -2,56 +2,62 @@
 const prizes = [
   {
     id: 1,
-    brand: '태그호이어',
-    name: '포뮬라1 쿼츠 남성 시계',
-    quantity: 1,
+    name: '스타벅스 아이스 카페 아메리카노 T',
+    subName: '스타벅스',
+    subName2: '아메리카노 1잔',
+    quantity: 1000,
     image: '../assets/img/prize-img01.png',
-    thumbnail: '../assets/img/prize-img01.png',
+    thumbnail: '../assets/img/prize-thumb-img01.svg',
     alt: '태그호이어 시계',
   },
   {
     id: 2,
-    brand: '브랜드2',
-    name: '상품2',
+    name: '삼성 갤럭시북5 Pro 360 울트라7',
+    subName: '삼성',
+    subName2: '갤럭시북5 Pro',
     quantity: 2,
     image: '../assets/img/prize-img02.png',
-    thumbnail: '../assets/img/prize-img02.png',
+    thumbnail: '../assets/img/prize-thumb-img02.svg',
     alt: '상품2',
   },
   {
     id: 3,
-    brand: '브랜드3',
-    name: '상품3',
+    name: 'LG 퓨리케어 하이드로타워 가습기',
+    subName: 'LG ',
+    subName2: '퓨리케어 가습기',
     quantity: 3,
     image: '../assets/img/prize-img03.png',
-    thumbnail: '../assets/img/prize-img03.png',
+    thumbnail: '../assets/img/prize-thumb-img03.svg',
     alt: '상품3',
   },
   {
     id: 4,
-    brand: '브랜드4',
-    name: '상품4',
+    name: 'Steam Deck 1TB OLED',
+    subName: 'Steam Deck',
+    subName2: '100만원',
     quantity: 4,
     image: '../assets/img/prize-img04.png',
-    thumbnail: '../assets/img/prize-img04.png',
+    thumbnail: '../assets/img/prize-thumb-img04.svg',
     alt: '상품4',
   },
   {
     id: 5,
-    brand: '브랜드5',
-    name: '상품5',
+    name: 'LG 시네빔 큐브',
+    subName: 'LG',
+    subName2: '시네빔 큐브',
     quantity: 5,
     image: '../assets/img/prize-img05.png',
-    thumbnail: '../assets/img/prize-img05.png',
+    thumbnail: '../assets/img/prize-thumb-img05.svg',
     alt: '상품5',
   },
   {
     id: 6,
-    brand: '브랜드6',
-    name: '상품6',
+    name: '에르메스 자이언트 트라이앵글',
+    subName: '에르메스',
+    subName2: '트라이앵글',
     quantity: 6,
     image: '../assets/img/prize-img06.png',
-    thumbnail: '../assets/img/prize-img06.png',
+    thumbnail: '../assets/img/prize-thumb-img06.svg',
     alt: '상품6',
   },
 ];
@@ -60,7 +66,11 @@ const prizes = [
 <article class="lucky-draw common-inner">
   <div class="lucky-draw-header">
     <h2>
-      <img src="../assets/img/lucky-draw-h2.png" alt="경품/상품 추첨 이벤트" />
+      <img
+        style="width: 195px !important;"
+        src="../assets/img/lucky-draw-h2.png"
+        alt="경품/상품 추첨 이벤트"
+      />
     </h2>
   </div>
 
@@ -74,7 +84,7 @@ const prizes = [
                 <img src={prize.image} alt={prize.alt} />
                 <div class="prize-info">
                   <p class="name">{prize.name}</p>
-                  <p class="quantity">({prize.quantity}명)</p>
+                  <p class="quantity">{prize.quantity}명</p>
                 </div>
               </div>
             </div>
@@ -90,27 +100,34 @@ const prizes = [
           <div class="swiper-slide thumb-item-wrp">
             <button class={`thumb-item ${index === 0 ? 'active' : ''}`}>
               <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
-              <div class="prize-info">
-                <p class="brand">{prize.brand}</p>
-                <p class="name">{prize.name}</p>
-              </div>
             </button>
+            <div class="prize-info">
+              <p class="name">{prize.subName}</p>
+              <p class="sub-name">{prize.subName2}</p>
+            </div>
           </div>
         ))
       }
     </div>
   </div>
 
-  <!-- 응모하기 -->
-  <button
-    class="common-btn"
-    data-gtm-click-location="사전예약 콘텐츠 영역"
-    data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
-    data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
-    data-gtm-event-category="클릭"
-    data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
-    data-gtm-event-name="button_click"
-    type="button"
-    >오늘의 혜택 받고 예약하기<i class="icon"></i>
-  </button>
+  <div class="common-btn-wrp mt-24" data-aos="fade-up" data-aos-duration="1000">
+    <button
+      class="common-btn"
+      data-gtm-click-location="사전예약 콘텐츠 영역"
+      data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+      data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+      data-gtm-event-category="클릭"
+      data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+      data-gtm-event-name="button_click"
+      type="button"
+    >
+      래플 참여하기
+      <i class="arrow-right animate"></i>
+    </button>
+    <p>
+      ※ 당첨된 선물은 개통 후 14일 유지 시 지급됩니다. <br />
+      자세한 내용은 하단 유의사항을 읽어주세요.
+    </p>
+  </div>
 </article>

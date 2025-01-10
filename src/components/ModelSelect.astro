@@ -349,7 +349,7 @@ const models = [
     <div
       class="common-tab-menu-wrp common-inner"
       data-aos="fade-up"
-      data-aos-duration="800"
+      data-aos-duration="1000"
     >
       <ul class="common-tab-menu model-tab">
         {
@@ -375,7 +375,7 @@ const models = [
             <div
               class="tab-group color-select"
               data-aos="fade-up"
-              data-aos-duration="800"
+              data-aos-duration="1000"
             >
               {model.colors.map((color) => (
                 <div
@@ -422,7 +422,7 @@ const models = [
             <div
               class="tab-group storage-select"
               data-aos="fade-up"
-              data-aos-duration="800"
+              data-aos-duration="1000"
             >
               <ul class="common-tab-menu common-tabs storage-tab">
                 {model.storage.map((storage) => (
@@ -442,7 +442,7 @@ const models = [
                   class={`common-tab-content ${storage.active ? 'active' : ''}`}
                   id={`${model.id}-${storage.size}`}
                   data-aos="fade-up"
-                  data-aos-duration="800"
+                  data-aos-duration="1000"
                 >
                   <div class="storage-price-box">
                     <div class="storage-info">
@@ -457,35 +457,40 @@ const models = [
                       {index === 2 ? (
                         <div class="storage-text">
                           <p>1TB 업그레이드 비용</p>
-                          <p>
+                          <p class="storage-text-sub">
                             다른 곳보다 <span>136,000원</span> 저렴
                           </p>
                         </div>
                       ) : (
-                        <div class="price-info">
-                          <div class="price">
-                            <span class="left">다른 곳</span>
-                            <span class="right">
-                              {storage.storagePrice.others.toLocaleString()}
-                              <span>원</span>
-                            </span>
+                        <div>
+                          <div class="price-info">
+                            <div class="price">
+                              <span class="left">다른 곳</span>
+                              <span class="right">
+                                {storage.storagePrice.others.toLocaleString()}
+                                <span>원</span>
+                              </span>
+                            </div>
+                            <div class="discount">
+                              <span class="left">유플닷컴</span>
+                              <span class="right">
+                                {storage.storagePrice.uplus}
+                                <span>원</span>
+                              </span>
+                            </div>
                           </div>
-                          <div class="discount">
-                            <span class="left">유플닷컴</span>
-                            <span class="right">
-                              {storage.storagePrice.uplus}
-                              <span>원</span>
-                            </span>
-                          </div>
+                          <p
+                            class="notice"
+                            set:html={storage.storagePrice.notice}
+                          />
                         </div>
                       )}
                     </div>
-                    <p class="notice" set:html={storage.storagePrice.notice} />
                   </div>
                   <div
                     class="price-info"
                     data-aos="fade-up"
-                    data-aos-duration="800"
+                    data-aos-duration="1000"
                   >
                     <p class="original-price">
                       출고가 <br />
@@ -554,7 +559,7 @@ const models = [
       <div
         class="common-btn-wrp mt-24"
         data-aos="fade-up"
-        data-aos-duration="800"
+        data-aos-duration="1000"
       >
         <button
           class="common-btn"

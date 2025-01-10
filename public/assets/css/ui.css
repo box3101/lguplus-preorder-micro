@@ -40,6 +40,9 @@
   /*   model-select-wrp   */
   /* ============= ======= */
   /* ==================== */
+  /*   coupon-content   */
+  /* ============= ======= */
+  /* ==================== */
   /*      toast-message       */
   /* ==================== */
   /* ==================== */
@@ -408,12 +411,34 @@
   width: 100%;
 }
 .preorder-section .lucky-draw {
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: #fff2f9;
 }
 .preorder-section .lucky-draw h3 {
   margin-top: 0.75rem;
   margin-bottom: 2.5rem;
+}
+.preorder-section .lucky-draw .prize-info .name {
+  color: #272727;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+}
+.preorder-section .lucky-draw .prize-info .sub-name {
+  color: #8100f5;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  margin-top: 2px;
 }
 .preorder-section .lucky-draw .prize-thumbs-swiper {
   margin-top: 2rem;
@@ -424,11 +449,14 @@
   gap: 0.875rem;
 }
 .preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item {
-  background: pink;
-}
-.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item img {
-  width: 100% !important;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 94px;
+  height: 84px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: #fff;
 }
 .preorder-section .lucky-draw .notice {
   margin-top: 1.4375rem;
@@ -516,18 +544,19 @@
   transform: rotateY(180deg);
 }
 .preorder-section .prize-display-swiper .prize-item {
-  width: 100%;
-  background: pink;
-  padding-top: 34px;
+  padding-top: 24px;
   padding-bottom: 24px;
+  width: 100%;
+  border-radius: 16px;
+  background: linear-gradient(156deg, #ffcef4 16.67%, #f64fcf 63.28%, #ed2fc1 100%), #fff;
+  box-shadow: 0px 4px 54px 0px rgba(255, 133, 236, 0.5) inset;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-circle {
-  margin-top: 2.0625rem;
   perspective: 1000px;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-circle img {
   width: auto !important;
-  max-width: 74%;
+  height: 120px !important;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -536,7 +565,7 @@
   transform: rotateY(180deg);
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info {
-  margin-top: 1.875rem;
+  margin-top: 0.5625rem;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info .brand {
   font-size: 0.875rem;
@@ -546,22 +575,33 @@
   margin-bottom: 0.25rem;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info .name {
-  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 18px;
+  font-style: normal;
   font-weight: 700;
-  color: #000;
-  letter-spacing: -0.8px;
-  margin-bottom: 0.25rem;
-  line-height: 1.2;
+  line-height: normal;
+  letter-spacing: -0.9px;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info .quantity {
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  border-radius: 100px;
-  background: #000;
+  margin-top: 8px;
+  display: inline-flex;
+  padding: 8px 14px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 85.714px;
+  background: #b91493;
   color: #fff;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: -0.6px;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.7px;
 }
 .preorder-section .prize-display-swiper .prize-item .lucky-badge {
   position: absolute;
@@ -930,6 +970,32 @@
 }
 .preorder-section .model-select-wrp .storage-price-box .storage-text {
   margin-top: 30px;
+  color: #777;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: -0.7px;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-text .storage-text-sub {
+  color: #000;
+  font-family: SUIT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.8px;
+}
+.preorder-section .model-select-wrp .storage-price-box .storage-text .storage-text-sub span {
+  color: #8100f5;
+  font-family: SUIT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.8px;
 }
 .preorder-section .model-select-wrp .storage-price-box .storage-icon {
   position: absolute;
@@ -1244,6 +1310,186 @@
 }
 .preorder-section .model-select-wrp .price-info .accordion.active .accordion-content {
   display: block;
+}
+.preorder-section .coupon-content {
+  padding: 3.75rem 1.5rem;
+  background: #222;
+}
+.preorder-section .coupon-content .accordion {
+  margin-top: 1.125rem;
+  text-align: center;
+}
+.preorder-section .coupon-content .accordion .accordion-icon {
+  position: relative;
+  top: 0rem;
+}
+.preorder-section .coupon-content .accordion .accordion-txt {
+  color: #fff;
+  font-family: SUIT;
+  font-size: 0.8125rem;
+  letter-spacing: -0.040625rem;
+  padding-bottom: 0.3125rem;
+  border-bottom: 1px solid #fff;
+}
+.preorder-section .coupon-content .accordion .arrow-down {
+  border-bottom: #fff solid 1px;
+  border-right: #fff solid 1px;
+}
+.preorder-section .coupon-content .tab-group {
+  max-width: 19.5rem;
+  margin: 0 auto;
+  background: #3f3f3f;
+  border-radius: 1.3125rem;
+}
+.preorder-section .coupon-content .tab-group .common-tab-content {
+  position: relative;
+}
+@media screen and (max-width: 345px) {
+  .preorder-section .coupon-content .tab-group .common-tab-content .coupon-bg > img {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+.preorder-section .coupon-content .tab-group .common-tab-content .coupon-machine {
+  position: absolute;
+  top: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+}
+@media screen and (max-width: 345px) {
+  .preorder-section .coupon-content .tab-group .common-tab-content .coupon-machine {
+    top: 6.25rem;
+  }
+}
+.preorder-section .coupon-content .tab-group .common-tab-content .coupon-machine .coupon-claw {
+  animation: fadeUp 1s 1;
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.preorder-section .coupon-content .tab-group .common-tab-content:last-child .coupon-machine {
+  top: 2.5rem;
+  left: 48%;
+}
+@media screen and (max-width: 345px) {
+  .preorder-section .coupon-content .tab-group .common-tab-content:last-child .coupon-machine {
+    top: 1.25rem;
+    margin-left: -0.625rem;
+  }
+}
+.preorder-section .coupon-content .common-tabs {
+  margin-top: 2.25rem;
+  position: relative;
+  z-index: 8;
+  display: flex;
+  gap: 0;
+}
+.preorder-section .coupon-content .common-tabs .common-tab-menu-item {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+.preorder-section .coupon-content .common-tabs .common-tab-menu-item.active {
+  background: transparent;
+}
+.preorder-section .coupon-content .common-tabs .common-tab-menu-item.active button {
+  color: #ff00a8;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.0625rem;
+}
+.preorder-section .coupon-content .common-tabs li {
+  flex: 1;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.0625rem;
+  box-sizing: border-box;
+}
+.preorder-section .coupon-content .common-tabs li button {
+  color: #fff;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.0625rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.preorder-section .coupon-content .tab-contents {
+  position: relative;
+  z-index: 7;
+  margin-top: -3.5rem;
+}
+.preorder-section .coupon-content .coupon-content {
+  margin-top: 2.3125rem;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 345px) {
+  .preorder-section .coupon-content .coupon-content .coupon-bg > img {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+.preorder-section .coupon-content .coupon-content .coupon-bg .coupon-machine {
+  position: absolute;
+  top: 5.3125rem;
+  left: 50%;
+  margin-left: -7.25rem;
+}
+.preorder-section .coupon-content .coupon-content .coupon-bg .coupon-machine .coupon-claw {
+  animation: floatClaw 2s ease-in-out infinite;
+}
+@keyframes floatClaw {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5625rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.preorder-section .coupon-content .coupon-date {
+  margin-top: 1.25rem;
+  margin-bottom: 3.3125rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.05625rem;
+}
+.preorder-section .coupon-content .coupon-header {
+  margin: 0 auto;
+  text-align: center;
+}
+.preorder-section .coupon-content .coupon-header .coupon-title {
+  margin: 0 auto;
+}
+.preorder-section .coupon-content .coupon-header .coupon-subtitle {
+  margin: 0 auto;
+  margin-top: 0.75rem;
 }
 .preorder-section .toast-message {
   position: fixed;
@@ -6626,6 +6872,8 @@
   width: 100%;
   display: flex;
   padding: 17px 82px 17px 83px;
+  padding-left: 0;
+  padding-right: 0;
   justify-content: center;
   align-items: center;
   border-radius: 100px;
@@ -6750,7 +6998,7 @@
 
 .arrow-right {
   position: relative;
-  top: 0.0625rem;
+  top: 0rem;
   left: 0.625rem;
   width: 0.5rem;
   height: 0.5rem;
