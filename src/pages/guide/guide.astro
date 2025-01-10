@@ -52,6 +52,96 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <PriceComparison />
           <!-- 그곳보다가격/할인 비교 섹션 EEE -->
 
+          <article class="s25_counter common-inner">
+            <div
+              class="tit_cnt3_inner"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-once="true"
+            >
+              <img
+                style="width: 246px!important;"
+                src="../assets/img/counter-title.png"
+                alt="출시일 전에 먼저 받아보세요"
+              />
+            </div>
+            <div class="realtime_counter-wrp">
+              <div
+                class="realtime_counter"
+                data-aos="flip-left"
+                data-aos-duration="800"
+                data-aos-delay="400"
+                data-aos-once="true"
+              >
+                <p class="counter-title">미리드림 신청자 수</p>
+                <div class="reqPReCnt-wrp">
+                  <span id="reqPReCnt" class="counter" data-start="" data-end=""
+                    >2,025</span
+                  ><em>명</em>
+                </div>
+                <div class="counter-img">
+                  <img
+                    style="width: 165px!important;"
+                    src="../assets/img/counter-img.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                class="alarm"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="1200"
+                data-aos-once="true"
+              >
+                ※ 실시간 신청 수는 10분마다 업데이트 됩니다
+              </div>
+            </div>
+            <ul
+              class="info-txt"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="1600"
+              data-aos-once="true"
+            >
+              <li>
+                방법 : <em>1/23(화)</em>까지
+                <em class="under">가입 신청</em>
+              </li>
+              <li>
+                대상 : U<sup>+</sup> 이용자 <span class="ft_12"
+                  >(1년 이상 + 연체 없음)</span
+                >
+              </li>
+            </ul>
+
+            <div
+              class="common-btn-wrp mt-55"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="600"
+            >
+              <div class="toast dongdong-effect">
+                <img src="../assets/img/coupon-toast2.png" />
+              </div>
+              <button
+                class="common-btn"
+                data-gtm-event-category="클릭"
+                data-gtm-event-action="사전알람 콘텐츠 영역 - 버튼 클릭"
+                data-gtm-click-location="사전알람 콘텐츠 영역"
+                data-gtm-event-name="button_click"
+                data-gtm-event-label="컨텐츠 : 알람신청_01-단계진입_내 당첨금 확인하기"
+                data-gtm-click-text="알람신청_01-단계진입_내 당첨금 확인하기"
+                onclick="ALARM.oepnEvtPag();"
+                type="button"
+              >
+                출시 전 미리 받기
+                <i class="arrow-right animate"></i>
+              </button>
+            </div>
+          </article>
+
           <!-- 혜택 요약 섹션 -->
           <BenefitSummary />
           <!-- 혜택 요약 섹션 EEE -->
@@ -64,14 +154,80 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
       src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
     ></script>
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script
+      is:inline
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script is:inline>
-      window.addEventListener('DOMContentLoaded', function () {
+      window.addEventListener('load', function () {
         if (typeof AOS !== 'undefined') {
           AOS.init({
             easing: 'ease-out-cubic',
             once: true,
           });
         }
+
+        /* [S] 스크롤 모니터 */
+        const $counters = $('.counter');
+        // 노출 비율(%)과 애니메이션 속도(ms)을 설정
+        const exposurePercentage = 100; // 스크롤시 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
+        const duration = 5000;
+        const addCommas = true; // 숫자에 쉼표
+
+        // 숫자를 업데이트하고 애니메이션하는 함수 정의
+        function updateCounter($el, start, end) {
+          let startTime;
+          function animateCounter(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = (timestamp - startTime) / duration;
+            const current = Math.round(start + progress * (end - start));
+            const formattedNumber = addCommas
+              ? current.toLocaleString()
+              : current;
+            $el.text(formattedNumber);
+
+            if (progress < 1) {
+              requestAnimationFrame(animateCounter);
+            } else {
+              $el.text(addCommas ? end.toLocaleString() : end);
+            }
+          }
+          requestAnimationFrame(animateCounter);
+        }
+
+        // 윈도우의 스크롤 이벤트를 모니터링합니다.
+        $(window)
+          .on('scroll', function () {
+            // 각 "counter" 요소에 대해 반복합니다.
+            $counters.each(function () {
+              const $el = $(this);
+              // 요소가 아직 스크롤되지 않았다면 처리합니다.
+              if (!$el.data('scrolled')) {
+                // 요소의 위치 정보
+                const rect = $el[0].getBoundingClientRect();
+                const winHeight = window.innerHeight;
+                const contentHeight = rect.bottom - rect.top;
+
+                // 요소가 화면에 특정 비율만큼 노출될 때 처리
+                if (
+                  rect.top <=
+                    winHeight - (contentHeight * exposurePercentage) / 100 &&
+                  rect.bottom >= (contentHeight * exposurePercentage) / 100
+                ) {
+                  const start = parseInt($el.data('start'));
+                  const end = parseInt($el.data('end'));
+                  //updateCounter($el, start, end);
+                  updateCounter($counters, 0, 100);
+                  $el.data('scrolled', true);
+                }
+              }
+            });
+          })
+          .scroll();
+
+        /* [e] 스크롤 모니터 */
       });
     </script>
     <script type="module" src="../assets/js/main/main.js"></script>

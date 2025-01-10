@@ -1,4 +1,5 @@
 {
   "px-to-rem.px-per-rem": 16,
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "prettier.printWidth": 120
 }
