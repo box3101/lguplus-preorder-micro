@@ -177,8 +177,7 @@ export function initializeSwiper() {
   if (benefitSwipers.length) {
     benefitSwipers.forEach((element) => {
       new Swiper(element, {
-        slidesPerView: 1.2,
-        spaceBetween: 12,
+        slidesPerView: 1.5,
       });
     });
   }
