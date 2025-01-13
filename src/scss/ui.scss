@@ -1886,7 +1886,7 @@
         }
 
         .swiper-slide {
-            max-width: 236px;
+          max-width: 236px;
 
           .benefit-box {
             position: relative;
@@ -1923,7 +1923,7 @@
               line-height: 28px; /* 140% */
               letter-spacing: -1px;
               text-align: left;
-              span{
+              span {
                 color: #ff1f9a;
               }
             }
@@ -1952,7 +1952,7 @@
           margin-top: 12px;
         }
 
-        .notice{
+        .notice {
           margin-top: 16px;
           font-size: 14px;
           text-align: left;
@@ -1960,15 +1960,25 @@
         }
       }
     }
-    .notice{
+    .notice {
       margin-top: 16px;
       font-size: 14px;
       text-align: center;
       margin-bottom: 44px;
-        span{
-          color: #ff1f9a;
-        }
+      span {
+        color: #ff1f9a;
+      }
     }
+  }
+
+  /* ==================== */
+  /*      채팅 영역       */
+  /* ==================== */
+  .chat-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #fff;
+    overflow-x: hidden;
   }
 
   @keyframes slideDown {
@@ -1985,17 +1995,17 @@
   /* ==================== */
   /*      숏츠영상 섹션       */
   /* ==================== */
-  .shorts-section{
+  .shorts-section {
     padding-top: 40px;
     padding-bottom: 40px;
     background: #fff;
-    .shorts-title{
+    .shorts-title {
       margin-bottom: 20px;
     }
-    .shorts-content{
-        height: 480px;
-        background: #f1f1f1;
-      .shorts-video-wrap{
+    .shorts-content {
+      height: 480px;
+      background: #f1f1f1;
+      .shorts-video-wrap {
         width: 100%;
         height: 100%;
         border-radius: 12px;

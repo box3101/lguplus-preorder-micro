@@ -52,6 +52,9 @@
   /*      혜택 요약 영역       */
   /* ==================== */
   /* ==================== */
+  /*      채팅 영역       */
+  /* ==================== */
+  /* ==================== */
   /*      숏츠영상 섹션       */
   /* ==================== */
   /* ==================== */
@@ -1827,6 +1830,12 @@
 }
 .preorder-section .benefit-summary .notice span {
   color: #ff1f9a;
+}
+.preorder-section .chat-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #fff;
+  overflow-x: hidden;
 }
 @keyframes slideDown {
   from {
