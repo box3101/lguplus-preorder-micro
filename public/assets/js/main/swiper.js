@@ -7,66 +7,62 @@ export function initializeSwiper() {
   const bgSwiper = document.querySelector(".bg-swiper");
 
   if (mainVisual) {
-    // 가격 스와이퍼 초기화
-    const priceSwiperInstance = new Swiper(priceSwiper, {
-      direction: "horizontal",
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      speed: 500,
-      effect: "creative",
-      creativeEffect: {
-        prev: {
-          translate: [0, "-50%", 0],
-          opacity: 0,
+    setTimeout(() => {
+      // 가격 스와이퍼 초기화
+      const priceSwiperInstance = new Swiper(priceSwiper, {
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 500, // 0.5초 딜레이
+          disableOnInteraction: true, // 터치시 자동 슬라이드 정지
         },
-        next: {
-          translate: [0, "50%", 0],
-          opacity: 0,
+        speed: 700,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            translate: [0, "-50%", 0],
+            opacity: 0,
+          },
+          next: {
+            translate: [0, "50%", 0],
+            opacity: 0,
+          },
         },
-      },
-      allowTouchMove: true,
-    });
+        allowTouchMove: true,
+      });
 
-    // 메인 비주얼 스와이퍼 초기화
-    const mainSwiperInstance = new Swiper(mainVisualSwiper, {
-      direction: "horizontal",
-      loop: true,
-      effect: "creative",
-      creativeEffect: {
-        prev: {
-          translate: [0, "-50%", 0],
-          opacity: 0,
+      // 메인 비주얼 스와이퍼 초기화
+      const mainSwiperInstance = new Swiper(mainVisualSwiper, {
+        direction: "horizontal",
+        loop: true,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            translate: [0, "-50%", 0],
+            opacity: 0,
+          },
+          next: {
+            translate: [0, "50%", 0],
+            opacity: 0,
+          },
         },
-        next: {
-          translate: [0, "50%", 0],
-          opacity: 0,
+        allowTouchMove: true,
+      });
+
+      // bg 스와이퍼 초기화
+      const bgSwiperInstance = new Swiper(bgSwiper, {
+        direction: "horizontal",
+        loop: true,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
         },
-      },
-      allowTouchMove: true,
-    });
+        allowTouchMove: true,
+      });
 
-    // bg 스와이퍼 초기화
-    const bgSwiperInstance = new Swiper(bgSwiper, {
-      direction: "horizontal",
-      loop: true,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      allowTouchMove: true,
-    });
-
-    priceSwiperInstance.controller.control = [
-      mainSwiperInstance,
-      bgSwiperInstance,
-    ];
-    mainSwiperInstance.controller.control = [
-      priceSwiperInstance,
-      bgSwiperInstance,
-    ];
+      priceSwiperInstance.controller.control = [mainSwiperInstance, bgSwiperInstance];
+      mainSwiperInstance.controller.control = [priceSwiperInstance, bgSwiperInstance];
+    }, 1500);
   }
 
   // 컬러 스와이퍼 초기화
@@ -145,24 +141,18 @@ export function initializeSwiper() {
     });
 
     // 썸네일 클릭 시 메인 이미지 변경 및 모션 효과
-    const thumbSlides = document.querySelectorAll(
-      ".prize-thumbs-swiper .swiper-slide"
-    );
+    const thumbSlides = document.querySelectorAll(".prize-thumbs-swiper .swiper-slide");
     thumbSlides.forEach((slide, index) => {
       slide.addEventListener("click", () => {
         // 클릭한 썸네일에 active 클래스 추가
-        thumbSlides.forEach((s) =>
-          s.querySelector(".thumb-item").classList.remove("active")
-        );
+        thumbSlides.forEach((s) => s.querySelector(".thumb-item").classList.remove("active"));
         slide.querySelector(".thumb-item").classList.add("active");
 
         // 메인 이미지 전환
         prizeDisplaySwiper.slideTo(index);
 
         // 클릭한 슬라이드의 이미지 flip
-        const mainSlideImg = prizeDisplayEl.querySelector(
-          `.swiper-slide:nth-child(${index + 1}) img`
-        );
+        const mainSlideImg = prizeDisplayEl.querySelector(`.swiper-slide:nth-child(${index + 1}) img`);
         mainSlideImg.classList.add("flipped");
 
         // 3초 후 flip 제거

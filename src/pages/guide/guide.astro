@@ -36,13 +36,17 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <MainVisual />
           <!-- 메인 비쥬얼 EEE -->
 
-          <!-- 모델 선택 -->
-          <ModelSelect />
-          <!-- 모델 선택 EEE -->
+          <!-- 오늘 예약자 특혜 -->
+          <TodayTomorrowTab />
+          <!-- 오늘 예약자 특혜 EEE -->
 
           <!-- 오늘 내일 쿠폰 -->
           <TodayTomorrowTab />
           <!-- 오늘 내일 쿠폰 EEE -->
+
+          <!-- 모델 선택 -->
+          <ModelSelect />
+          <!-- 모델 선택 EEE -->
 
           <!-- 경품/상품 추첨 이벤트 -->
           <LuckyDraw />
@@ -149,11 +153,17 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <!-- 숏츠영상 섹션 -->
           <article class="shorts-section common-inner">
             <div class="shorts-title">
-              <img src="../assets/img/shorts-title.png" alt="숏츠영상">
+              <img src="../assets/img/shorts-title.png" alt="숏츠영상" />
             </div>
             <div class="shorts-content">
-              <div class="shorts-video-wrap" onclick="COMMON.openBottomSheet('shorts-video')">
-                <img src="../assets/img/shorts-thumbnail.png" alt="숏츠영상 썸네일" />
+              <div
+                class="shorts-video-wrap"
+                onclick="COMMON.openBottomSheet('shorts-video')"
+              >
+                <img
+                  src="../assets/img/shorts-thumbnail.png"
+                  alt="숏츠영상 썸네일"
+                />
               </div>
             </div>
           </article>
@@ -163,7 +173,10 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
         <!-- 앵콜요청 -->
         <article class="announce-request common-inner">
           <div class="announce-request-inner">
-            <img src="../assets/img/announce-request-title.png" alt="앵콜요청">
+            <img
+              src="../assets/img/announce-request-title.png"
+              alt="앵콜요청"
+            />
           </div>
           <div class="announce-request-content">
             <div class="announce-request-card">
@@ -172,7 +185,10 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
                 <p>앵콜요청 카드 영역</p>
               </div>
               <div class="announce-request-img">
-                <img src="../assets/img/announce-request1.png" alt="갤럭시 워치 7" />
+                <img
+                  src="../assets/img/announce-request1.png"
+                  alt="갤럭시 워치 7"
+                />
               </div>
             </div>
             <div class="announce-request-card">
@@ -181,7 +197,10 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
                 <p>앵콜요청 카드 영역</p>
               </div>
               <div class="announce-request-img">
-                <img src="../assets/img/announce-request2.png" alt="갤럭시 워치 7" />
+                <img
+                  src="../assets/img/announce-request2.png"
+                  alt="갤럭시 워치 7"
+                />
               </div>
             </div>
             <div class="announce-request-card">
@@ -190,44 +209,116 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
                 <p>앵콜요청 카드 영역</p>
               </div>
               <div class="announce-request-img">
-                <img src="../assets/img/announce-request3.png" alt="갤럭시 워치 7" />
+                <img
+                  src="../assets/img/announce-request3.png"
+                  alt="갤럭시 워치 7"
+                />
               </div>
             </div>
           </div>
         </article>
         <!-- 앵콜요청 EEE -->
 
-      <!-- 채팅 섹션 -->
-      <article class="chat-section common-inner">
-        <div class="chat-content">
-          <div class="chat-message customer" data-aos="fade-right" data-aos-duration="1000">
-            <div class="message-bubble">
-              저어... 사전예약을 처음 해보는데요😅
+        <!-- 채팅 섹션 -->
+        <article class="chat-section common-inner">
+          <div class="chat-content">
+            <div
+              class="chat-message customer"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <div class="message-bubble">
+                저어... 사전예약을 처음 해보는데요😅
+              </div>
+            </div>
+
+            <div
+              class="chat-message uplus"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <div class="message-bubble">
+                예약만 하고 개통은 천천히 해도 되나요?
+              </div>
+            </div>
+
+            <div
+              class="chat-message customer"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <div class="message-bubble">
+                아, 예약현금 바로 계약하는 건 잘았어요 😅
+              </div>
+            </div>
+
+            <div
+              class="chat-message uplus"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <div class="message-bubble">
+                고민되시는 마음 저희도 공감하고 있어요. 조특히 비교해보고
+                고객님께 가장 좋은 결정을 하시길 바랍니다 😊
+              </div>
             </div>
           </div>
+        </article>
+        <!-- 채팅 섹션 EEE -->
+      </main>
 
-          <div class="chat-message uplus" data-aos="fade-left" data-aos-duration="1000">
-            <div class="message-bubble">
-              예약만 하고 개통은 천천히 해도 되나요?
-            </div>
-          </div>
+      <div
+        class="ios_alarm type2"
+        id="btnAlarm"
+        style="display: block; z-index: 999;"
+      >
+        <div class="click_trigger">
+          <div class="ip283_btn_wrap">
+            <div class="countBox">
+              <div class="timerWrap ty2">
+                <div class="day">
+                  <span id="d1">0</span>
+                  <span id="d0">0</span>
+                  <span>일</span>
+                </div>
 
-          <div class="chat-message customer" data-aos="fade-right" data-aos-duration="1000">
-            <div class="message-bubble">
-              아, 예약현금 바로 계약하는 건 잘았어요 😅
-            </div>
-          </div>
+                <div class="hour">
+                  <span id="h1">0</span>
+                  <span id="h0">0</span>
+                  <span>시간</span>
+                </div>
 
-          <div class="chat-message uplus" data-aos="fade-left" data-aos-duration="1000">
-            <div class="message-bubble">
-              고민되시는 마음 저희도 공감하고 있어요. 조특히 비교해보고 고객님께 가장 좋은 결정을 하시길 바랍니다 😊
+                <div class="min">
+                  <span id="m1">0</span>
+                  <span id="m0">0</span>
+                  <span>분</span>
+                </div>
+
+                <div class="sec">
+                  <span id="s1" class="num0">0</span>
+                  <span id="s0" class="num0">0</span>
+                  <span>초</span>
+                </div>
+              </div>
             </div>
+
+            <button
+              class="ip283_bot_btn btn_confirm ga-tag-btn"
+              data-gtm-click-location="플로팅 영역"
+              data-gtm-click-text="01-단계진입_알람받기"
+              data-gtm-event-action="플로팅 영역  - 버튼 클릭"
+              data-gtm-event-category="클릭"
+              data-gtm-event-label="컨텐츠 : 01-단계진입_사전알람 신청하기"
+              data-gtm-event-name="button_click"
+              id="alarmEvtRun"
+              onclick="PreorderCtrl.open();"
+              type="button"
+            >
+              사전예약하기
+            </button>
           </div>
         </div>
-      </article>
-      <!-- 채팅 섹션 EEE -->
-
-      </main>
+      </div>
     </div>
 
     <script

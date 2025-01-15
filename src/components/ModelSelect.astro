@@ -444,49 +444,6 @@ const models = [
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
-                  <div class="storage-price-box">
-                    <div class="storage-info">
-                      <div class="storage-icon dongdong-effect">
-                        <img
-                          src={`../assets/img/model-sel-tootop0${
-                            index + 1
-                          }.svg`}
-                          alt="저장공간 아이콘"
-                        />
-                      </div>
-                      {index === 2 ? (
-                        <div class="storage-text">
-                          <p>1TB 업그레이드 비용</p>
-                          <p class="storage-text-sub">
-                            다른 곳보다 <span>136,000원</span> 저렴
-                          </p>
-                        </div>
-                      ) : (
-                        <div>
-                          <div class="price-info">
-                            <div class="price">
-                              <span class="left">다른 곳</span>
-                              <span class="right">
-                                {storage.storagePrice.others.toLocaleString()}
-                                <span>원</span>
-                              </span>
-                            </div>
-                            <div class="discount">
-                              <span class="left">유플닷컴</span>
-                              <span class="right">
-                                {storage.storagePrice.uplus}
-                                <span>원</span>
-                              </span>
-                            </div>
-                          </div>
-                          <p
-                            class="notice"
-                            set:html={storage.storagePrice.notice}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </div>
                   <div
                     class="price-info"
                     data-aos="fade-up"
