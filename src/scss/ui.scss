@@ -20,6 +20,10 @@
   padding-top: rem(93);
   padding-bottom: 200px;
 
+  > article {
+    overflow-x: hidden;
+  }
+
   svg {
     transform: translateZ(0);
     backface-visibility: hidden;

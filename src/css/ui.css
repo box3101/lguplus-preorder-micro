@@ -77,6 +77,9 @@
   /*      공통 NOTICE        */
   /* ==================== */
 }
+.preorder-section > article {
+  overflow-x: hidden;
+}
 .preorder-section svg {
   transform: translateZ(0);
   backface-visibility: hidden;
