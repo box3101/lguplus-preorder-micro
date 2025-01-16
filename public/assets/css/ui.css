@@ -26,6 +26,9 @@
   /*    priceComparison         */
   /* ============= ======= */
   /* ==================== */
+  /*   model-select-wrp   */
+  /* ============= ======= */
+  /* ==================== */
   /*    lucky-draw       */
   /* ============= ======= */
   /* ==================== */
@@ -36,9 +39,6 @@
   /* ==================== */
   /* ==================== */
   /*    new-galaxy-coming-soon      */
-  /* ============= ======= */
-  /* ==================== */
-  /*   model-select-wrp   */
   /* ============= ======= */
   /* ==================== */
   /*   coupon-content   */
@@ -162,6 +162,34 @@
   font-weight: 400;
   letter-spacing: -0.03rem;
   color: #aaa;
+}
+@keyframes zoom-fade {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.preorder-section [data-aos=zoom-fade] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+.preorder-section [data-aos=zoom-fade].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+.preorder-section .main-visual .bg-swiper,
+.preorder-section .main-visual .price-swiper,
+.preorder-section .main-visual .top-info {
+  will-change: transform, opacity;
+}
+@media (max-width: 768px) {
+  .preorder-section .main-visual [data-aos] {
+    transition-duration: 600ms !important;
+  }
 }
 .preorder-section .preorder-coupon {
   background: rgba(129, 0, 245, 0.08);
@@ -438,373 +466,6 @@
 }
 .preorder-section .priceComparison.on .price-content .price-savings::after {
   width: 100%;
-}
-.preorder-section .lucky-draw {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  background: #fff2f9;
-}
-.preorder-section .lucky-draw h3 {
-  margin-top: 0.75rem;
-  margin-bottom: 2.5rem;
-}
-.preorder-section .lucky-draw .prize-info .name {
-  color: #272727;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.6px;
-}
-.preorder-section .lucky-draw .prize-info .sub-name {
-  color: #8100f5;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.6px;
-  margin-top: 2px;
-}
-.preorder-section .lucky-draw .prize-thumbs-swiper {
-  margin-top: 2rem;
-}
-.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.875rem;
-}
-.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item {
-  display: flex;
-  flex-direction: column;
-  width: 94px;
-  height: 84px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  background: #fff;
-}
-.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item.active {
-  border-radius: 16px;
-  border: 2px solid #ff008c;
-  background: #fff;
-}
-.preorder-section .lucky-draw .notice {
-  margin-top: 1.4375rem;
-  line-height: 1.5;
-  text-align: center;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  color: #aaa;
-  letter-spacing: -0.65px;
-}
-.preorder-section .lucky-draw .common-btn-wrp {
-  margin-top: 1.625rem;
-}
-.preorder-section .lucky-draw .common-notice-desc {
-  margin-top: 1.25rem;
-  color: #aaa;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 0.8125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.25rem; /* 153.846% */
-  letter-spacing: -0.65px;
-}
-.preorder-section .lucky-draw .lucky-draw-content .prize-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.preorder-section .lucky-draw .lucky-draw-content .prize-card {
-  position: relative;
-  text-align: center;
-  flex: 1 0 calc(50% - 0.25rem);
-  border-radius: 12px;
-  background: #f5f5f5;
-  padding: 1.5625rem 0rem;
-  box-sizing: border-box;
-}
-.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-brand {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #ff18aa;
-  letter-spacing: -0.6px;
-}
-.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-name {
-  margin-top: 0.3125rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #272727;
-  letter-spacing: -0.7px;
-}
-.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-quantity {
-  width: 2.8125rem;
-  height: 2.8125rem;
-  box-sizing: border-box;
-  position: absolute;
-  right: 1.0625rem;
-  top: 1.25rem;
-  padding: 0.75rem 0.5rem 0.8125rem 0.4375rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #fff;
-}
-.preorder-section .prize-display-swiper {
-  position: relative;
-  margin-top: 1.875rem;
-}
-.preorder-section .prize-display-swiper .swiper-slide {
-  perspective: 62.5rem;
-}
-.preorder-section .prize-display-swiper .swiper-slide img {
-  width: auto;
-  height: auto;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  backface-visibility: hidden;
-}
-.preorder-section .prize-display-swiper .swiper-slide img.flipped {
-  transform: rotateY(180deg);
-}
-.preorder-section .prize-display-swiper .prize-item {
-  padding: 1.5rem 0;
-  width: 100%;
-  border-radius: 1rem;
-  background: linear-gradient(156deg, #ffcef4 16.67%, #f64fcf 63.28%, #ed2fc1 100%), #fff;
-  box-shadow: 0 0.25rem 3.375rem 0 rgba(255, 133, 236, 0.5) inset;
-}
-.preorder-section .prize-display-swiper .prize-item .prize-circle {
-  perspective: 62.5rem;
-}
-.preorder-section .prize-display-swiper .prize-item .prize-circle img {
-  width: auto !important;
-  height: 7.5rem !important;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-.preorder-section .prize-display-swiper .prize-item .prize-circle img.flipped {
-  transform: rotateY(180deg);
-}
-.preorder-section .prize-display-swiper .prize-item .prize-info {
-  margin-top: 0.5625rem;
-}
-.preorder-section .prize-display-swiper .prize-item .prize-info .brand {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #777;
-  letter-spacing: -0.04375rem;
-  margin-bottom: 0.25rem;
-}
-.preorder-section .prize-display-swiper .prize-item .prize-info .name {
-  color: #fff;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: -0.05625rem;
-}
-.preorder-section .prize-display-swiper .prize-item .prize-info .quantity {
-  margin-top: 0.5rem;
-  display: inline-flex;
-  padding: 0.5rem 0.875rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 5.357125rem;
-  background: #b91493;
-  color: #fff;
-  text-align: center;
-  font-family: SUIT;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: -0.04375rem;
-}
-.preorder-section .prize-display-swiper .prize-item .lucky-badge {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.preorder-section .discount-card {
-  background: rgba(254, 5, 146, 0.05);
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-}
-.preorder-section .discount-card h3 {
-  margin-top: 0.75rem;
-}
-.preorder-section .discount-card .benefit-cards-container {
-  margin-top: 2rem;
-}
-.preorder-section .discount-card .benefit-card {
-  margin-bottom: 1.875rem;
-  padding-left: 1.875rem;
-  padding-top: 2rem;
-  padding-bottom: 1.75rem;
-  padding-right: 1.875rem;
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 0, 140, 0.2);
-  background: #fff;
-}
-.preorder-section .discount-card .benefit-card:last-of-type {
-  margin-bottom: 0;
-}
-.preorder-section .discount-card .benefit-card .benefit-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0.875rem;
-  height: 1rem;
-  border-radius: 100px;
-  background: #c1c1c1;
-  padding: 0.5625rem 0.625rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.26px;
-}
-.preorder-section .discount-card .benefit-card .benefit-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #333;
-  letter-spacing: -1.2px;
-  font-family: SUIT;
-}
-.preorder-section .discount-card .benefit-card .discount-amount {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ff008c;
-  letter-spacing: -1.2px;
-  font-family: SUIT;
-}
-.preorder-section .discount-card .benefit-card .benefit-description {
-  margin-top: 0.5rem;
-}
-.preorder-section .discount-card .benefit-card .description-line1 {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #777;
-  letter-spacing: -0.8px;
-  color: #777;
-  font-family: SUIT;
-  line-height: 24px; /* 150% */
-}
-.preorder-section .discount-card .benefit-card .description-line1 span {
-  font-weight: 700;
-}
-.preorder-section .discount-card .benefit-card .description-line2 {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #777;
-  letter-spacing: -0.6px;
-  font-family: SUIT;
-}
-.preorder-section .discount-card .benefit-card .benefit-image img {
-  margin-left: auto;
-  margin-right: 0;
-  margin-top: 1.875rem;
-}
-.preorder-section .plan-benefits {
-  background: #1f1f1f;
-}
-.preorder-section .plan-benefits .common-inner {
-  padding: 3.75rem 1.25rem;
-}
-.preorder-section .plan-benefits .coupon-title {
-  text-align: center;
-  margin-bottom: 1.25rem;
-}
-.preorder-section .plan-benefits .coupon-title img {
-  width: 11.25rem !important;
-}
-.preorder-section .plan-benefits .coupon-subtitle {
-  text-align: center;
-}
-.preorder-section .plan-benefits .coupon-subtitle img {
-  width: 24.125rem !important;
-}
-.preorder-section .plan-benefits .mt-20 {
-  margin-top: 1.25rem;
-}
-.preorder-section .plan-benefits .plan-benefits-cards {
-  margin-top: 2.5rem;
-}
-.preorder-section .plan-benefits .plan-card:last-child {
-  margin-bottom: 0;
-}
-.preorder-section .plan-benefits .plan-card .plan-content .plan-number {
-  display: inline-block;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-.preorder-section .plan-benefits .plan-card .plan-content .plan-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-  letter-spacing: -0.48px;
-  font-family: SUIT;
-}
-.preorder-section .plan-benefits .plan-card .plan-content .plan-description {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  letter-spacing: -0.32px;
-  font-family: SUIT;
-}
-.preorder-section .plan-benefits .plan-card .plan-image {
-  margin: 0.875rem auto;
-  text-align: center;
-  margin-top: 1.875rem;
-  max-width: 19.5rem;
-}
-.preorder-section .plan-benefits .plan-card .plan-image img {
-  width: 16.25rem !important;
-}
-.preorder-section .plan-benefits .plan-card .plan-notice {
-  margin-top: 0.875rem;
-}
-.preorder-section .plan-benefits .plan-card .plan-notice .notice-text {
-  text-align: left;
-  color: #999;
-  font-family: SUIT;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.6px;
-}
-.preorder-section .plan-benefits .plan-card .plan-notice .notice-text:last-child {
-  margin-bottom: 0;
-}
-.preorder-section .new-galaxy-coming-soon {
-  padding-top: 3.75rem;
-  background: #1d1d1d;
-  position: relative;
-}
-.preorder-section .new-galaxy-coming-soon .bg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0rem;
-}
-.preorder-section .new-galaxy-coming-soon p {
-  margin-top: 2.1875rem;
 }
 .preorder-section .model-select-wrp {
   padding-bottom: 3.75rem;
@@ -1332,6 +993,373 @@
 }
 .preorder-section .model-select-wrp .price-info .accordion.active .accordion-content {
   display: block;
+}
+.preorder-section .lucky-draw {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: #fff2f9;
+}
+.preorder-section .lucky-draw h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+.preorder-section .lucky-draw .prize-info .name {
+  color: #272727;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+}
+.preorder-section .lucky-draw .prize-info .sub-name {
+  color: #8100f5;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  margin-top: 2px;
+}
+.preorder-section .lucky-draw .prize-thumbs-swiper {
+  margin-top: 2rem;
+}
+.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item {
+  display: flex;
+  flex-direction: column;
+  width: 94px;
+  height: 84px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: #fff;
+}
+.preorder-section .lucky-draw .prize-thumbs-swiper .thumb-item-wrp .thumb-item.active {
+  border-radius: 16px;
+  border: 2px solid #ff008c;
+  background: #fff;
+}
+.preorder-section .lucky-draw .notice {
+  margin-top: 1.4375rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #aaa;
+  letter-spacing: -0.65px;
+}
+.preorder-section .lucky-draw .common-btn-wrp {
+  margin-top: 1.625rem;
+}
+.preorder-section .lucky-draw .common-notice-desc {
+  margin-top: 1.25rem;
+  color: #aaa;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem; /* 153.846% */
+  letter-spacing: -0.65px;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card {
+  position: relative;
+  text-align: center;
+  flex: 1 0 calc(50% - 0.25rem);
+  border-radius: 12px;
+  background: #f5f5f5;
+  padding: 1.5625rem 0rem;
+  box-sizing: border-box;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-brand {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #ff18aa;
+  letter-spacing: -0.6px;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-name {
+  margin-top: 0.3125rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #272727;
+  letter-spacing: -0.7px;
+}
+.preorder-section .lucky-draw .lucky-draw-content .prize-card .prize-quantity {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  box-sizing: border-box;
+  position: absolute;
+  right: 1.0625rem;
+  top: 1.25rem;
+  padding: 0.75rem 0.5rem 0.8125rem 0.4375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+}
+.preorder-section .prize-display-swiper {
+  position: relative;
+  margin-top: 1.875rem;
+}
+.preorder-section .prize-display-swiper .swiper-slide {
+  perspective: 62.5rem;
+}
+.preorder-section .prize-display-swiper .swiper-slide img {
+  width: auto;
+  height: auto;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  backface-visibility: hidden;
+}
+.preorder-section .prize-display-swiper .swiper-slide img.flipped {
+  transform: rotateY(180deg);
+}
+.preorder-section .prize-display-swiper .prize-item {
+  padding: 1.5rem 0;
+  width: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(156deg, #ffcef4 16.67%, #f64fcf 63.28%, #ed2fc1 100%), #fff;
+  box-shadow: 0 0.25rem 3.375rem 0 rgba(255, 133, 236, 0.5) inset;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-circle {
+  perspective: 62.5rem;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-circle img {
+  width: auto !important;
+  height: 7.5rem !important;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-circle img.flipped {
+  transform: rotateY(180deg);
+}
+.preorder-section .prize-display-swiper .prize-item .prize-info {
+  margin-top: 0.5625rem;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-info .brand {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.04375rem;
+  margin-bottom: 0.25rem;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-info .name {
+  color: #fff;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.05625rem;
+}
+.preorder-section .prize-display-swiper .prize-item .prize-info .quantity {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  padding: 0.5rem 0.875rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 5.357125rem;
+  background: #b91493;
+  color: #fff;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.04375rem;
+}
+.preorder-section .prize-display-swiper .prize-item .lucky-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.preorder-section .discount-card {
+  background: rgba(254, 5, 146, 0.05);
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+.preorder-section .discount-card h3 {
+  margin-top: 0.75rem;
+}
+.preorder-section .discount-card .benefit-cards-container {
+  margin-top: 2rem;
+}
+.preorder-section .discount-card .benefit-card {
+  margin-bottom: 1.875rem;
+  padding-left: 1.875rem;
+  padding-top: 2rem;
+  padding-bottom: 1.75rem;
+  padding-right: 1.875rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 140, 0.2);
+  background: #fff;
+}
+.preorder-section .discount-card .benefit-card:last-of-type {
+  margin-bottom: 0;
+}
+.preorder-section .discount-card .benefit-card .benefit-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.875rem;
+  height: 1rem;
+  border-radius: 100px;
+  background: #c1c1c1;
+  padding: 0.5625rem 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.26px;
+}
+.preorder-section .discount-card .benefit-card .benefit-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -1.2px;
+  font-family: SUIT;
+}
+.preorder-section .discount-card .benefit-card .discount-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff008c;
+  letter-spacing: -1.2px;
+  font-family: SUIT;
+}
+.preorder-section .discount-card .benefit-card .benefit-description {
+  margin-top: 0.5rem;
+}
+.preorder-section .discount-card .benefit-card .description-line1 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.8px;
+  color: #777;
+  font-family: SUIT;
+  line-height: 24px; /* 150% */
+}
+.preorder-section .discount-card .benefit-card .description-line1 span {
+  font-weight: 700;
+}
+.preorder-section .discount-card .benefit-card .description-line2 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: -0.6px;
+  font-family: SUIT;
+}
+.preorder-section .discount-card .benefit-card .benefit-image img {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 1.875rem;
+}
+.preorder-section .plan-benefits {
+  background: #1f1f1f;
+}
+.preorder-section .plan-benefits .common-inner {
+  padding: 3.75rem 1.25rem;
+}
+.preorder-section .plan-benefits .coupon-title {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.preorder-section .plan-benefits .coupon-title img {
+  width: 11.25rem !important;
+}
+.preorder-section .plan-benefits .coupon-subtitle {
+  text-align: center;
+}
+.preorder-section .plan-benefits .coupon-subtitle img {
+  width: 24.125rem !important;
+}
+.preorder-section .plan-benefits .mt-20 {
+  margin-top: 1.25rem;
+}
+.preorder-section .plan-benefits .plan-benefits-cards {
+  margin-top: 2.5rem;
+}
+.preorder-section .plan-benefits .plan-card:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .plan-benefits .plan-card .plan-content .plan-number {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.preorder-section .plan-benefits .plan-card .plan-content .plan-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  letter-spacing: -0.48px;
+  font-family: SUIT;
+}
+.preorder-section .plan-benefits .plan-card .plan-content .plan-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  letter-spacing: -0.32px;
+  font-family: SUIT;
+}
+.preorder-section .plan-benefits .plan-card .plan-image {
+  margin: 0.875rem auto;
+  text-align: center;
+  margin-top: 1.875rem;
+  max-width: 19.5rem;
+}
+.preorder-section .plan-benefits .plan-card .plan-image img {
+  width: 16.25rem !important;
+}
+.preorder-section .plan-benefits .plan-card .plan-notice {
+  margin-top: 0.875rem;
+}
+.preorder-section .plan-benefits .plan-card .plan-notice .notice-text {
+  text-align: left;
+  color: #999;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.6px;
+}
+.preorder-section .plan-benefits .plan-card .plan-notice .notice-text:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .new-galaxy-coming-soon {
+  padding-top: 3.75rem;
+  background: #1d1d1d;
+  position: relative;
+}
+.preorder-section .new-galaxy-coming-soon .bg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0rem;
+}
+.preorder-section .new-galaxy-coming-soon p {
+  margin-top: 2.1875rem;
 }
 .preorder-section .coupon-content {
   padding: 3.75rem 1.5rem;
