@@ -2211,6 +2211,7 @@
     overflow-x: hidden;
     .chat-content {
       margin-top: rem(36);
+      overflow: hidden;
       .chat-message {
         margin-bottom: rem(24);
         &:last-child {

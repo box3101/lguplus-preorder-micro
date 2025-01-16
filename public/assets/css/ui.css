@@ -2026,6 +2026,7 @@
 }
 .preorder-section .chat-section .chat-content {
   margin-top: 2.25rem;
+  overflow: hidden;
 }
 .preorder-section .chat-section .chat-content .chat-message {
   margin-bottom: 1.5rem;
