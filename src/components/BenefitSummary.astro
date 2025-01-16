@@ -107,6 +107,7 @@ const benefits = {
       src="../assets/img/benefit-title.png"
       alt="쿠폰 선착순!"
       class="amount-title"
+      loading="lazy"
     />
 
     {
@@ -127,6 +128,7 @@ const benefits = {
                       <img
                         src={`../assets/img/benefit${index + 1}-${item.id}.jpg`}
                         alt={`${section.title} 아이콘`}
+                        loading="lazy"
                       />
                     </div>
                     <p set:html={item.text} />

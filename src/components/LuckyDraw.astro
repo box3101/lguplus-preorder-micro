@@ -70,6 +70,7 @@ const prizes = [
         style="width: 294px !important;"
         src="../assets/img/lucky-draw-h2.png"
         alt="경품/상품 추첨 이벤트"
+        loading="lazy"
       />
     </h2>
   </div>
@@ -81,7 +82,7 @@ const prizes = [
           <div class="swiper-slide">
             <div class="prize-item main">
               <div class="prize-circle">
-                <img src={prize.image} alt={prize.alt} />
+                <img src={prize.image} alt={prize.alt} loading="lazy" />
                 <div class="prize-info">
                   <p class="name">{prize.name}</p>
                   <p class="quantity">{prize.quantity}명</p>
@@ -99,7 +100,11 @@ const prizes = [
         prizes.map((prize, index) => (
           <div class="swiper-slide thumb-item-wrp">
             <button class={`thumb-item ${index === 0 ? 'active' : ''}`}>
-              <img src={prize.thumbnail} alt={`${prize.name} 썸네일`} />
+              <img
+                src={prize.thumbnail}
+                alt={`${prize.name} 썸네일`}
+                loading="lazy"
+              />
             </button>
             <div class="prize-info">
               <p class="name">{prize.subName}</p>
