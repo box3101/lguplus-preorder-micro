@@ -583,13 +583,6 @@ import TodayReservationBenefit from '../../components/TodayReservationBenefit.as
         ></script>
         <script is:inline>
           window.addEventListener('load', function () {
-            if (typeof AOS !== 'undefined') {
-              AOS.init({
-                easing: 'ease-out-cubic',
-                once: true,
-              });
-            }
-
             /* [S] 스크롤 모니터 */
             const $counters = $('.counter');
             // 노출 비율(%)과 애니메이션 속도(ms)을 설정
