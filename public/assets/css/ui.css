@@ -16,6 +16,7 @@
 .preorder-section {
   padding-top: 5.8125rem;
   padding-bottom: 200px;
+  overflow-x: hidden;
   /* ==================== */
   /*      visual         */
   /* ============= ======= */
@@ -1392,9 +1393,6 @@
 }
 .preorder-section .benefit-summary .benefit-group:last-child {
   margin-bottom: 0;
-}
-.preorder-section .benefit-summary .benefit-group .benefit-swiper {
-  overflow-x: hidden;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-wrapper {
   display: flex;

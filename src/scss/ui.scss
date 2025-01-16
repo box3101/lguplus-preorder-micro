@@ -19,6 +19,7 @@
 .preorder-section {
   padding-top: rem(93);
   padding-bottom: 200px;
+  overflow-x: hidden;
 
   svg {
     transform: translateZ(0);
@@ -1474,7 +1475,6 @@
         margin-bottom: 0;
       }
       .benefit-swiper {
-        overflow-x: hidden;
         .swiper-wrapper {
           display: flex;
           gap: rem(14);
