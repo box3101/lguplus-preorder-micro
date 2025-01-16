@@ -18,6 +18,7 @@
 /* ==================== */
 .preorder-section {
   padding-top: rem(93);
+  padding-bottom: 200px;
 
   svg {
     transform: translateZ(0);
@@ -2054,6 +2055,7 @@
                   content: '·';
                   position: absolute;
                   left: 0;
+                  top: 8%;
                 }
 
                 span {
@@ -2164,6 +2166,34 @@
     overflow-x: hidden;
     .chat-content {
       margin-top: rem(36);
+      .chat-message {
+        margin-bottom: rem(24);
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.customer {
+          .announce-request-img {
+            text-align: left;
+          }
+        }
+
+        &.uplus {
+          .announce-request-img {
+            text-align: right;
+          }
+        }
+
+        .announce-request-img {
+          img {
+            display: inline-block;
+            @media screen and (max-width: 345px) {
+              min-width: 100%;
+              max-width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 
