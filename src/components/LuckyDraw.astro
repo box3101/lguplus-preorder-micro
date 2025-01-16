@@ -64,7 +64,12 @@ const prizes = [
 ---
 
 <article class="lucky-draw common-inner">
-  <div class="lucky-draw-header">
+  <div
+    class="lucky-draw-header"
+    data-aos="fade-down"
+    data-aos-duration="800"
+    data-aos-delay="100"
+  >
     <h2>
       <img
         style="width: 294px !important;"
@@ -75,7 +80,12 @@ const prizes = [
     </h2>
   </div>
 
-  <div class="prize-display-swiper swiper">
+  <div
+    class="prize-display-swiper swiper"
+    data-aos="fade-up"
+    data-aos-duration="800"
+    data-aos-delay="200"
+  >
     <div class="swiper-wrapper">
       {
         prizes.map((prize) => (
@@ -94,11 +104,21 @@ const prizes = [
       }
     </div>
   </div>
-  <div class="prize-thumbs-swiper swiper">
+  <div
+    class="prize-thumbs-swiper swiper"
+    data-aos="fade-up"
+    data-aos-duration="800"
+    data-aos-delay="300"
+  >
     <div class="swiper-wrapper">
       {
         prizes.map((prize, index) => (
-          <div class="swiper-slide thumb-item-wrp">
+          <div
+            class="swiper-slide thumb-item-wrp"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay={300 + index * 100}
+          >
             <button class={`thumb-item ${index === 0 ? 'active' : ''}`}>
               <img
                 src={prize.thumbnail}
@@ -116,7 +136,12 @@ const prizes = [
     </div>
   </div>
 
-  <div class="common-btn-wrp mt-24" data-aos="fade-up" data-aos-duration="1000">
+  <div
+    class="common-btn-wrp mt-24"
+    data-aos="fade-up"
+    data-aos-duration="800"
+    data-aos-delay="400"
+  >
     <button
       class="common-btn"
       data-gtm-click-location="사전예약 콘텐츠 영역"

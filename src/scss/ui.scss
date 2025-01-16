@@ -1245,6 +1245,328 @@
   }
 
   /* ==================== */
+  /*      카운터 영역       */
+  /* ==================== */
+  .s25_counter {
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+    .tit_cnt3_inner {
+      .mw_main_tit_wrap {
+        strong {
+          opacity: 1;
+        }
+      }
+
+      p {
+        span {
+          opacity: 1;
+        }
+        .click.man {
+          opacity: 1;
+        }
+      }
+    }
+
+    .realtime_counter-wrp {
+      padding: rem(29) rem(54) rem(29) rem(55);
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+      border-radius: rem(8);
+      background: #f5f5f5;
+      text-align: center;
+      margin-top: rem(36);
+      .counter-title {
+        border-radius: rem(4);
+        background: linear-gradient(115deg, #ed2026 1.88%, #ec098d 69.65%),
+          #ff00a8;
+        display: flex;
+        padding: rem(6) rem(18);
+        justify-content: center;
+        align-items: center;
+        gap: rem(10);
+        max-width: rem(99);
+        margin: 0 auto;
+        color: #fff;
+        font-family: SUIT;
+        font-size: rem(14);
+        font-weight: 700;
+        letter-spacing: rem(-0.7);
+      }
+      img {
+        opacity: 1;
+      }
+      .reqPReCnt-wrp {
+        margin-top: rem(5);
+        display: inline-block;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: rem(12);
+          left: 50%;
+          bottom: rem(4);
+          transform: translateX(-50%);
+          border-bottom: rem(12) solid rgba(40, 40, 40, 0.19);
+        }
+        em {
+          color: #282828;
+          font-family: SUIT;
+          font-size: rem(16);
+          font-weight: 400;
+          letter-spacing: rem(-0.8);
+          margin-left: rem(3);
+          display: inline-block;
+        }
+
+        .counter {
+          color: #282828;
+          font-family: Outfit;
+          font-size: rem(40);
+          font-weight: 700;
+        }
+      }
+      .alarm {
+        color: #777;
+        font-family: SUIT;
+        font-size: rem(12);
+        font-weight: 400;
+        line-height: rem(18);
+        letter-spacing: rem(-0.6);
+        margin-top: rem(12);
+      }
+      .counter-img {
+        margin-top: rem(5);
+      }
+      span {
+        opacity: 1;
+      }
+
+      .blind {
+        opacity: 1;
+      }
+    }
+
+    .btn-outline {
+      button {
+        opacity: 1;
+
+        .icon {
+          opacity: 1;
+        }
+      }
+    }
+
+    .alarm {
+      span {
+        opacity: 1;
+      }
+    }
+
+    .info-txt {
+      margin-top: rem(24);
+      color: #333;
+      text-align: center;
+      font-family: SUIT;
+      font-size: rem(14);
+      font-weight: 400;
+      line-height: rem(22);
+      letter-spacing: rem(-0.7);
+      em {
+        color: #333;
+        font-family: SUIT;
+        font-size: rem(14);
+        font-weight: 700;
+        line-height: rem(22);
+        letter-spacing: rem(-0.7);
+      }
+      em.under {
+        color: #333;
+        font-family: SUIT;
+        font-size: rem(14);
+        font-weight: 700;
+        line-height: rem(22);
+        letter-spacing: rem(-0.7);
+        text-decoration-line: underline;
+      }
+      span {
+        color: #777;
+        font-family: SUIT;
+        font-size: rem(12);
+        font-weight: 400;
+        line-height: rem(22);
+        letter-spacing: rem(-0.6);
+      }
+      li {
+        opacity: 1;
+
+        em {
+          opacity: 1;
+
+          &.under {
+            opacity: 1;
+          }
+        }
+
+        .ft_12 {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /* ==================== */
+  /*      혜택 요약 영역       */
+  /* ==================== */
+
+  .benefit-summary {
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+    background: #f1f1f1;
+    .amount-title {
+      margin-bottom: rem(38);
+    }
+    .amount-title2 {
+      color: #282828;
+      font-family: SUIT;
+      font-size: rem(22);
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: rem(-1.1);
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(22);
+      em {
+        display: inline-flex;
+        width: rem(32);
+        height: rem(32);
+        padding: rem(13.5) rem(15);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(15);
+        border-radius: rem(150);
+        background: #ff1f9a;
+        color: #fff;
+        font-family: Outfit;
+        font-size: rem(14);
+        font-weight: 700;
+        letter-spacing: rem(-0.28);
+        box-sizing: border-box;
+        margin-right: rem(8);
+      }
+      span {
+        color: #ff1f9a;
+        font-family: SUIT;
+        font-size: rem(22);
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: rem(-1.1);
+        display: inline-block;
+        margin-left: rem(5);
+      }
+    }
+    .benefit-group {
+      margin-bottom: rem(46);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .benefit-swiper {
+        .swiper-wrapper {
+          display: flex;
+          gap: rem(14);
+        }
+
+        .swiper-slide {
+          max-width: rem(236);
+          .notice {
+            margin-top: rem(16);
+          }
+          .benefit-box {
+            position: relative;
+            background: #fff;
+            border-radius: rem(12);
+            height: rem(275);
+            padding-left: rem(30);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            gap: rem(12);
+            max-width: rem(236);
+
+            p {
+              color: #272727;
+              font-family: SUIT;
+              font-size: rem(20);
+              font-weight: 700;
+              line-height: rem(28);
+              letter-spacing: rem(-1);
+              text-align: left;
+              span {
+                color: #ff1f9a;
+              }
+            }
+
+            .btn-more {
+              position: absolute;
+              bottom: rem(20);
+              right: rem(20);
+              width: rem(40);
+              height: rem(40);
+              border-radius: rem(100);
+              background: #ccc;
+              color: #fff;
+              font-family: SUIT;
+              font-size: rem(22);
+              font-weight: 700;
+            }
+          }
+        }
+
+        .swiper-scrollbar {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          max-width: rem(60);
+          margin-top: rem(12);
+        }
+
+        .notice {
+          color: #75757b;
+          font-family: SUIT;
+          font-size: rem(14);
+          font-weight: 400;
+          line-height: rem(18);
+          letter-spacing: rem(-0.7);
+          text-align: left;
+        }
+      }
+    }
+    .notice {
+      margin-top: rem(32);
+      color: #333;
+      text-align: center;
+      font-family: SUIT;
+      font-size: rem(13);
+      font-style: normal;
+      font-weight: 400;
+      line-height: rem(20);
+      letter-spacing: rem(-0.65);
+      span {
+        color: #333;
+        font-family: SUIT;
+        font-size: rem(13);
+        font-style: normal;
+        font-weight: 700;
+        line-height: rem(20);
+        letter-spacing: rem(-0.65);
+      }
+    }
+  }
+
+  /* ==================== */
   /*    discount-card      */
   /* ============= ======= */
   .discount-card {
@@ -1681,328 +2003,6 @@
       top: rem(1.3);
       &:hover {
         color: #333;
-      }
-    }
-  }
-
-  /* ==================== */
-  /*      카운터 영역       */
-  /* ==================== */
-  .s25_counter {
-    padding-top: rem(40);
-    padding-bottom: rem(40);
-    .tit_cnt3_inner {
-      .mw_main_tit_wrap {
-        strong {
-          opacity: 1;
-        }
-      }
-
-      p {
-        span {
-          opacity: 1;
-        }
-        .click.man {
-          opacity: 1;
-        }
-      }
-    }
-
-    .realtime_counter-wrp {
-      padding: rem(29) rem(54) rem(29) rem(55);
-      justify-content: center;
-      align-items: center;
-      align-self: stretch;
-      border-radius: rem(8);
-      background: #f5f5f5;
-      text-align: center;
-      margin-top: rem(36);
-      .counter-title {
-        border-radius: rem(4);
-        background: linear-gradient(115deg, #ed2026 1.88%, #ec098d 69.65%),
-          #ff00a8;
-        display: flex;
-        padding: rem(6) rem(18);
-        justify-content: center;
-        align-items: center;
-        gap: rem(10);
-        max-width: rem(99);
-        margin: 0 auto;
-        color: #fff;
-        font-family: SUIT;
-        font-size: rem(14);
-        font-weight: 700;
-        letter-spacing: rem(-0.7);
-      }
-      img {
-        opacity: 1;
-      }
-      .reqPReCnt-wrp {
-        margin-top: rem(5);
-        display: inline-block;
-        position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: rem(12);
-          left: 50%;
-          bottom: rem(4);
-          transform: translateX(-50%);
-          border-bottom: rem(12) solid rgba(40, 40, 40, 0.19);
-        }
-        em {
-          color: #282828;
-          font-family: SUIT;
-          font-size: rem(16);
-          font-weight: 400;
-          letter-spacing: rem(-0.8);
-          margin-left: rem(3);
-          display: inline-block;
-        }
-
-        .counter {
-          color: #282828;
-          font-family: Outfit;
-          font-size: rem(40);
-          font-weight: 700;
-        }
-      }
-      .alarm {
-        color: #777;
-        font-family: SUIT;
-        font-size: rem(12);
-        font-weight: 400;
-        line-height: rem(18);
-        letter-spacing: rem(-0.6);
-        margin-top: rem(12);
-      }
-      .counter-img {
-        margin-top: rem(5);
-      }
-      span {
-        opacity: 1;
-      }
-
-      .blind {
-        opacity: 1;
-      }
-    }
-
-    .btn-outline {
-      button {
-        opacity: 1;
-
-        .icon {
-          opacity: 1;
-        }
-      }
-    }
-
-    .alarm {
-      span {
-        opacity: 1;
-      }
-    }
-
-    .info-txt {
-      margin-top: rem(24);
-      color: #333;
-      text-align: center;
-      font-family: SUIT;
-      font-size: rem(14);
-      font-weight: 400;
-      line-height: rem(22);
-      letter-spacing: rem(-0.7);
-      em {
-        color: #333;
-        font-family: SUIT;
-        font-size: rem(14);
-        font-weight: 700;
-        line-height: rem(22);
-        letter-spacing: rem(-0.7);
-      }
-      em.under {
-        color: #333;
-        font-family: SUIT;
-        font-size: rem(14);
-        font-weight: 700;
-        line-height: rem(22);
-        letter-spacing: rem(-0.7);
-        text-decoration-line: underline;
-      }
-      span {
-        color: #777;
-        font-family: SUIT;
-        font-size: rem(12);
-        font-weight: 400;
-        line-height: rem(22);
-        letter-spacing: rem(-0.6);
-      }
-      li {
-        opacity: 1;
-
-        em {
-          opacity: 1;
-
-          &.under {
-            opacity: 1;
-          }
-        }
-
-        .ft_12 {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  /* ==================== */
-  /*      혜택 요약 영역       */
-  /* ==================== */
-
-  .benefit-summary {
-    padding-top: rem(40);
-    padding-bottom: rem(40);
-    background: #f1f1f1;
-    .amount-title {
-      margin-bottom: rem(38);
-    }
-    .amount-title2 {
-      color: #282828;
-      font-family: SUIT;
-      font-size: rem(22);
-      font-weight: 700;
-      line-height: normal;
-      letter-spacing: rem(-1.1);
-      display: flex;
-      align-items: center;
-      margin-bottom: rem(22);
-      em {
-        display: inline-flex;
-        width: rem(32);
-        height: rem(32);
-        padding: rem(13.5) rem(15);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: rem(15);
-        border-radius: rem(150);
-        background: #ff1f9a;
-        color: #fff;
-        font-family: Outfit;
-        font-size: rem(14);
-        font-weight: 700;
-        letter-spacing: rem(-0.28);
-        box-sizing: border-box;
-        margin-right: rem(8);
-      }
-      span {
-        color: #ff1f9a;
-        font-family: SUIT;
-        font-size: rem(22);
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: rem(-1.1);
-        display: inline-block;
-        margin-left: rem(5);
-      }
-    }
-    .benefit-group {
-      margin-bottom: rem(46);
-      &:last-child {
-        margin-bottom: 0;
-      }
-      .benefit-swiper {
-        .swiper-wrapper {
-          display: flex;
-          gap: rem(14);
-        }
-
-        .swiper-slide {
-          max-width: rem(236);
-          .notice {
-            margin-top: rem(16);
-          }
-          .benefit-box {
-            position: relative;
-            background: #fff;
-            border-radius: rem(12);
-            height: rem(275);
-            padding-left: rem(30);
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-            gap: rem(12);
-            max-width: rem(236);
-
-            p {
-              color: #272727;
-              font-family: SUIT;
-              font-size: rem(20);
-              font-weight: 700;
-              line-height: rem(28);
-              letter-spacing: rem(-1);
-              text-align: left;
-              span {
-                color: #ff1f9a;
-              }
-            }
-
-            .btn-more {
-              position: absolute;
-              bottom: rem(20);
-              right: rem(20);
-              width: rem(40);
-              height: rem(40);
-              border-radius: rem(100);
-              background: #ccc;
-              color: #fff;
-              font-family: SUIT;
-              font-size: rem(22);
-              font-weight: 700;
-            }
-          }
-        }
-
-        .swiper-scrollbar {
-          position: relative;
-          left: 50%;
-          transform: translateX(-50%);
-          max-width: rem(60);
-          margin-top: rem(12);
-        }
-
-        .notice {
-          color: #75757b;
-          font-family: SUIT;
-          font-size: rem(14);
-          font-weight: 400;
-          line-height: rem(18);
-          letter-spacing: rem(-0.7);
-          text-align: left;
-        }
-      }
-    }
-    .notice {
-      margin-top: rem(32);
-      color: #333;
-      text-align: center;
-      font-family: SUIT;
-      font-size: rem(13);
-      font-style: normal;
-      font-weight: 400;
-      line-height: rem(20);
-      letter-spacing: rem(-0.65);
-      span {
-        color: #333;
-        font-family: SUIT;
-        font-size: rem(13);
-        font-style: normal;
-        font-weight: 700;
-        line-height: rem(20);
-        letter-spacing: rem(-0.65);
       }
     }
   }
