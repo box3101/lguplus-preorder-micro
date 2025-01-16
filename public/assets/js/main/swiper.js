@@ -167,7 +167,9 @@ export function initializeSwiper() {
   if (benefitSwipers.length) {
     benefitSwipers.forEach((element) => {
       new Swiper(element, {
-        slidesPerView: 1.5,
+        slidesPerView: "auto",
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 40,
       });
     });
   }

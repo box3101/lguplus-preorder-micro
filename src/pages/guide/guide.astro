@@ -6,6 +6,7 @@ import PriceComparison from '../../components/PriceComparison.astro';
 import LuckyDraw from '../../components/LuckyDraw.astro';
 import TodayTomorrowTab from '../../components/TodayTomorrowTab.astro';
 import BenefitSummary from '../../components/BenefitSummary.astro';
+import TodayReservationBenefit from '../../components/TodayReservationBenefit.astro';
 ---
 
 <!DOCTYPE html>
@@ -36,13 +37,13 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <MainVisual />
           <!-- 메인 비쥬얼 EEE -->
 
-          <!-- 오늘 예약자 특혜 -->
-          <TodayTomorrowTab />
-          <!-- 오늘 예약자 특혜 EEE -->
-
           <!-- 오늘 내일 쿠폰 -->
           <TodayTomorrowTab />
           <!-- 오늘 내일 쿠폰 EEE -->
+
+          <!-- 오늘 예약자 특혜 -->
+          <TodayReservationBenefit />
+          <!-- 오늘 예약자 특혜 EEE -->
 
           <!-- 모델 선택 -->
           <ModelSelect />
@@ -51,10 +52,6 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <!-- 경품/상품 추첨 이벤트 -->
           <LuckyDraw />
           <!-- 경품/상품 추첨 이벤트 EEE -->
-
-          <!-- 가격/할인 비교 섹션 -->
-          <PriceComparison />
-          <!-- 그곳보다가격/할인 비교 섹션 EEE -->
 
           <article class="s25_counter common-inner">
             <div
@@ -65,7 +62,7 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
               data-aos-once="true"
             >
               <img
-                style="width: 246px!important;"
+                style="width: 298px!important;"
                 src="../assets/img/counter-title.png"
                 alt="출시일 전에 먼저 받아보세요"
               />
@@ -80,8 +77,11 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
               >
                 <p class="counter-title">미리드림 신청자 수</p>
                 <div class="reqPReCnt-wrp">
-                  <span id="reqPReCnt" class="counter" data-start="" data-end=""
-                    >2,025</span
+                  <span
+                    id="reqPReCnt"
+                    class="counter"
+                    data-start="0"
+                    data-end="2025">2,025</span
                   ><em>명</em>
                 </div>
                 <div class="counter-img">
@@ -110,8 +110,8 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
               data-aos-once="true"
             >
               <li>
-                방법 : <em>1/23(화)</em>까지
-                <em class="under">가입 신청</em>
+                방법 : <em>2/3(월)</em>까지
+                <em class="under">가입신청서 작성</em>
               </li>
               <li>
                 대상 : U<sup>+</sup> 이용자 <span class="ft_12"
@@ -121,14 +121,11 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
             </ul>
 
             <div
-              class="common-btn-wrp mt-55"
+              class="common-btn-wrp mt-30"
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay="600"
             >
-              <div class="toast dongdong-effect">
-                <img src="../assets/img/coupon-toast2.png" />
-              </div>
               <button
                 class="common-btn"
                 data-gtm-event-category="클릭"
@@ -140,7 +137,7 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
                 onclick="ALARM.oepnEvtPag();"
                 type="button"
               >
-                출시 전 미리 받기
+                갤럭시 S25 제일 먼저 받기
                 <i class="arrow-right animate"></i>
               </button>
             </div>
@@ -150,10 +147,193 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
           <BenefitSummary />
           <!-- 혜택 요약 섹션 EEE -->
 
+          <!-- u+ 4대 서비스 -->
+          <article class="u4-service-section common-inner">
+            <img
+              style="width: 253px!important;"
+              src="../assets/img/u4-service-title.png"
+              alt=""
+            />
+            <div class="u4-service-content">
+              <div class="u4-service-items">
+                <div class="u4-service-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">
+                        나만의 AI 에이전트 <br /> 익시오
+                      </p>
+                      <p class="sub-title">
+                        통화 녹음 요약부터 <br /> 보이는 전화까지
+                      </p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 116px!important;"
+                        src="../assets/img/u4-service-1.png"
+                        alt="U+ 모바일tv"
+                      />
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <ul>
+                      <li>2월 중 출시 예정이에요.</li>
+                      <li>
+                        U+에서 구매한 <span>S25, S25 Plus, S25 Ultra</span
+                        >에서만 사용할 수 있어요.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="u4-service-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">
+                        폰 교체 패스 <br />
+                        with New 갤럭시 AI 클럽
+                      </p>
+                      <p class="sub-title">
+                        가입 시 수리와 교체 <br />
+                        또는 2년 뒤 보상금까지
+                      </p>
+                      <p class="notice">자세히보기 ></p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 112px!important;"
+                        src="../assets/img/u4-service-2.png"
+                        alt="U+ 모바일tv"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="u4-service-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">인터넷 함께 가입</p>
+                      <p class="sub-title">
+                        최대 352만원 혜택 <br />
+                        순금 2돈 + N Pay 3만원까지
+                      </p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 112px!important;"
+                        src="../assets/img/u4-service-3.png"
+                        alt="U+ 모바일tv"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="u4-service-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">
+                        NETFLIX 보여주는 <br /> N+ 멤버십 무료이용권
+                      </p>
+                      <p class="sub-title">매달, 연 12개 제공되는 요금제</p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 112px!important;"
+                        src="../assets/img/u4-service-4.png"
+                        alt="U+ 모바일tv"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- u+ 4대 서비스 EEE -->
+
+          <!-- 삼성전자 혜택 3가지 -->
+          <article class="samsung-benefit-section common-inner">
+            <img
+              style="width: 254px!important;"
+              src="../assets/img/samsung-benefit-title.png"
+              alt=""
+            />
+            <div class="samsung-benefit-content">
+              <div class="samsung-benefit-items">
+                <div class="samsung-benefit-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">갤럭시 워치7</p>
+                      <p class="sub-title">15만원 할인</p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 116px!important;"
+                        src="../assets/img/watch7.png"
+                        alt="갤럭시 워치7"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="samsung-benefit-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">액세서리몰</p>
+                      <p class="sub-title">30$ 할인쿠폰</p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 116px!important;"
+                        src="../assets/img/accessory.png"
+                        alt="액세서리몰"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="samsung-benefit-item">
+                  <div class="top">
+                    <div class="tit-wrp">
+                      <p class="title">유튜브, 윌라</p>
+                      <p class="sub-title">3개월 구독권</p>
+                    </div>
+                    <div class="img-wrp dongdong-effect">
+                      <img
+                        style="width: 116px!important;"
+                        src="../assets/img/youtube.png"
+                        alt="유튜브 월라"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- 삼성전자 혜택 3가지 EEE -->
+
+          <!-- 가격/할인 비교 섹션 -->
+          <PriceComparison />
+          <!-- 그곳보다가격/할인 비교 섹션 EEE -->
+
+          <!-- 1분 요약보기 -->
+          <article class="one-minute-section common-inner">
+            <img
+              style="width: 172px!important;"
+              src="../assets/img/one-minute-title.png"
+              alt=""
+            />
+            <div class="one-minute-content">
+              <img
+                style="width: 312px!important;"
+                src="../assets/img/one-minute-img.png"
+                alt="1분 요약보기"
+              />
+            </div>
+          </article>
+          <!-- 1분 요약보기 EEE -->
+
           <!-- 숏츠영상 섹션 -->
           <article class="shorts-section common-inner">
             <div class="shorts-title">
-              <img src="../assets/img/shorts-title.png" alt="숏츠영상" />
+              <img
+                style="width: 220px!important;"
+                src="../assets/img/shorts-title.png"
+                alt="숏츠영상"
+              />
             </div>
             <div class="shorts-content">
               <div
@@ -161,6 +341,7 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
                 onclick="COMMON.openBottomSheet('shorts-video')"
               >
                 <img
+                  style="width: 312px!important;"
                   src="../assets/img/shorts-thumbnail.png"
                   alt="숏츠영상 썸네일"
                 />
@@ -168,240 +349,196 @@ import BenefitSummary from '../../components/BenefitSummary.astro';
             </div>
           </article>
           <!-- 숏츠영상 섹션 EEE -->
+
+          <!-- 채팅 섹션 -->
+          <article class="chat-section common-inner">
+            <img
+              style="width: 233px!important;"
+              src="../assets/img/announce-request-title.png"
+              alt=""
+            />
+            <div class="chat-content">
+              <div class="chat-message customer">
+                <div class="announce-request-img">
+                  <img
+                    style="width: 267px!important;"
+                    src="../assets/img/announce-request1.png"
+                    alt="채팅 메시지 1"
+                  />
+                </div>
+              </div>
+
+              <div class="chat-message uplus">
+                <div class="announce-request-img">
+                  <img
+                    style="width: 125px!important;"
+                    src="../assets/img/announce-request2.png"
+                    alt="채팅 메시지 2"
+                  />
+                </div>
+              </div>
+
+              <div class="chat-message customer">
+                <div class="announce-request-img">
+                  <img
+                    style="width: 173px!important;"
+                    src="../assets/img/announce-request3.png"
+                    alt="채팅 메시지 3"
+                  />
+                </div>
+              </div>
+
+              <div class="chat-message uplus">
+                <div class="announce-request-img">
+                  <img
+                    style="width: 312px!important;"
+                    src="../assets/img/announce-request4.png"
+                    alt="채팅 메시지 4"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- 채팅 섹션 EEE -->
+
+          <div
+            class="ios_alarm type2"
+            id="btnAlarm"
+            style="display: block; z-index: 999;"
+          >
+            <div class="click_trigger">
+              <div class="ip283_btn_wrap">
+                <div class="countBox">
+                  <div class="timerWrap ty2">
+                    <div class="day">
+                      <span id="d1">0</span>
+                      <span id="d0">0</span>
+                      <span>일</span>
+                    </div>
+
+                    <div class="hour">
+                      <span id="h1">0</span>
+                      <span id="h0">0</span>
+                      <span>시간</span>
+                    </div>
+
+                    <div class="min">
+                      <span id="m1">0</span>
+                      <span id="m0">0</span>
+                      <span>분</span>
+                    </div>
+
+                    <div class="sec">
+                      <span id="s1" class="num0">0</span>
+                      <span id="s0" class="num0">0</span>
+                      <span>초</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="ip283_bot_btn btn_confirm ga-tag-btn"
+                  data-gtm-click-location="플로팅 영역"
+                  data-gtm-click-text="01-단계진입_알람받기"
+                  data-gtm-event-action="플로팅 영역  - 버튼 클릭"
+                  data-gtm-event-category="클릭"
+                  data-gtm-event-label="컨텐츠 : 01-단계진입_사전알람 신청하기"
+                  data-gtm-event-name="button_click"
+                  id="alarmEvtRun"
+                  onclick="PreorderCtrl.open();"
+                  type="button"
+                >
+                  사전예약하기
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <!-- 앵콜요청 -->
-        <article class="announce-request common-inner">
-          <div class="announce-request-inner">
-            <img
-              src="../assets/img/announce-request-title.png"
-              alt="앵콜요청"
-            />
-          </div>
-          <div class="announce-request-content">
-            <div class="announce-request-card">
-              <div class="announce-request-text">
-                <h2>앵콜요청</h2>
-                <p>앵콜요청 카드 영역</p>
-              </div>
-              <div class="announce-request-img">
-                <img
-                  src="../assets/img/announce-request1.png"
-                  alt="갤럭시 워치 7"
-                />
-              </div>
-            </div>
-            <div class="announce-request-card">
-              <div class="announce-request-text">
-                <h2>앵콜요청</h2>
-                <p>앵콜요청 카드 영역</p>
-              </div>
-              <div class="announce-request-img">
-                <img
-                  src="../assets/img/announce-request2.png"
-                  alt="갤럭시 워치 7"
-                />
-              </div>
-            </div>
-            <div class="announce-request-card">
-              <div class="announce-request-text">
-                <h2>앵콜요청</h2>
-                <p>앵콜요청 카드 영역</p>
-              </div>
-              <div class="announce-request-img">
-                <img
-                  src="../assets/img/announce-request3.png"
-                  alt="갤럭시 워치 7"
-                />
-              </div>
-            </div>
-          </div>
-        </article>
-        <!-- 앵콜요청 EEE -->
-
-        <!-- 채팅 섹션 -->
-        <article class="chat-section common-inner">
-          <div class="chat-content">
-            <div
-              class="chat-message customer"
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
-              <div class="message-bubble">
-                저어... 사전예약을 처음 해보는데요😅
-              </div>
-            </div>
-
-            <div
-              class="chat-message uplus"
-              data-aos="fade-left"
-              data-aos-duration="1000"
-            >
-              <div class="message-bubble">
-                예약만 하고 개통은 천천히 해도 되나요?
-              </div>
-            </div>
-
-            <div
-              class="chat-message customer"
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
-              <div class="message-bubble">
-                아, 예약현금 바로 계약하는 건 잘았어요 😅
-              </div>
-            </div>
-
-            <div
-              class="chat-message uplus"
-              data-aos="fade-left"
-              data-aos-duration="1000"
-            >
-              <div class="message-bubble">
-                고민되시는 마음 저희도 공감하고 있어요. 조특히 비교해보고
-                고객님께 가장 좋은 결정을 하시길 바랍니다 😊
-              </div>
-            </div>
-          </div>
-        </article>
-        <!-- 채팅 섹션 EEE -->
-      </main>
-
-      <div
-        class="ios_alarm type2"
-        id="btnAlarm"
-        style="display: block; z-index: 999;"
-      >
-        <div class="click_trigger">
-          <div class="ip283_btn_wrap">
-            <div class="countBox">
-              <div class="timerWrap ty2">
-                <div class="day">
-                  <span id="d1">0</span>
-                  <span id="d0">0</span>
-                  <span>일</span>
-                </div>
-
-                <div class="hour">
-                  <span id="h1">0</span>
-                  <span id="h0">0</span>
-                  <span>시간</span>
-                </div>
-
-                <div class="min">
-                  <span id="m1">0</span>
-                  <span id="m0">0</span>
-                  <span>분</span>
-                </div>
-
-                <div class="sec">
-                  <span id="s1" class="num0">0</span>
-                  <span id="s0" class="num0">0</span>
-                  <span>초</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              class="ip283_bot_btn btn_confirm ga-tag-btn"
-              data-gtm-click-location="플로팅 영역"
-              data-gtm-click-text="01-단계진입_알람받기"
-              data-gtm-event-action="플로팅 영역  - 버튼 클릭"
-              data-gtm-event-category="클릭"
-              data-gtm-event-label="컨텐츠 : 01-단계진입_사전알람 신청하기"
-              data-gtm-event-name="button_click"
-              id="alarmEvtRun"
-              onclick="PreorderCtrl.open();"
-              type="button"
-            >
-              사전예약하기
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
-    ></script>
-    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script
-      is:inline
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script is:inline>
-      window.addEventListener('load', function () {
-        if (typeof AOS !== 'undefined') {
-          AOS.init({
-            easing: 'ease-out-cubic',
-            once: true,
-          });
-        }
-
-        /* [S] 스크롤 모니터 */
-        const $counters = $('.counter');
-        // 노출 비율(%)과 애니메이션 속도(ms)을 설정
-        const exposurePercentage = 100; // 스크롤시 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
-        const duration = 5000;
-        const addCommas = true; // 숫자에 쉼표
-
-        // 숫자를 업데이트하고 애니메이션하는 함수 정의
-        function updateCounter($el, start, end) {
-          let startTime;
-          function animateCounter(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const progress = (timestamp - startTime) / duration;
-            const current = Math.round(start + progress * (end - start));
-            const formattedNumber = addCommas
-              ? current.toLocaleString()
-              : current;
-            $el.text(formattedNumber);
-
-            if (progress < 1) {
-              requestAnimationFrame(animateCounter);
-            } else {
-              $el.text(addCommas ? end.toLocaleString() : end);
+        <script
+          is:inline
+          src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+        ></script>
+        <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script
+          is:inline
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"
+        ></script>
+        <script is:inline>
+          window.addEventListener('load', function () {
+            if (typeof AOS !== 'undefined') {
+              AOS.init({
+                easing: 'ease-out-cubic',
+                once: true,
+              });
             }
-          }
-          requestAnimationFrame(animateCounter);
-        }
 
-        // 윈도우의 스크롤 이벤트를 모니터링합니다.
-        $(window)
-          .on('scroll', function () {
-            // 각 "counter" 요소에 대해 반복합니다.
-            $counters.each(function () {
-              const $el = $(this);
-              // 요소가 아직 스크롤되지 않았다면 처리합니다.
-              if (!$el.data('scrolled')) {
-                // 요소의 위치 정보
-                const rect = $el[0].getBoundingClientRect();
-                const winHeight = window.innerHeight;
-                const contentHeight = rect.bottom - rect.top;
+            /* [S] 스크롤 모니터 */
+            const $counters = $('.counter');
+            // 노출 비율(%)과 애니메이션 속도(ms)을 설정
+            const exposurePercentage = 100; // 스크롤시 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
+            const duration = 5000;
+            const addCommas = true; // 숫자에 쉼표
 
-                // 요소가 화면에 특정 비율만큼 노출될 때 처리
-                if (
-                  rect.top <=
-                    winHeight - (contentHeight * exposurePercentage) / 100 &&
-                  rect.bottom >= (contentHeight * exposurePercentage) / 100
-                ) {
-                  const start = parseInt($el.data('start'));
-                  const end = parseInt($el.data('end'));
-                  //updateCounter($el, start, end);
-                  updateCounter($counters, 0, 100);
-                  $el.data('scrolled', true);
+            // 숫자를 업데이트하고 애니메이션하는 함수 정의
+            function updateCounter($el, start, end) {
+              let startTime;
+              function animateCounter(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = (timestamp - startTime) / duration;
+                const current = Math.round(start + progress * (end - start));
+                const formattedNumber = addCommas
+                  ? current.toLocaleString()
+                  : current;
+                $el.text(formattedNumber);
+
+                if (progress < 1) {
+                  requestAnimationFrame(animateCounter);
+                } else {
+                  $el.text(addCommas ? end.toLocaleString() : end);
                 }
               }
-            });
-          })
-          .scroll();
+              requestAnimationFrame(animateCounter);
+            }
 
-        /* [e] 스크롤 모니터 */
-      });
-    </script>
-    <script type="module" src="../assets/js/main/main.js"></script>
+            // 윈도우의 스크롤 이벤트를 모니터링합니다.
+            $(window)
+              .on('scroll', function () {
+                // 각 "counter" 요소에 대해 반복합니다.
+                $counters.each(function () {
+                  const $el = $(this);
+                  // 요소가 아직 스크롤되지 않았다면 처리합니다.
+                  if (!$el.data('scrolled')) {
+                    // 요소의 위치 정보
+                    const rect = $el[0].getBoundingClientRect();
+                    const winHeight = window.innerHeight;
+                    const contentHeight = rect.bottom - rect.top;
+
+                    // 요소가 화면에 특정 비율만큼 노출될 때 처리
+                    if (
+                      rect.top <=
+                        winHeight -
+                          (contentHeight * exposurePercentage) / 100 &&
+                      rect.bottom >= (contentHeight * exposurePercentage) / 100
+                    ) {
+                      const start = parseInt($el.data('start'));
+                      const end = parseInt($el.data('end'));
+                      //updateCounter($el, start, end);
+                      updateCounter($counters, 0, 100);
+                      $el.data('scrolled', true);
+                    }
+                  }
+                });
+              })
+              .scroll();
+
+            /* [e] 스크롤 모니터 */
+          });
+        </script>
+        <script type="module" src="../assets/js/main/main.js"></script>
+      </main>
+    </div>
   </body>
 </html>

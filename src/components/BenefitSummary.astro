@@ -2,125 +2,101 @@
 const benefits = {
   // 기계값 할인 혜택
   deviceDiscount: {
-    title: "기계값 할인",
-    count: "5가지",
+    title: '기계값 할인',
+    count: '3가지',
     items: [
       {
         id: 1,
-        text: "<span>지금제보다,</span> <br> 15% 또 할인",
-        notice: "※ 15% 할인은 24개월 약정 기준입니다",
-        bottomSheetId: "device-discount-1"
+        text: '쓰던 폰 보상 <br> 시세 + <span>15만원</span> 더',
+        notice: '※ 선착순 3,000명 한정',
+        bottomSheetId: 'device-discount-1',
       },
       {
-        id: 2, 
-        text: "<span>선착순</span><span>4만원</span>",
-        notice: "※ 선착순 마감 시 종료될 수 있습니다",
-        bottomSheetId: "device-discount-2"
+        id: 2,
+        text: '바로 쓸 수 있는 쿠폰 <br> <span>최대 20만원</span>',
+        notice: '※ 선착순 5,000명 한정',
+        bottomSheetId: 'device-discount-2',
       },
       {
         id: 3,
-        text: "<span>추가 할인</span><span>3만원</span>",
-        notice: "※ 추가 할인은 특정 요금제 가입 시 적용됩니다",
-        bottomSheetId: "device-discount-3"
+        text: '공시지원금 <br> 자급제보다 15% 더',
+        notice: '※ 최종 지원금은 출시일 이후 확정',
+        bottomSheetId: 'device-discount-3',
       },
-      {
-        id: 4,
-        text: "<span>특별 할인</span><span>5만원</span>",
-        notice: "※ 특별 할인은 기간 내 1인 1회로 제한됩니다",
-        bottomSheetId: "device-discount-4"
-      },
-      {
-        id: 5,
-        text: "<span>프로모션</span><span>할인</span>",
-        notice: "※ 프로모션 할인은 행사 기간 동안만 적용됩니다",
-        bottomSheetId: "device-discount-5"
-      }
-    ]
+    ],
   },
 
   // 제휴카드 할인 혜택
   cardBenefit: {
-    title: "제휴카드 할인",
-    count: "2가지",
+    title: '제휴카드 할인',
+    count: '2가지',
     items: [
       {
         id: 1,
-        text: "<span>카드 할인</span><span>최대 12만원</span>",
-        notice: "※ 제휴카드 결제 시에만 할인이 적용됩니다",
-        bottomSheetId: "card-benefit-1"
+        text: '삼성카드로 결제 시 <br> <span>최대 9만원</span> 페이백',
+        bottomSheetId: 'card-benefit-1',
       },
       {
         id: 2,
-        text: "<span>무이자 할부</span><span>12개월</span>",
-        notice: "※ 12개월 무이자는 5만원 이상 결제 시 적용",
-        bottomSheetId: "card-benefit-2"
-      }
-    ]
+        text: '삼성카드로 결제 시 <br> 최대 24개월 <span>무이자</span>',
+        bottomSheetId: 'card-benefit-2',
+      },
+    ],
   },
 
   // 요금제 혜택
   planBenefit: {
-    title: "요금제 혜택",
-    count: "4가지", 
+    title: '요금제 혜택',
+    count: '3가지',
     items: [
       {
         id: 1,
-        text: "<span>데이터</span><span>무제한</span>",
-        notice: "※ 속도제한이 발생할 수 있습니다",
-        bottomSheetId: "plan-benefit-1"
+        text: '<span>갤럭시 워치7</span> <br> 전액 할인',
+        notice: '※ 5G 다이렉트 65 요금제 ',
+        bottomSheetId: 'plan-benefit-1',
       },
       {
         id: 2,
-        text: "<span>음성통화</span><span>무제한</span>",
-        notice: "※ 영상/부가통화는 제외됩니다",
-        bottomSheetId: "plan-benefit-2"
+        text: '<span>넷플릭스+유튜브</span> <br> 무료 구독',
+        notice: '※ 5G 다이렉트 65 요금제 ',
+        bottomSheetId: 'plan-benefit-2',
       },
       {
         id: 3,
-        text: "<span>문자</span><span>무제한</span>",
-        notice: "※ MMS/해외문자는 요금이 부과됩니다",
-        bottomSheetId: "plan-benefit-3"
+        text: '<span>갤럭시 버즈3</span> <br> 전액 할인',
+        notice: '※ 5G 다이렉트 65 요금제 ',
+        bottomSheetId: 'plan-benefit-3',
       },
-      {
-        id: 4,
-        text: "<span>부가서비스</span><span>무료</span>",
-        notice: "※ 일부 부가서비스는 제외될 수 있습니다",
-        bottomSheetId: "plan-benefit-4"
-      }
-    ]
+    ],
   },
 
   // U+만의 즐거움 혜택
   uplusBenefit: {
-    title: "U+만의 즐거움",
-    count: "4가지",
+    title: 'U+만의 즐거움',
+    count: '4가지',
     items: [
       {
         id: 1,
-        text: "<span>U+모바일tv</span><span>무료</span>",
-        notice: "※ 프리미엄 콘텐츠는 별도 구매가 필요합니다",
-        bottomSheetId: "uplus-benefit-1"
+        text: '사전예약 고수들의 성지 <br> <span>100% 경품 라방</span>',
+        bottomSheetId: 'uplus-benefit-1',
       },
       {
         id: 2,
-        text: "<span>게임패스</span><span>무료</span>",
-        notice: "※ 게임패스 무료 혜택은 3개월간 제공됩니다",
-        bottomSheetId: "uplus-benefit-2"
+        text: '필요한 걸 골라 받는 <br> <span>개통 사은품</span>',
+        bottomSheetId: 'uplus-benefit-2',
       },
       {
         id: 3,
-        text: "<span>지니뮤직</span><span>무료</span>",
-        notice: "※ 음원 다운로드는 별도 요금이 부과됩니다",
-        bottomSheetId: "uplus-benefit-3"
+        text: '출시일보다 빨리 받는 <br> <span>미리드림</span>',
+        bottomSheetId: 'uplus-benefit-3',
       },
       {
         id: 4,
-        text: "<span>아이들나라</span><span>무료</span>",
-        notice: "※ VOD 콘텐츠는 별도 구매가 필요합니다",
-        bottomSheetId: "uplus-benefit-4"
-      }
-    ]
-  }
+        text: '<span>아이들나라</span><span>무료</span>',
+        bottomSheetId: 'uplus-benefit-4',
+      },
+    ],
+  },
 };
 ---
 
@@ -133,37 +109,48 @@ const benefits = {
       class="amount-title"
     />
 
-    {Object.entries(benefits).map(([key, section], index) => (
-      <div class="benefit-group">
-        <div class="amount-wrap">
-          <span class="amount-title2">
-            <em>{String(index + 1).padStart(2, '0')}</em> {section.title} <span>{section.count}</span>
-          </span>
-        </div>
-        <div class="benefit-swiper swiper">
-          <div class="swiper-wrapper">
-            {section.items.map((item) => (
-              <div class="swiper-slide">
-                <div class="benefit-box">
-                  <div class="img-wrp">
-                    <img
-                      src={`../assets/img/benefit${index + 1}-${item.id}.svg`}
-                      alt={`${section.title} 아이콘`}
-                      style="width: 100px!important;"
-                    />
+    {
+      Object.entries(benefits).map(([key, section], index) => (
+        <div class="benefit-group">
+          <div class="amount-wrap">
+            <span class="amount-title2">
+              <em>{String(index + 1).padStart(2, '0')}</em> {section.title}{' '}
+              <span>{section.count}</span>
+            </span>
+          </div>
+          <div class="benefit-swiper swiper">
+            <div class="swiper-wrapper">
+              {section.items.map((item) => (
+                <div class="swiper-slide">
+                  <div class="benefit-box">
+                    <div class="img-wrp">
+                      <img
+                        src={`../assets/img/benefit${index + 1}-${item.id}.jpg`}
+                        alt={`${section.title} 아이콘`}
+                        style="width: 100px!important;"
+                      />
+                    </div>
+                    <p set:html={item.text} />
+                    <button
+                      class="btn-more"
+                      onclick={`COMMON.openBottomSheet('${item.bottomSheetId}')`}
+                    >
+                      +
+                    </button>
                   </div>
-                  <p set:html={item.text} />
-                  <button class="btn-more" onclick={`COMMON.openBottomSheet('${item.bottomSheetId}')`}>+</button>
+                  {item.notice && <p class="notice">{item.notice}</p>}
                 </div>
-                <p class="notice">{item.notice}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
 
-    <p class="notice">※ 혜택은 당사 사정에 의해 별도 <span>고지없이</span> <br> 변경되거나 조기 종료 될 수 있습니다.</p>
-
+    <p class="notice">
+      ※ 혜택은 당사 사정에 의해 별도 <span>고지없이</span>
+      <br />
+      <span>변경되거나 조기 종료</span> 될 수 있습니다.
+    </p>
   </div>
 </article>

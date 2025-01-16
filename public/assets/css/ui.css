@@ -52,10 +52,22 @@
   /*      혜택 요약 영역       */
   /* ==================== */
   /* ==================== */
+  /*       u+ 4대 서비스 영역       */
+  /* ==================== */
+  /* ==================== */
+  /*      삼성전자 혜택 영역       */
+  /* ==================== */
+  /* ==================== */
+  /*  1분 요약보기 섹션       */
+  /* ==================== */
+  /* ==================== */
+  /*  숏츠영상 섹션       */
+  /* ==================== */
+  /* ==================== */
   /*      채팅 영역       */
   /* ==================== */
   /* ==================== */
-  /*      숏츠영상 섹션       */
+  /*  오늘 예약자 특혜       */
   /* ==================== */
   /* ==================== */
   /*      공통 탭         */
@@ -63,6 +75,11 @@
   /* ==================== */
   /*      공통 NOTICE        */
   /* ==================== */
+}
+.preorder-section svg {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 .preorder-section img {
   display: block;
@@ -543,10 +560,10 @@
 }
 .preorder-section .prize-display-swiper {
   position: relative;
-  margin-top: 30px;
+  margin-top: 1.875rem;
 }
 .preorder-section .prize-display-swiper .swiper-slide {
-  perspective: 1000px;
+  perspective: 62.5rem;
 }
 .preorder-section .prize-display-swiper .swiper-slide img {
   width: auto;
@@ -560,19 +577,18 @@
   transform: rotateY(180deg);
 }
 .preorder-section .prize-display-swiper .prize-item {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 1.5rem 0;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 1rem;
   background: linear-gradient(156deg, #ffcef4 16.67%, #f64fcf 63.28%, #ed2fc1 100%), #fff;
-  box-shadow: 0px 4px 54px 0px rgba(255, 133, 236, 0.5) inset;
+  box-shadow: 0 0.25rem 3.375rem 0 rgba(255, 133, 236, 0.5) inset;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-circle {
-  perspective: 1000px;
+  perspective: 62.5rem;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-circle img {
   width: auto !important;
-  height: 120px !important;
+  height: 7.5rem !important;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -587,37 +603,33 @@
   font-size: 0.875rem;
   font-weight: 400;
   color: #777;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.04375rem;
   margin-bottom: 0.25rem;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info .name {
   color: #fff;
   text-align: center;
   font-family: SUIT;
-  font-size: 18px;
-  font-style: normal;
+  font-size: 1.125rem;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.9px;
+  letter-spacing: -0.05625rem;
 }
 .preorder-section .prize-display-swiper .prize-item .prize-info .quantity {
-  margin-top: 8px;
+  margin-top: 0.5rem;
   display: inline-flex;
-  padding: 8px 14px;
+  padding: 0.5rem 0.875rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  border-radius: 85.714px;
+  gap: 0.5rem;
+  border-radius: 5.357125rem;
   background: #b91493;
   color: #fff;
   text-align: center;
   font-family: SUIT;
-  font-size: 14px;
-  font-style: normal;
+  font-size: 0.875rem;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.04375rem;
 }
 .preorder-section .prize-display-swiper .prize-item .lucky-badge {
   position: absolute;
@@ -794,8 +806,8 @@
   margin-top: 2.1875rem;
 }
 .preorder-section .model-select-wrp {
-  padding-bottom: 2.5rem;
-  padding-top: 2.5rem;
+  padding-bottom: 3.75rem;
+  padding-top: 3.75rem;
 }
 .preorder-section .model-select-wrp .swiper-button-prev {
   position: absolute;
@@ -832,9 +844,10 @@
 .preorder-section .model-select-wrp .tit-wrp .model-title {
   color: #333;
   text-align: center;
-  font-family: "pretendard";
   font-size: 1.625rem;
-  font-weight: 700;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -1px;
 }
 .preorder-section .model-select-wrp .tit-wrp .color-title {
   margin-top: 0.5rem;
@@ -870,12 +883,22 @@
   background: #f1f1f1;
   letter-spacing: -0.0375rem;
 }
+.preorder-section .model-select-wrp .model-tab li.active button {
+  border: 2px solid #000;
+  background: #fff;
+  color: #222;
+  border-radius: 100px;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  line-height: normal;
+}
 .preorder-section .model-select-wrp .common-tab-content-wrp {
   border-radius: 1rem;
   margin-top: 1.5rem;
   border: 0.0625rem solid #ddd;
   background: #fff;
   padding: 1.5rem;
+  padding-top: 2rem;
   gap: 1.5rem;
 }
 .preorder-section .model-select-wrp .color-tab {
@@ -962,12 +985,12 @@
   letter-spacing: -0.04375rem;
 }
 .preorder-section .model-select-wrp .storage-tab li.active {
-  background: #fff;
-  border-radius: 6.25rem;
-  border: 0.0625rem solid #282828;
+  border-radius: 100px;
+  border: 1px solid #282828;
+  background: #282828;
 }
 .preorder-section .model-select-wrp .storage-tab li.active button {
-  color: #333;
+  color: #fff;
   font-size: 0.875rem;
   font-weight: 800;
   line-height: 1.25rem;
@@ -1122,60 +1145,50 @@
 .preorder-section .model-select-wrp .price-info .original-price {
   color: #555;
   font-family: SUIT;
-  font-size: 14px;
-  font-style: normal;
+  font-size: 0.875rem;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.04375rem;
   line-height: 1.6;
 }
 .preorder-section .model-select-wrp .price-info .original-price span {
   color: #555;
   font-family: Outfit;
-  font-size: 22px;
-  font-style: normal;
+  font-size: 1.375rem;
   font-weight: 700;
-  line-height: normal;
 }
 .preorder-section .model-select-wrp .price-info .original-price em {
   color: #555;
   font-family: SUIT;
-  font-size: 14px;
-  font-style: normal;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.04375rem;
   display: inline-block;
-  margin-left: 3px;
+  margin-left: 0.1875rem;
 }
 .preorder-section .model-select-wrp .price-info .reservation-price {
   display: flex;
-  padding: 4px 10px;
+  padding: 0.25rem 0.625rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   align-self: stretch;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   border: 1px solid #ff18aa;
   background: #fff;
-  max-width: 75px;
+  max-width: 4.6875rem;
   color: #ff00a8;
   font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.0375rem;
   margin-bottom: 0.5rem;
 }
 .preorder-section .model-select-wrp .price-info .discount-price {
   display: inline-block;
   color: #ff00a8;
   font-family: Outfit;
-  font-size: 28px;
-  font-style: normal;
+  font-size: 1.75rem;
   font-weight: 700;
-  line-height: normal;
   position: relative;
 }
 .preorder-section .model-select-wrp .price-info .discount-price::after {
@@ -1184,36 +1197,30 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 7px;
+  height: 0.4375rem;
   background: rgba(255, 0, 168, 0.25);
 }
 .preorder-section .model-select-wrp .price-info .discount-price em {
   color: #ff00a8;
   font-family: SUITE;
-  font-size: 16px;
-  font-style: normal;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.05rem;
 }
 .preorder-section .model-select-wrp .price-info .savings {
   margin-top: 0.8125rem;
   color: #66707a;
   font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.0375rem;
 }
 .preorder-section .model-select-wrp .price-info .savings em {
   color: #000;
   font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.0375rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion {
   text-align: right;
@@ -1221,31 +1228,29 @@
 .preorder-section .model-select-wrp .price-info .accordion .accordion-txt-wrp {
   position: relative;
   right: 0;
-  bottom: 1rem;
+  bottom: 1.1875rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-txt {
   color: #000;
   font-family: SUIT;
-  font-size: 13px;
-  font-style: normal;
+  font-size: 0.8125rem;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.65px;
+  letter-spacing: -0.040625rem;
   padding-bottom: 0;
   display: inline-flex;
-  gap: 5px;
+  gap: 0.3125rem;
   align-items: center;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content {
   display: none;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list {
-  padding: 18px 20px;
+  padding: 1.125rem 1.25rem;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 0.375rem;
   align-self: stretch;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: rgba(255, 191, 233, 0.24);
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li {
@@ -1256,31 +1261,26 @@
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-label {
   position: relative;
-  padding-left: 12px;
+  padding-left: 0.625rem;
   color: #282828;
   font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.6px;
+  line-height: 1.125rem;
+  letter-spacing: -0.0375rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-label:before {
   content: "·";
   position: absolute;
   left: 0;
 }
-.preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li:last-child .benefit-label:before {
-  content: "+";
-}
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-list li .benefit-value {
   color: #ff18aa;
   font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 700;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.6px;
+  line-height: 1.125rem;
+  letter-spacing: -0.0375rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .total-benefit {
   margin-top: 1rem;
@@ -1301,11 +1301,10 @@
   color: #777;
   text-align: center;
   font-family: SUIT;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.6px;
+  line-height: 1.125rem;
+  letter-spacing: -0.0375rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice ul {
   text-align: center;
@@ -1315,14 +1314,20 @@
   position: relative;
   color: #999;
   font-family: SUIT;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: -0.03125rem;
-  line-height: 1rem;
+  letter-spacing: -0.0375rem;
+  line-height: 1.125rem;
   text-align: center;
 }
 .preorder-section .model-select-wrp .price-info .accordion .accordion-content .benefit-notice ul li.last {
-  margin-top: 1rem;
+  margin-top: 0.625rem;
+  color: #777;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.03125rem;
 }
 .preorder-section .model-select-wrp .price-info .accordion.active .accordion-content {
   display: block;
@@ -1703,30 +1708,29 @@
   background: #f1f1f1;
 }
 .preorder-section .benefit-summary .amount-title {
-  margin-bottom: 38px;
+  margin-bottom: 2.375rem;
 }
 .preorder-section .benefit-summary .amount-title2 {
   color: #282828;
   font-family: SUIT;
-  font-size: 22px;
-  font-style: normal;
+  font-size: 1.375rem;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -1.1px;
+  letter-spacing: -0.06875rem;
   display: flex;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
 }
 .preorder-section .benefit-summary .amount-title2 em {
   display: inline-flex;
-  width: 32px;
-  height: 32px;
-  padding: 13.5px 15px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.84375rem 0.9375rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  border-radius: 150px;
+  gap: 0.9375rem;
+  border-radius: 9.375rem;
   background: #ff1f9a;
   color: #fff;
   font-family: Outfit;
@@ -1734,59 +1738,54 @@
   font-weight: 700;
   letter-spacing: -0.0175rem;
   box-sizing: border-box;
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 .preorder-section .benefit-summary .amount-title2 span {
   color: #ff1f9a;
   font-family: SUIT;
-  font-size: 22px;
-  font-style: normal;
+  font-size: 1.375rem;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -1.1px;
+  letter-spacing: -0.06875rem;
   display: inline-block;
-  margin-left: 5px;
+  margin-left: 0.3125rem;
+}
+.preorder-section .benefit-summary .benefit-group {
+  margin-bottom: 2.875rem;
+}
+.preorder-section .benefit-summary .benefit-group:last-child {
+  margin-bottom: 0;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-wrapper {
   display: flex;
-  gap: 14px;
+  gap: 0.875rem;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide {
-  max-width: 236px;
+  max-width: 14.75rem;
+}
+.preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .notice {
+  margin-top: 1rem;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .benefit-box {
   position: relative;
-  background: #f5f5f5;
-  border-radius: 12px;
-  height: 275px;
-  padding-left: 24px;
+  background: #fff;
+  border-radius: 0.75rem;
+  height: 17.1875rem;
+  padding-left: 1.875rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
-}
-.preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .benefit-box .img-wrp {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  background: #f5f5f5;
-  box-sizing: border-box;
-}
-.preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .benefit-box .img-wrp img {
-  margin: 0 !important;
+  gap: 0.75rem;
+  max-width: 14.75rem;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .benefit-box p {
   color: #272727;
   font-family: SUIT;
-  font-size: 20px;
-  font-style: normal;
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 28px; /* 140% */
-  letter-spacing: -1px;
+  line-height: 1.75rem;
+  letter-spacing: -0.0625rem;
   text-align: left;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .benefit-box p span {
@@ -1794,44 +1793,226 @@
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-slide .benefit-box .btn-more {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
-  border-radius: 100px;
-  background: #ff1f9a;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6.25rem;
+  background: #ccc;
   color: #fff;
   font-family: SUIT;
-  font-size: 14px;
+  font-size: 1.375rem;
   font-weight: 700;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-scrollbar {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 60px;
-  margin-top: 12px;
+  max-width: 3.75rem;
+  margin-top: 0.75rem;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .notice {
-  margin-top: 16px;
-  font-size: 14px;
+  color: #75757b;
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: -0.04375rem;
   text-align: left;
-  margin-bottom: 44px;
 }
 .preorder-section .benefit-summary .notice {
-  margin-top: 16px;
-  font-size: 14px;
+  margin-top: 2rem;
+  color: #333;
   text-align: center;
-  margin-bottom: 44px;
+  font-family: SUIT;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: -0.040625rem;
 }
 .preorder-section .benefit-summary .notice span {
-  color: #ff1f9a;
+  color: #333;
+  font-family: SUIT;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: -0.040625rem;
+}
+.preorder-section .u4-service-section.common-inner {
+  background: linear-gradient(0deg, #fff2f9 0%, #fff2f9 100%), #fff;
+  padding-top: 2.5rem;
+  padding-bottom: 3.125rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content {
+  margin-top: 2.25rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 0.5rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .top .title {
+  color: #ff18aa;
+  font-family: SUIT;
+  font-size: 1.0833125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.0666875rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .top .sub-title {
+  margin-top: 0.375rem;
+  display: inline-block;
+  color: #777;
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: -0.04375rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .top .notice {
+  margin-top: 0.375rem;
+  color: #75757b;
+  font-family: SUIT;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: -0.0375rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .bottom {
+  margin-top: 1rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .bottom ul {
+  border-radius: 0.5rem;
+  background: #f5f5f5;
+  padding: 1rem 1.1875rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .bottom ul li {
+  position: relative;
+  padding-left: 0.5rem;
+  color: #777;
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: -0.04375rem;
+  margin-bottom: 0.3125rem;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .bottom ul li:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .bottom ul li:before {
+  content: "·";
+  position: absolute;
+  left: 0;
+}
+.preorder-section .u4-service-section.common-inner .u4-service-content .u4-service-items .u4-service-item .bottom ul li span {
+  color: #777;
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: -0.04375rem;
+}
+.preorder-section .samsung-benefit-section.common-inner {
+  background: linear-gradient(0deg, rgba(39, 135, 246, 0.15) 0%, rgba(39, 135, 246, 0.15) 100%), #fff;
+  padding-top: 2.5rem;
+  padding-bottom: 3.125rem;
+}
+.preorder-section .samsung-benefit-section.common-inner .samsung-benefit-content {
+  margin-top: 2.25rem;
+}
+.preorder-section .samsung-benefit-section.common-inner .samsung-benefit-content .samsung-benefit-items .samsung-benefit-item {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 0.5rem;
+}
+.preorder-section .samsung-benefit-section.common-inner .samsung-benefit-content .samsung-benefit-items .samsung-benefit-item:last-child {
+  margin-bottom: 0;
+}
+.preorder-section .samsung-benefit-section.common-inner .samsung-benefit-content .samsung-benefit-items .samsung-benefit-item .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.preorder-section .samsung-benefit-section.common-inner .samsung-benefit-content .samsung-benefit-items .samsung-benefit-item .top .title {
+  color: #2787f6;
+  font-family: SUIT;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.625rem;
+  letter-spacing: -0.0625rem;
+}
+.preorder-section .samsung-benefit-section.common-inner .samsung-benefit-content .samsung-benefit-items .samsung-benefit-item .top .sub-title {
+  margin-top: 0.375rem;
+  color: #777;
+  font-family: SUIT;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: -0.04375rem;
+}
+.preorder-section .one-minute-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.preorder-section .one-minute-section .one-minute-content {
+  margin-top: 2.25rem;
+}
+.preorder-section .shorts-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: #f1f1f1;
+}
+.preorder-section .shorts-section .shorts-content {
+  margin-top: 2.25rem;
 }
 .preorder-section .chat-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   background: #fff;
   overflow-x: hidden;
+}
+.preorder-section .chat-section .chat-content {
+  margin-top: 2.25rem;
+}
+.preorder-section .today-benefit-content {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: linear-gradient(0deg, rgba(129, 0, 245, 0.11) 0%, rgba(129, 0, 245, 0.11) 100%), #fff;
+}
+.preorder-section .today-benefit-content .today-benefit-items {
+  margin-top: 1.5rem;
+}
+.preorder-section .today-benefit-content .today-benefit-items .benefit-item {
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 345px) {
+  .preorder-section .today-benefit-content .today-benefit-items .benefit-item img {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+.preorder-section .today-benefit-content .today-benefit-items .benefit-item:last-child {
+  margin-bottom: 0;
 }
 @keyframes slideDown {
   from {
@@ -1842,24 +2023,6 @@
     transform: translate(-50%, 0);
     opacity: 1;
   }
-}
-.preorder-section .shorts-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: #fff;
-}
-.preorder-section .shorts-section .shorts-title {
-  margin-bottom: 20px;
-}
-.preorder-section .shorts-section .shorts-content {
-  height: 480px;
-  background: #f1f1f1;
-}
-.preorder-section .shorts-section .shorts-content .shorts-video-wrap {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
 }
 .preorder-section .common-tab-menu-wrp .common-tab-content {
   display: none;
@@ -7201,7 +7364,7 @@
   letter-spacing: -0.9px;
 }
 .common-btn-wrp p {
-  margin-top: 0.875rem;
+  margin-top: 1.125rem;
   text-align: center;
   font-size: 0.8125rem;
   color: #777;
