@@ -77,9 +77,6 @@
   /*      공통 NOTICE        */
   /* ==================== */
 }
-.preorder-section > article {
-  overflow-x: hidden;
-}
 .preorder-section svg {
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -1345,6 +1342,7 @@
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   background: #f1f1f1;
+  overflow-x: hidden;
 }
 .preorder-section .benefit-summary .amount-title {
   margin-bottom: 2.375rem;

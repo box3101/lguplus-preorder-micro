@@ -20,10 +20,6 @@
   padding-top: rem(93);
   padding-bottom: 200px;
 
-  > article {
-    overflow-x: hidden;
-  }
-
   svg {
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -1428,6 +1424,7 @@
     padding-top: rem(40);
     padding-bottom: rem(40);
     background: #f1f1f1;
+    overflow-x: hidden;
     .amount-title {
       margin-bottom: rem(38);
     }
