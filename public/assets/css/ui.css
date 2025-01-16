@@ -243,6 +243,7 @@
 .preorder-section .priceComparison {
   padding-top: 3.75rem;
   padding-bottom: 2.5rem;
+  overflow-x: hidden;
 }
 .preorder-section .priceComparison .common-btn-wrp {
   margin-top: 1.6875rem;
@@ -1391,6 +1392,9 @@
 }
 .preorder-section .benefit-summary .benefit-group:last-child {
   margin-bottom: 0;
+}
+.preorder-section .benefit-summary .benefit-group .benefit-swiper {
+  overflow-x: hidden;
 }
 .preorder-section .benefit-summary .benefit-group .benefit-swiper .swiper-wrapper {
   display: flex;

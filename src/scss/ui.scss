@@ -223,6 +223,7 @@
   .priceComparison {
     padding-top: rem(60);
     padding-bottom: rem(40);
+    overflow-x: hidden;
     .common-btn-wrp {
       margin-top: rem(27);
     }
@@ -1473,6 +1474,7 @@
         margin-bottom: 0;
       }
       .benefit-swiper {
+        overflow-x: hidden;
         .swiper-wrapper {
           display: flex;
           gap: rem(14);
