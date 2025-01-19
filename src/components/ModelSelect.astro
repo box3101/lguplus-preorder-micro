@@ -1,9 +1,76 @@
 ---
 const models = [
   {
-    id: 'Galaxy S25 Ultra',
-    name: 'Galaxy S25 Ultra',
+    id: 'Galaxy S25',
+    name: 'Galaxy S25',
     active: true,
+    colors: [
+      {
+        subTitle: '티타늄 블랙',
+        name: 'gray',
+        active: true,
+        images: ['S24_t-gray_01.jpg', 'S24_t-gray_02.jpg', 'S24_t-gray_03.jpg'],
+      },
+      {
+        subTitle: '티타늄 화이트',
+        name: 'white',
+        active: false,
+        images: [
+          'S24_t-white_01.jpg',
+          'S24_t-white_02.jpg',
+          'S24_t-white_03.jpg',
+        ],
+      },
+      {
+        subTitle: '티타늄 바이올렛',
+        name: 'violet',
+        active: false,
+        images: [
+          'S24_t-violet_01.jpg',
+          'S24_t-violet_02.jpg',
+          'S24_t-violet_03.jpg',
+        ],
+      },
+      {
+        subTitle: '티타늄 옐로우',
+        name: 'yellow',
+        active: false,
+        images: [
+          'S24_t-yellow_01.jpg',
+          'S24_t-yellow_02.jpg',
+          'S24_t-yellow_03.jpg',
+        ],
+      },
+    ],
+    storage: [
+      {
+        size: '512GB',
+        active: true,
+        price: 12841000,
+        discount: 1100000,
+        savings: 170000,
+        storagePrice: {
+          others: 386000,
+          uplus: 0,
+          notice: "많은 512GB 사용자들이 '예약'으로 구매했어요",
+        },
+        benefitList: [
+          { label: '공시지원금', value: '173,650원' },
+          { label: '사전알람 랜덤쿠폰', value: '100,000원' },
+          { label: '사전예약 랜덤쿠폰', value: '30,000원' },
+          { label: '쓰던 폰 반납', value: '435,000원' },
+          { label: '쓰던 폰 추가보상(셀로)', value: '150,000원' },
+          { label: '삼성카드 캐시백', value: '90,000원' },
+          { label: '무료 용량 업그레이드', value: '158,000원' },
+          { label: 'N Pay 포인트 (24개월)', value: '0원' },
+        ],
+      }
+    ],
+  },
+  {
+    id: 'Galaxy S25 Ultra',
+    name: 'Galaxy S25 Ultra', 
+    active: false,
     colors: [
       {
         subTitle: '티타늄 블랙',
@@ -48,29 +115,8 @@ const models = [
     ],
     storage: [
       {
-        size: '256GB',
-        active: true,
-        price: 1598400,
-        discount: 150000,
-        savings: 140000,
-        storagePrice: {
-          others: 286000,
-          uplus: 0,
-          notice: "많은 256GB 사용자들이 '<span>예약</span>'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '510,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '40,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '650,000원' },
-          { label: '쓰던 폰 반납', value: '200,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '200,000원' },
-          { label: '삼성카드 캐시백', value: '200,000원' },
-          { label: '무료 용량 업그레이드', value: '200,000원' },
-        ],
-      },
-      {
         size: '512GB',
-        active: false,
+        active: true,
         price: 17210000,
         discount: 170000,
         savings: 160000,
@@ -87,29 +133,9 @@ const models = [
           { label: '쓰던 폰 추가보상(셀로)', value: '220,000원' },
           { label: '삼성카드 캐시백', value: '220,000원' },
           { label: '무료 용량 업그레이드', value: '220,000원' },
+          { label: 'N Pay 포인트 (24개월)', value: '220,000원' },
         ],
-      },
-      {
-        size: '1TB',
-        active: false,
-        price: 1987200,
-        discount: 200000,
-        savings: 1100000,
-        storagePrice: {
-          others: 486000,
-          uplus: 0,
-          notice: "많은 1TB 사용자들이 '예약'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '530,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '50,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '690,000원' },
-          { label: '쓰던 폰 반납', value: '240,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '240,000원' },
-          { label: '삼성카드 캐시백', value: '240,000원' },
-          { label: '무료 용량 업그레이드', value: '240,000원' },
-        ],
-      },
+      }
     ],
   },
   {
@@ -160,29 +186,8 @@ const models = [
     ],
     storage: [
       {
-        size: '256GB',
-        active: true,
-        price: 1350400,
-        discount: 150000,
-        savings: 140000,
-        storagePrice: {
-          others: 286000,
-          uplus: 0,
-          notice: "많은 256GB 사용자들이 '예약'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '510,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '40,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '650,000원' },
-          { label: '쓰던 폰 반납', value: '200,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '200,000원' },
-          { label: '삼성카드 캐시백', value: '200,000원' },
-          { label: '무료 용량 업그레이드', value: '200,000원' },
-        ],
-      },
-      {
         size: '512GB',
-        active: false,
+        active: true,
         price: 14100000,
         discount: 170000,
         savings: 160000,
@@ -199,137 +204,9 @@ const models = [
           { label: '쓰던 폰 추가보상(셀로)', value: '220,000원' },
           { label: '삼성카드 캐시백', value: '220,000원' },
           { label: '무료 용량 업그레이드', value: '220,000원' },
+          { label: 'N Pay 포인트 (24개월)', value: '220,000원' },
         ],
-      },
-      {
-        size: '1TB',
-        active: false,
-        price: 1610000,
-        discount: 190000,
-        savings: 170000,
-        storagePrice: {
-          others: 486000,
-          uplus: 0,
-          notice: "많은 1TB 사용자들이 '예약'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '530,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '50,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '690,000원' },
-          { label: '쓰던 폰 반납', value: '240,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '240,000원' },
-          { label: '삼성카드 캐시백', value: '240,000원' },
-          { label: '무료 용량 업그레이드', value: '240,000원' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'Galaxy S25',
-    name: 'Galaxy S25',
-    active: false,
-    colors: [
-      {
-        subTitle: '티타늄 블랙',
-        name: 'gray',
-        active: true,
-        images: ['S24_t-gray_01.jpg', 'S24_t-gray_02.jpg', 'S24_t-gray_03.jpg'],
-      },
-      {
-        subTitle: '티타늄 화이트',
-        name: 'white',
-        active: false,
-        images: [
-          'S24_t-white_01.jpg',
-          'S24_t-white_02.jpg',
-          'S24_t-white_03.jpg',
-        ],
-      },
-      {
-        subTitle: '티타늄 바이올렛',
-        name: 'violet',
-        active: false,
-        images: [
-          'S24_t-violet_01.jpg',
-          'S24_t-violet_02.jpg',
-          'S24_t-violet_03.jpg',
-        ],
-      },
-      {
-        subTitle: '티타늄 옐로우',
-        name: 'yellow',
-        active: false,
-        images: [
-          'S24_t-yellow_01.jpg',
-          'S24_t-yellow_02.jpg',
-          'S24_t-yellow_03.jpg',
-        ],
-      },
-    ],
-    storage: [
-      {
-        size: '256GB',
-        active: true,
-        price: 1155000,
-        discount: 160000,
-        savings: 150000,
-        storagePrice: {
-          others: 286000,
-          uplus: 0,
-          notice: "많은 256GB 사용자들이 '예약'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '520,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '45,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '670,000원' },
-          { label: '쓰던 폰 반납', value: '220,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '220,000원' },
-          { label: '삼성카드 캐시백', value: '220,000원' },
-          { label: '무료 용량 업그레이드', value: '220,000원' },
-        ],
-      },
-      {
-        size: '512GB',
-        active: false,
-        price: 12841000,
-        discount: 1100000,
-        savings: 170000,
-        storagePrice: {
-          others: 386000,
-          uplus: 0,
-          notice: "많은 512GB 사용자들이 '예약'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '530,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '50,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '690,000원' },
-          { label: '쓰던 폰 반납', value: '240,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '240,000원' },
-          { label: '삼성카드 캐시백', value: '240,000원' },
-          { label: '무료 용량 업그레이드', value: '240,000원' },
-        ],
-      },
-      {
-        size: '1TB',
-        active: false,
-        price: 1414600,
-        discount: 200000,
-        savings: 190000,
-        storagePrice: {
-          others: 486000,
-          uplus: 0,
-          notice: "많은 1TB 사용자들이 '예약'으로 구매했어요",
-        },
-        benefitList: [
-          { label: '공시지원금', value: '540,000원' },
-          { label: '사전알람 랜덤쿠폰', value: '55,000원' },
-          { label: '사전예약 랜덤쿠폰', value: '710,000원' },
-          { label: '쓰던 폰 반납', value: '260,000원' },
-          { label: '쓰던 폰 추가보상(셀로)', value: '260,000원' },
-          { label: '삼성카드 캐시백', value: '260,000원' },
-          { label: '무료 용량 업그레이드', value: '260,000원' },
-        ],
-      },
+      }
     ],
   },
 ];
@@ -499,13 +376,12 @@ const models = [
                         </ul>
                         <div class="benefit-notice">
                           <ul>
-                            <li>※ 5G 프리미어 에센셜 요금제 공시지원금</li>
+                            <li>※ 5G 프리미어 에센셜 요금제 공시지원금으로 개통</li>
                             <li>
-                              Galaxy S23 512GB B등급, 24.01 셀로 판매가 기준
+                              Galaxy S23 512GB A등급, 25.01.08 셀로 판매가 기준
                             </li>
                             <li class="last">
-                              ※ 선착순 혜택이 종료될 경우 최종 혜택가가 변경될
-                              수 있습니다.
+                              ※ 선착순 종료 시 혜택가가 달라질 수 있습니다.
                             </li>
                           </ul>
                         </div>
