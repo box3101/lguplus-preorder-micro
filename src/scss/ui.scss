@@ -3594,3 +3594,100 @@ footer {
   position: relative;
   top: -2px;
 }
+
+
+
+
+ /* ==================== */
+  /*    언팩전용추가         */
+  /* ============= ======= */
+  .unpack-lucky-draw {
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+
+    h3 {
+      margin-top: rem(12);
+      margin-bottom: rem(40);
+    }
+
+    .prize-thumbs-swiper {
+      margin-top: rem(32);
+    }
+
+    .notice {
+      margin-top: rem(23);
+      line-height: 1.5;
+      text-align: center;
+      font-size: rem(13);
+      font-weight: 400;
+      color: #aaa;
+      letter-spacing: rem(-0.65);
+    }
+
+    .common-btn-wrp {
+      margin-top: rem(26);
+    }
+
+    .common-notice-desc {
+      margin-top: rem(20);
+      color: #aaa;
+      text-align: center;
+      font-family: SUIT;
+      font-size: rem(13);
+      font-style: normal;
+      font-weight: 400;
+      line-height: rem(20);
+      letter-spacing: rem(-0.65);
+    }
+
+    .lucky-draw-content {
+      .prize-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(8);
+      }
+
+      .prize-card {
+        position: relative;
+        text-align: center;
+        flex: 1 0 calc(50% - rem(4));
+        border-radius: 12px;
+        background: #f5f5f5;
+        padding: rem(25) 0;
+        box-sizing: border-box;
+
+        .prize-brand {
+          font-size: rem(12);
+          font-weight: 400;
+          color: #ff18aa;
+          letter-spacing: rem(-0.6);
+        }
+
+        .prize-name {
+          margin-top: rem(5);
+          font-size: rem(15);
+          font-weight: 600;
+          color: #272727;
+          letter-spacing: rem(-0.7);
+        }
+
+        .prize-quantity {
+          width: rem(45);
+          height: rem(45);
+          box-sizing: border-box;
+          position: absolute;
+          right: rem(17);
+          top: rem(20);
+          padding: rem(12) rem(8) rem(13) rem(7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100px;
+          background: rgba(0, 0, 0, 0.5);
+          font-size: rem(12);
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+  }

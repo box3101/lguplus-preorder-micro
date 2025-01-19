@@ -7,6 +7,8 @@ import LuckyDraw from '../../components/LuckyDraw.astro';
 import TodayTomorrowTab from '../../components/TodayTomorrowTab.astro';
 import BenefitSummary from '../../components/BenefitSummary.astro';
 import TodayReservationBenefit from '../../components/TodayReservationBenefit.astro';
+import UnpackTodayTomorrowTab from '../../components/UnpackTodayTomorrowTab.astro';
+import UnpackLuckyDraw from '../../components/UnpackLuckyDraw.astro';
 ---
 
 <!DOCTYPE html>
@@ -41,6 +43,11 @@ import TodayReservationBenefit from '../../components/TodayReservationBenefit.as
           <TodayTomorrowTab />
           <!-- 오늘 내일 쿠폰 EEE -->
 
+          <!-- ============================================= -->
+          <!-- 오늘/내일 쿠폰 섹션 (언팩 전용) -->
+          <UnpackTodayTomorrowTab />
+          <!-- ============================================= -->
+
           <!-- 오늘 예약자 특혜 -->
           <TodayReservationBenefit />
           <!-- 오늘 예약자 특혜 EEE -->
@@ -52,6 +59,11 @@ import TodayReservationBenefit from '../../components/TodayReservationBenefit.as
           <!-- 경품/상품 추첨 이벤트 -->
           <LuckyDraw />
           <!-- 경품/상품 추첨 이벤트 EEE -->
+
+            <!-- ============================================= -->
+          <!-- 오늘/내일 쿠폰 섹션 (언팩 전용) -->
+          <UnpackLuckyDraw />
+          <!-- ============================================= -->
 
           <article class="s25_counter common-inner">
             <div

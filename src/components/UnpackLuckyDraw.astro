@@ -1,0 +1,112 @@
+---
+const prizes = [
+  {
+    id: 1,
+    brand: '네이버페이',
+    name: '모바일 금액권<br>(1,000P)',
+    quantity: '1천',
+    image: '../assets/img/IMG_prod.svg',
+  },
+  {
+    id: 2,
+    brand: 'GS칼텍스',
+    name: '주유권<br>(100만원)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod2.svg',
+  },
+  {
+    id: 3,
+    brand: '대한항공',
+    name: '기프트 카드<br>(100만원)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod3.svg',
+  },
+  {
+    id: 4,
+    brand: '올리브영',
+    name: '기프트 카드<br>(100만원)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod4.svg',
+  },
+  {
+    id: 5,
+    brand: 'SONY',
+    name: '플레이스테이션 5<br>(슬림)',
+    quantity: 1,
+    image: '../assets/img/IMG_prod5.svg',
+  },
+  {
+    id: 6,
+    brand: 'Celine',
+    name: '트리옹프 캔버스 &<br>카프스킨 미니 아바 탄',
+    quantity: 1,
+    image: '../assets/img/IMG_prod6.svg',
+  },
+];
+---
+
+<article class="unpack-lucky-draw">
+  <div class="common-inner">
+    <div class="lucky-draw-header">
+      <h3 data-aos="fade-up" data-aos-duration="600">
+        <img
+          style="width: 311px!important;"
+          src="../assets/img/unpack-lucky-draw-title.png"
+        />
+      </h3>
+    </div>
+
+    <div
+      class="lucky-draw-content"
+      data-aos="fade-up"
+      data-aos-duration="800"
+      data-aos-delay="400"
+    >
+      <div class="prize-cards-container">
+        {
+          prizes.map((prize, index) => (
+            <div
+              class="prize-card"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay={100 * (index + 1)}
+            >
+              <img src={prize.image} />
+              <div class="prize-info">
+                <span class="prize-brand">{prize.brand}</span>
+                <h4 class="prize-name" set:html={prize.name} />
+                <p class="prize-quantity">{prize.quantity}명</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- 응모하기 -->
+    <div
+      class="common-btn-wrp mt-38"
+      data-aos="fade-up"
+      data-aos-duration="600"
+    >
+      <button
+        class="common-btn"
+        data-gtm-click-location="사전예약 콘텐츠 영역"
+        data-gtm-click-text="예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+        data-gtm-event-action="사전예약 콘텐츠 영역 - 버튼 클릭"
+        data-gtm-event-category="클릭"
+        data-gtm-event-label="컨텐츠 : 예약신청_01-단계진입_오늘의 혜택 받고 예약하기"
+        data-gtm-event-name="button_click"
+        type="button"
+      >
+        래플 참여하기
+        <i class="arrow-right animate"></i>
+      </button>
+    </div>
+
+    <div class="common-notice-desc aos-init aos-animate" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+      <p>※ 마케팅 수신동의를 하신 고객에 한해 당첨됩니다.</p>
+      <p>자세한 내용은 유의사항을 읽어주세요.</p>
+    </div>
+  </div>
+</article>

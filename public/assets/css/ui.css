@@ -8437,4 +8437,86 @@ footer {
   top: -2px;
 }
 
+/* ==================== */
+/*    언팩전용추가         */
+/* ============= ======= */
+.unpack-lucky-draw {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+.unpack-lucky-draw h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+.unpack-lucky-draw .prize-thumbs-swiper {
+  margin-top: 2rem;
+}
+.unpack-lucky-draw .notice {
+  margin-top: 1.4375rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #aaa;
+  letter-spacing: -0.040625rem;
+}
+.unpack-lucky-draw .common-btn-wrp {
+  margin-top: 1.625rem;
+}
+.unpack-lucky-draw .common-notice-desc {
+  margin-top: 1.25rem;
+  color: #aaa;
+  text-align: center;
+  font-family: SUIT;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: -0.040625rem;
+}
+.unpack-lucky-draw .lucky-draw-content .prize-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.unpack-lucky-draw .lucky-draw-content .prize-card {
+  position: relative;
+  text-align: center;
+  flex: 1 0 calc(50% - 0.25rem);
+  border-radius: 12px;
+  background: #f5f5f5;
+  padding: 1.5625rem 0;
+  box-sizing: border-box;
+}
+.unpack-lucky-draw .lucky-draw-content .prize-card .prize-brand {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #ff18aa;
+  letter-spacing: -0.0375rem;
+}
+.unpack-lucky-draw .lucky-draw-content .prize-card .prize-name {
+  margin-top: 0.3125rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #272727;
+  letter-spacing: -0.04375rem;
+}
+.unpack-lucky-draw .lucky-draw-content .prize-card .prize-quantity {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  box-sizing: border-box;
+  position: absolute;
+  right: 1.0625rem;
+  top: 1.25rem;
+  padding: 0.75rem 0.5rem 0.8125rem 0.4375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+}
+
 /*# sourceMappingURL=ui.css.map */
